@@ -4,44 +4,6 @@ return require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	-- LSP
-	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		config = function()
-			require("plugins.lsp.nvim-cmp")
-		end,
-		dependencies = {
-			{
-				"L3MON4D3/LuaSnip",
-				event = "InsertEnter",
-				config = function()
-					require("plugins.lsp.luasnip")
-				end,
-			},
-		},
-	},
-	{ "hrsh7th/cmp-buffer" },
-	{ "saadparwaiz1/cmp_luasnip" },
-	{ "hrsh7th/cmp-path" },
-
-	{
-		"neovim/nvim-lspconfig",
-		event = "BufRead",
-		config = function()
-			require("plugins.lsp.servers")
-		end,
-		dependencies = {
-			{ "hrsh7th/cmp-nvim-lsp" },
-		},
-	},
-
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		event = "BufRead",
-		config = function()
-			require("plugins.lsp.null-ls")
-		end,
-	},
 
 	-- Telescope
 	{
