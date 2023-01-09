@@ -4,6 +4,19 @@ return require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	-- LSP
+    {
+        "williamboman/mason.nvim",
+        config = function()
+            require("mason").setup()
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        config = function()
+            require("plugins.lsp.settings")
+        end,
+    },
+    { "neovim/nvim-lspconfig" },
 
 	-- Telescope
 	{
