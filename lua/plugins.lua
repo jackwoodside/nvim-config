@@ -18,6 +18,28 @@ return require("lazy").setup({
     },
     { "neovim/nvim-lspconfig" },
 
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        config = function()
+            require("plugins.lsp.cmp")
+        end,
+        dependencies = {
+            {
+                "L3MON4D3/LuaSnip",
+                event = "InsertEnter",
+                config = function()
+                    require("plugins.lsp.luasnip")
+                end,
+            },
+        },
+    },
+    { "hrsh7th/cmp-buffer" },
+    { "hrsh7th/cmp-nvim-lsp" },
+    { "hrsh7th/cmp-nvim-lsp-document-symbol" },
+    { "saadparwaiz1/cmp_luasnip" },
+    { "hrsh7th/cmp-path" },
+
 	-- Telescope
 	{
 		"nvim-telescope/telescope.nvim",

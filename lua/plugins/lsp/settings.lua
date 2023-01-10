@@ -41,7 +41,7 @@ local lsp_flags = {
 -- Configure servers
 local lspconfig = require("lspconfig")
 local get_servers = require("mason-lspconfig").get_installed_servers
---local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 -- Loop over all servers
 for _, server_name in ipairs(get_servers()) do
