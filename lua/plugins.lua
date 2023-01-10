@@ -4,42 +4,51 @@ return require("lazy").setup({
 	"nvim-lua/plenary.nvim",
 
 	-- LSP
-    {
-        "williamboman/mason.nvim",
-        config = function()
-            require("mason").setup()
-        end,
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        config = function()
-            require("plugins.lsp.servers")
-        end,
-    },
-    { "neovim/nvim-lspconfig" },
+	{
+		"williamboman/mason.nvim",
+		config = function()
+			require("mason").setup()
+		end,
+	},
 
-    {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        config = function()
-            require("plugins.lsp.cmp")
-        end,
-        dependencies = {
-            {
-                "L3MON4D3/LuaSnip",
-                event = "InsertEnter",
-                config = function()
-                    require("plugins.lsp.snippets")
-                end,
-                dependencies = { "rafamadriz/friendly-snippets" },
-            },
-        },
-    },
-    { "hrsh7th/cmp-buffer" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-nvim-lsp-document-symbol" },
-    { "saadparwaiz1/cmp_luasnip" },
-    { "hrsh7th/cmp-path" },
+	{
+		"williamboman/mason-lspconfig.nvim",
+		config = function()
+			require("plugins.lsp.servers")
+		end,
+	},
+	{ "neovim/nvim-lspconfig" },
+
+	{
+		"jayp0521/mason-null-ls.nvim",
+		config = function()
+			require("plugins.lsp.linters")
+		end,
+	},
+	{ "jose-elias-alvarez/null-ls.nvim" },
+
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		config = function()
+			require("plugins.lsp.cmp")
+		end,
+		dependencies = {
+			{
+				"L3MON4D3/LuaSnip",
+				event = "InsertEnter",
+				config = function()
+					require("plugins.lsp.snippets")
+				end,
+				dependencies = { "rafamadriz/friendly-snippets" },
+			},
+		},
+	},
+	{ "hrsh7th/cmp-buffer" },
+	{ "hrsh7th/cmp-nvim-lsp" },
+	{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
+	{ "saadparwaiz1/cmp_luasnip" },
+	{ "hrsh7th/cmp-path" },
 
 	-- Telescope
 	{

@@ -2,7 +2,7 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 local icons = {
-    Text = "",
+	Text = "",
 	Method = "",
 	Function = "",
 	Constructor = "",
@@ -29,57 +29,56 @@ local icons = {
 	TypeParameter = "",
 }
 
-
 local aliases = {
-    buffer = "Buffer",
-    nvim_lsp = "LSP",
-    path = "Path",
-    luasnip = "Snippet",
+	buffer = "Buffer",
+	nvim_lsp = "LSP",
+	path = "Path",
+	luasnip = "Snippet",
 }
 
 cmp.setup({
-    mapping = cmp.mapping.preset.insert({
-        ["<C-PageUp>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-PageDown>"] = cmp.mapping.scroll_docs(4),
-        ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
-        ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-    }),
+	mapping = cmp.mapping.preset.insert({
+		["<C-PageUp>"] = cmp.mapping.scroll_docs(-4),
+		["<C-PageDown>"] = cmp.mapping.scroll_docs(4),
+		["<C-Space>"] = cmp.mapping.confirm({ select = true }),
+		["<Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_next_item()
+			elseif luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+		["<S-Tab>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.select_prev_item()
+			elseif luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "s" }),
+	}),
 
-    sources = cmp.config.sources({
-        { name = "buffer", max_item_count = 10 },
-        { name = "nvim_lsp", max_item_count = 10 },
-        { name = "luasnip", max_item_count = 10 },
-        { name = "path", max_item_count = 10 },
-    }),
+	sources = cmp.config.sources({
+		{ name = "buffer", max_item_count = 10 },
+		{ name = "nvim_lsp", max_item_count = 10 },
+		{ name = "luasnip", max_item_count = 10 },
+		{ name = "path", max_item_count = 10 },
+	}),
 
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
 
-    formatting = {
-        format = function(entry, item)
-            item.kind = string.format("%s %s", icons[item.kind], item.kind)
-            item.menu = string.format("[%s]", aliases[entry.source.name] or entry.source.name)
-            return item
-        end,
-    }
+	formatting = {
+		format = function(entry, item)
+			item.kind = string.format("%s %s", icons[item.kind], item.kind)
+			item.menu = string.format("[%s]", aliases[entry.source.name] or entry.source.name)
+			return item
+		end,
+	},
 })
