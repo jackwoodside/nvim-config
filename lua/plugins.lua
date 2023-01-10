@@ -13,7 +13,7 @@ return require("lazy").setup({
     {
         "williamboman/mason-lspconfig.nvim",
         config = function()
-            require("plugins.lsp.settings")
+            require("plugins.lsp.servers")
         end,
     },
     { "neovim/nvim-lspconfig" },
