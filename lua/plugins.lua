@@ -29,8 +29,9 @@ return require("lazy").setup({
                 "L3MON4D3/LuaSnip",
                 event = "InsertEnter",
                 config = function()
-                    require("plugins.lsp.luasnip")
+                    require("plugins.lsp.snippets")
                 end,
+                dependencies = { "rafamadriz/friendly-snippets" },
             },
         },
     },
