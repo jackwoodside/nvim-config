@@ -34,7 +34,7 @@ end
 
 -- Flags
 local lsp_flags = {
-    allow_incremental_sync = true,   
+    allow_incremental_sync = true,
     debounce_text_changes = 200,
 }
 
@@ -42,9 +42,6 @@ local lsp_flags = {
 local lspconfig = require("lspconfig")
 local get_servers = require("mason-lspconfig").get_installed_servers
 --local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
-
--- Server-specific settings
-
 
 -- Loop over all servers
 for _, server_name in ipairs(get_servers()) do
@@ -54,3 +51,85 @@ for _, server_name in ipairs(get_servers()) do
         flags = lsp_flags,
     })
 end
+
+-- Server-specific settings (after the loop to avoid being overwritten)
+local words = {}
+local path = "/home/jack/.config/nvim/lua/plugins/lsp/words.txt"
+for word in io.open(path, "r"):lines() do
+    table.insert(words, word)
+end
+
+lspconfig["ltex"].setup({
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    flags = lsp_flags,
+    settings = {
+        ltex = {
+            language = "en-AU",
+            dictionary = {
+                ["en-AU"] = words,
+            },
+            checkFrequency = "save",
+        },
+    },
+})
+
+lspconfig["texlab"].setup({
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    flags = lsp_flags,
+    settings = {
+        texlab = {
+            build = {
+                onSave = true,
+                forwardSearchAfter = true,
+            },
+            chktex = { onOpenAndSave = true },
+            forwardSearch = {
+                executable = "sioyek",
+                args = {
+                    "--forward-search-file",
+                    "%f",
+                    "--forward-search-line",
+                    "%l",
+                    "%p",
+                },
+            },
+            diagnostics = {
+                ignoredPatterns = {
+                    "Underfull",
+                    "Overfull",
+                    "Wrong length of dash",
+                    "terminated with space",
+                    "Fira fonts",
+                },
+            },
+        },
+    },
+})
+
+lspconfig["sumneko_lua"].setup({
+    on_attach = lsp_attach,
+    capabilities = lsp_capabilities,
+    flags = lsp_flags,
+    settings = {
+        Lua = {
+            completion = {
+                enable = true,
+                showWord = "Disable",
+            },
+            runtime = {
+                version = "LuaJIT",
+            },
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = { os.getenv("VIMRUNTIME") },
+            },
+            telemetry = {
+                enable = false,
+            },
+        }
+    }
+})
