@@ -5,6 +5,7 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		"autopep8",
 		--"cpplint",
+		"shellcheck",
 		"shfmt",
 		"stylua",
 	},

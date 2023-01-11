@@ -3,7 +3,6 @@ local settings = require("plugins.lsp.settings")
 -- Servers
 require("mason-lspconfig").setup({
 	ensure_installed = {
-		"bashls",
 		"clangd",
 		"fortls",
 		"jedi_language_server",
