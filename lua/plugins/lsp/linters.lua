@@ -4,7 +4,7 @@ local settings = require("plugins.lsp.settings")
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"autopep8",
-		"cpplint",
+		--"cpplint",
 		"shfmt",
 		"stylua",
 	},
