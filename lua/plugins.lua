@@ -46,7 +46,6 @@ return require("lazy").setup({
 	},
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-nvim-lsp-document-symbol" },
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-path" },
 
@@ -76,9 +75,8 @@ return require("lazy").setup({
 			require("plugins.treesitter")
 		end,
 	},
-	{ "windwp/nvim-ts-autotag" },
+	{ "nvim-treesitter/nvim-treesitter-context" },
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{ "nvim-treesitter/playground" },
 	{ "nvim-treesitter/nvim-treesitter-refactor" },
 	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
