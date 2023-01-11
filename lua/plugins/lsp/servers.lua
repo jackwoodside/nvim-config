@@ -40,7 +40,7 @@ end
 
 -- Server-specific settings (after the loop to avoid being overwritten)
 local words = {}
-local path = "/home/jack/.config/nvim/lua/plugins/lsp/words.txt"
+local path = vim.fn.stdpath("config") .. "/lua/plugins/lsp/words.txt"
 for word in io.open(path, "r"):lines() do
 	table.insert(words, word)
 end
