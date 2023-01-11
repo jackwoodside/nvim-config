@@ -85,8 +85,8 @@ return require("lazy").setup({
 	-- UI
 	{
 		"catppuccin/nvim",
-        lazy = false,
-        priority = 1000,
+		lazy = false,
+		priority = 1000,
 		name = "catppuccin",
 		config = function()
 			require("plugins.catppuccin")
