@@ -49,6 +49,7 @@ lspconfig["ltex"].setup({
 	on_attach = lsp_attach,
 	capabilities = lsp_capabilities,
 	flags = lsp_flags,
+	filetypes = { "bib", "markdown", "tex" },
 	settings = {
 		ltex = {
 			language = "en-AU",
