@@ -49,7 +49,48 @@ return require("lazy").setup({
 	{ "saadparwaiz1/cmp_luasnip" },
 	{ "hrsh7th/cmp-path" },
 
-	-- Telescope
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = "CursorHold",
+		build = ":TSUpdate",
+		config = function()
+			require("plugins.treesitter")
+		end,
+	},
+	{ "nvim-treesitter/nvim-treesitter-context" },
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+	{ "nvim-treesitter/nvim-treesitter-refactor" },
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
+
+	-- Misc.
+	-- Auto-Pairs
+	{
+		"echasnovski/mini.pairs",
+		config = function()
+			require("mini.pairs").setup()
+		end,
+	},
+
+	-- Colour Highlighter
+	{
+		"norcalli/nvim-colorizer.lua",
+		event = "CursorHold",
+		config = function()
+			require("colorizer").setup()
+		end,
+	},
+
+	-- File Browser
+	{
+		"kyazdani42/nvim-tree.lua",
+		event = "CursorHold",
+		config = function()
+			require("plugins.nvim-tree")
+		end,
+	},
+
+	-- Finder
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "CursorHold",
@@ -66,21 +107,61 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Treesitter
+	-- Git
 	{
-		"nvim-treesitter/nvim-treesitter",
-		event = "CursorHold",
-		build = ":TSUpdate",
+		"lewis6991/gitsigns.nvim",
+		event = "BufRead",
 		config = function()
-			require("plugins.treesitter")
+			require("plugins.gitsigns")
 		end,
 	},
-	{ "nvim-treesitter/nvim-treesitter-context" },
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{ "nvim-treesitter/nvim-treesitter-refactor" },
-	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
-	-- UI
+	-- Icons
+	{ "kyazdani42/nvim-web-devicons" },
+
+	-- Indentation Guides
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "BufRead",
+		config = function()
+			require("plugins.indentline")
+		end,
+	},
+
+	-- Notifications
+	{
+		"rcarriga/nvim-notify",
+		config = function()
+			require("plugins.notify")
+		end,
+	},
+
+	-- Startscreen
+	{
+		"echasnovski/mini.starter",
+		config = function()
+			require("plugins.starter")
+		end,
+	},
+
+	-- Statusline
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "BufEnter",
+		config = function()
+			require("plugins.lualine")
+		end,
+	},
+
+	-- Terminal
+	{
+		"akinsho/toggleterm.nvim",
+		config = function()
+			require("plugins.toggleterm")
+		end,
+	},
+
+	-- Theme
 	{
 		"catppuccin/nvim",
 		lazy = false,
@@ -92,67 +173,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	{
-		"norcalli/nvim-colorizer.lua",
-		event = "CursorHold",
-		config = function()
-			require("colorizer").setup()
-		end,
-	},
-
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
-		config = function()
-			require("plugins.gitsigns")
-		end,
-	},
-
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
-		config = function()
-			require("plugins.indentline")
-		end,
-	},
-
-	{
-		"nvim-lualine/lualine.nvim",
-		event = "BufEnter",
-		config = function()
-			require("plugins.lualine")
-		end,
-	},
-
-	{
-		"folke/noice.nvim",
-		event = "VimEnter",
-		config = function()
-			require("noice").setup()
-		end,
-	},
-
-	{
-		"rcarriga/nvim-notify",
-		config = function()
-			require("plugins.notify")
-		end,
-	},
-
-	{
-		"echasnovski/mini.pairs",
-		config = function()
-			require("mini.pairs").setup()
-		end,
-	},
-
-	{
-		"echasnovski/mini.starter",
-		config = function()
-			require("plugins.starter")
-		end,
-	},
-
+	-- Todo
 	{
 		"folke/todo-comments.nvim",
 		dependencies = {
@@ -163,20 +184,12 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- UI Overhaul
 	{
-		"akinsho/toggleterm.nvim",
+		"folke/noice.nvim",
+		event = "VimEnter",
 		config = function()
-			require("plugins.toggleterm")
+			require("noice").setup()
 		end,
 	},
-
-	{
-		"kyazdani42/nvim-tree.lua",
-		event = "CursorHold",
-		config = function()
-			require("plugins.nvim-tree")
-		end,
-	},
-
-	{ "kyazdani42/nvim-web-devicons" },
 }, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json" })
