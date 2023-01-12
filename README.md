@@ -32,11 +32,13 @@
 ## Misc.
 - Auto-Pairs: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
 - Colour Highlighter: [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+- Commenting: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Finder: [telescope](https://github.com/nvim-telescope/telescope.nvim), [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Indentation Guides: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
+- Navigation: [leap](https://github.com/ggandor/leap.nvim)
 - Notifications: [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Startscreen: [mini.starter](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-starter.md)
 - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim)
