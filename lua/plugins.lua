@@ -143,6 +143,12 @@ return require("lazy").setup({
 			require("leap").add_default_mappings(true)
 		end,
 	},
+	{
+		"ggandor/leap-spooky.nvim",
+		config = function()
+			require("leap-spooky").setup()
+		end,
+	},
 
 	-- Notifications
 	{

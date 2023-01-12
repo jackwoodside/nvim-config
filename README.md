@@ -38,7 +38,7 @@
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Indentation Guides: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
-- Navigation: [leap](https://github.com/ggandor/leap.nvim)
+- Navigation: [leap](https://github.com/ggandor/leap.nvim), [leap-spooky](https://github.com/ggandor/leap-spooky.nvim)
 - Notifications: [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Startscreen: [mini.starter](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-starter.md)
 - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim)

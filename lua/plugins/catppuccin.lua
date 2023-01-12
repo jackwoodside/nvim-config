@@ -7,6 +7,8 @@ require("catppuccin").setup({
 			enabled = true,
 			colored_indent_levels = true,
 		},
+		leap = true,
+		mason = true,
 		mini = true,
 		native_lsp = {
 			enabled = true,
