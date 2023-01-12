@@ -2,6 +2,10 @@ require("catppuccin").setup({
 	flavour = "mocha",
 	integrations = {
 		cmp = true,
+		dap = {
+			enabled = true,
+			enable_ui = true,
+		},
 		gitsigns = true,
 		indent_blankline = {
 			enabled = true,

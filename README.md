@@ -1,15 +1,21 @@
 # Plugins managed by [lazy](https://github.com/folke/lazy.nvim)
 
-## LSP
+## Language Servers
+- [mason](https://github.com/williamboman/mason.nvim)
 
 ### Servers with LSP support
-- [mason](https://github.com/williamboman/mason.nvim)
-- [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 
 ### Servers without LSP support
-- [mason-null-ls](https://github.com/jay-babu/mason-null-ls.nvim)
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
+- [mason-null-ls](https://github.com/jay-babu/mason-null-ls.nvim)
+
+### Debuggers
+- [nvim-dap](https://github.com/mfussenegger/nvim-dap)
+- [mason-nvim-dap](https://github.com/jay-babu/mason-nvim-dap.nvim)
+- [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
+- [nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text)
 
 ### Completion
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)

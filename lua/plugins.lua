@@ -11,21 +11,41 @@ return require("lazy").setup({
 		end,
 	},
 
+	{ "neovim/nvim-lspconfig" },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
 			require("plugins.lsp.servers")
 		end,
 	},
-	{ "neovim/nvim-lspconfig" },
 
+	{ "jose-elias-alvarez/null-ls.nvim" },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		config = function()
 			require("plugins.lsp.linters")
 		end,
 	},
-	{ "jose-elias-alvarez/null-ls.nvim" },
+
+	{ "mfussenegger/nvim-dap" },
+	{
+		"jay-babu/mason-nvim-dap.nvim",
+		config = function()
+			require("plugins.lsp.debuggers")
+		end,
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		config = function()
+			require("dapui").setup()
+		end,
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		config = function()
+			require("nvim-dap-virtual-text").setup()
+		end,
+	},
 
 	{
 		"hrsh7th/nvim-cmp",
