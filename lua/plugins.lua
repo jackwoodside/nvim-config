@@ -81,6 +81,14 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Commenting
+	{
+		"echasnovski/mini.comment",
+		config = function()
+			require("mini.comment").setup()
+		end,
+	},
+
 	-- File Browser
 	{
 		"kyazdani42/nvim-tree.lua",
