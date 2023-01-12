@@ -136,6 +136,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Navigation
+	{
+		"ggandor/leap.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("leap").add_default_mappings()
+		end,
+	},
+
 	-- Notifications
 	{
 		"rcarriga/nvim-notify",
