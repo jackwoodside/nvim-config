@@ -6,6 +6,7 @@ return require("lazy").setup({
 	-- LSP
 	{
 		"williamboman/mason.nvim",
+		commit = "8c8f597ad88cf77ec8e531d19082d747c865755a",
 		config = function()
 			require("mason").setup({ PATH = "append" })
 		end,
