@@ -62,10 +62,11 @@ cmp.setup({
 	}),
 
 	sources = cmp.config.sources({
-		{ name = "buffer", max_item_count = 10, group_index = 3 },
-		{ name = "nvim_lsp", max_item_count = 10, group_index = 2 },
-		{ name = "luasnip", max_item_count = 10, group_index = 1 },
-		{ name = "path", max_item_count = 10, group_index = 4 },
+		{ name = "nvim_lsp", max_item_count = 10 },
+		{ name = "luasnip", max_item_count = 10 },
+	}, {
+		{ name = "buffer", max_item_count = 10 },
+		{ name = "path", max_item_count = 10 },
 	}),
 
 	snippet = {
