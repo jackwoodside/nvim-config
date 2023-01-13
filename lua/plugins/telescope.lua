@@ -42,13 +42,15 @@ local Telescope = setmetatable({}, {
 	end,
 })
 
--- Leader-b = fuzzy find buffers
-map("n", "<leader>b", Telescope.buffers)
+-- Mnemonic is 'f'ind
 
--- Leader-d = diagnostics
-map("n", "<leader>d", Telescope.diagnostics)
+-- Leader-fb = find buffers
+map("n", "<leader>fb", Telescope.buffers)
 
--- Leader-f = fuzzy finder
+-- Leader-fd = find diagnostics
+map("n", "<leader>fd", Telescope.diagnostics)
+
+-- Leader-ff = find files
 map("n", "<leader>f", function()
 	local ok = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
 	if ok then
@@ -58,14 +60,14 @@ map("n", "<leader>f", function()
 	end
 end)
 
--- Leader-gs = git status
-map("n", "<leader>gs", Telescope.git_status)
+-- Leader-fg = find git
+map("n", "<leader>fg", Telescope.git_status)
 
--- Leader-h = help pages
-map("n", "<leader>h", Telescope.help_tags)
+-- Leader-fh = find help
+map("n", "<leader>fh", Telescope.help_tags)
 
--- Leader-n = todo-comments (notes)
-map("n", "<leader>n", "<CMD>TodoTelescope<CR>")
+-- Leader-fn = find notes (todo-comments)
+map("n", "<leader>fn", "<CMD>TodoTelescope<CR>")
 
 -- Leader-/ = live grep
 map("n", "<leader>/", Telescope.live_grep)
