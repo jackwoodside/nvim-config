@@ -51,7 +51,7 @@ map("n", "<leader>fb", Telescope.buffers)
 map("n", "<leader>fd", Telescope.diagnostics)
 
 -- Leader-ff = find files
-map("n", "<leader>f", function()
+map("n", "<leader>ff", function()
 	local ok = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
 	if ok then
 		Telescope.git_files()
@@ -66,8 +66,12 @@ map("n", "<leader>fg", Telescope.git_status)
 -- Leader-fh = find help
 map("n", "<leader>fh", Telescope.help_tags)
 
--- Leader-fn = find notes (todo-comments)
-map("n", "<leader>fn", "<CMD>TodoTelescope<CR>")
+-- Leader-fn = find notifications
+require("telescope").load_extension("notify")
+map("n", "<leader>fn", Telescope.notify)
+
+-- Leader-ft = find todos (todo-comments)
+map("n", "<leader>ft", "<CMD>TodoTelescope<CR>")
 
 -- Leader-/ = live grep
 map("n", "<leader>/", Telescope.live_grep)
