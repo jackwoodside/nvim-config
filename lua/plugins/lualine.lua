@@ -1,4 +1,16 @@
--- word count section for tex files
+-- Use gitsigns for diff source
+local function diff_source()
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.modified,
+			removed = gitsigns.removed,
+		}
+	end
+end
+
+-- Word count section for tex files
 local va = vim.api
 local vf = vim.fn
 va.nvim_create_autocmd("BufWritePost", {
@@ -40,7 +52,7 @@ require("lualine").setup({
 		},
 		lualine_b = {
 			{ "branch" },
-			{ "diff", colored = true },
+			{ "diff", source = diff_source, colored = true },
 		},
 		lualine_c = {
 			{ "filename", file_status = true },
