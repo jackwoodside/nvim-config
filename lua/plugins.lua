@@ -231,7 +231,7 @@ return require("lazy").setup({
 		"folke/noice.nvim",
 		event = "VimEnter",
 		config = function()
-			require("noice").setup()
+			require("plugins.noice")
 		end,
 	},
 }, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json" })
