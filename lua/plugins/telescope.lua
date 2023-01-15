@@ -67,8 +67,7 @@ map("n", "<leader>fg", Telescope.git_status)
 map("n", "<leader>fh", Telescope.help_tags)
 
 -- Leader-fn = find notifications
-require("telescope").load_extension("notify")
-map("n", "<leader>fn", Telescope.notify)
+map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify(<opts>)")
 
 -- Leader-ft = find todos (todo-comments)
 map("n", "<leader>ft", "<CMD>TodoTelescope<CR>")
