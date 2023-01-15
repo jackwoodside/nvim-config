@@ -7,7 +7,6 @@ require("mason-lspconfig").setup({
 		"fortls",
 		"jedi_language_server",
 		"ltex",
-		"nil_ls",
 		"sumneko_lua",
 		"texlab",
 	},
