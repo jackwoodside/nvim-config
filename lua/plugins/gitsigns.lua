@@ -1,11 +1,8 @@
 local map = vim.keymap.set
 
 require("gitsigns").setup({
-	signs = {
-		add = { text = "+" },
-		change = { text = "~" },
-		changedelete = { text = "-" },
-	},
+	signcolumn = false,
+	numhl = true,
 	on_attach = function(buf)
 		local gs = package.loaded.gitsigns
 		local opts = { buffer = buf, expr = true, replace_keycodes = false }
