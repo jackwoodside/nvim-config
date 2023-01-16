@@ -1,10 +1,11 @@
+local nls = require("null-ls")
 local settings = require("plugins.lsp.settings")
 
 -- Linters
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"autopep8",
-		--"cpplint",
+		"clang-format",
 		"shellcheck",
 		"shfmt",
 		"stylua",
@@ -12,8 +13,10 @@ require("mason-null-ls").setup({
 	automatic_setup = true,
 })
 
+require("mason-null-ls").setup_handlers()
+
 -- Settings
-require("null-ls").setup({
+nls.setup({
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
@@ -28,5 +31,3 @@ require("null-ls").setup({
 		settings.mappings(bufnr)
 	end,
 })
-
-require("mason-null-ls").setup_handlers()
