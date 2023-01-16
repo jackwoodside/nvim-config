@@ -6,34 +6,26 @@ function settings.capabilities()
 	return require("cmp_nvim_lsp").default_capabilities(capabilities)
 end
 
--- Disable server formatting (handled by null-ls)
-function settings.disable_formatting(client)
-	client.server_capabilities.documentFormattingProvider = false
-	client.server_capabilities.documentRangeFormattingProvider = true
+-- Disable LSP formatting, only use null-ls
+function settings.formatting(bufnr)
+	vim.lsp.buf.format({
+		filter = function(client)
+			return client.name == "null-ls"
+		end,
+		bufnr = bufnr,
+	})
 end
 
--- Format-on-save
-function settings.fmt_on_save(client, buf)
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			buffer = buf,
-			callback = function()
-				vim.lsp.buf.format({
-					timeout_ms = 3000,
-					buffer = buf,
-				})
-			end,
-		})
-	end
-end
+-- Format on save
+settings.augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- Keybinds
 local function map(m, k, v, opts)
 	vim.keymap.set(m, k, v, opts)
 end
 
-function settings.mappings(buf)
-	local opts = { buffer = buf }
+function settings.mappings(bufnr)
+	local opts = { buffer = bufnr }
 	map("n", "[d", vim.diagnostic.goto_prev, opts)
 	map("n", "]d", vim.diagnostic.goto_next, opts)
 	map("n", "gD", vim.lsp.buf.declaration, opts)

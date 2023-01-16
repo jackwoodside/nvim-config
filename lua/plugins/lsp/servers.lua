@@ -21,9 +21,18 @@ local lsp_flags = {
 -- Configure servers
 local lspconfig = require("lspconfig")
 local get_servers = require("mason-lspconfig").get_installed_servers
-local function lsp_attach(client, buf)
-	settings.disable_formatting(client)
-	settings.mappings(buf)
+local function lsp_attach(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = settings.augroup,
+			buffer = bufnr,
+			callback = function()
+				settings.formatting(bufnr)
+			end,
+		})
+	end
+	settings.mappings(bufnr)
 end
 local lsp_capabilities = settings.capabilities()
 

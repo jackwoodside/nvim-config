@@ -15,7 +15,16 @@ require("mason-null-ls").setup({
 -- Settings
 require("null-ls").setup({
 	on_attach = function(client, bufnr)
-		settings.fmt_on_save(client, bufnr)
+		if client.supports_method("textDocument/formatting") then
+			vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				group = settings.augroup,
+				buffer = bufnr,
+				callback = function()
+					settings.formatting(bufnr)
+				end,
+			})
+		end
 		settings.mappings(bufnr)
 	end,
 })
