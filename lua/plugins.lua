@@ -37,7 +37,7 @@ return require("lazy").setup({
 	{
 		"rcarriga/nvim-dap-ui",
 		config = function()
-			require("dapui").setup()
+			require("plugins.lsp.dap-ui")
 		end,
 	},
 	{
