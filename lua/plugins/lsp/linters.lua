@@ -4,7 +4,7 @@ local settings = require("plugins.lsp.settings")
 -- Linters
 require("mason-null-ls").setup({
 	ensure_installed = {
-		"autopep8",
+		"black",
 		"clang-format",
 		"shellcheck",
 		"shfmt",
@@ -17,6 +17,11 @@ require("mason-null-ls").setup_handlers()
 
 -- Settings
 nls.setup({
+	-- Non-mason sources
+	source = {
+		nls.builtins.formatting.fprettify,
+		nls.builtins.formatting.latexindent,
+	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
