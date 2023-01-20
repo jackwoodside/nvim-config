@@ -4,7 +4,6 @@ local settings = require("plugins.lsp.settings")
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"clangd",
-		"fortls",
 		"jedi_language_server",
 		"ltex",
 		"sumneko_lua",

@@ -17,7 +17,6 @@ require("mason-null-ls").setup({
 nls.setup({
 	-- Non-mason sources
 	source = {
-		nls.builtins.formatting.fprettify,
 		nls.builtins.formatting.latexindent,
 	},
 	on_attach = function(client, bufnr)
