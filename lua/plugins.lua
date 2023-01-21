@@ -6,6 +6,7 @@ return require("lazy").setup({
 	-- LSP
 	{
 		"williamboman/mason.nvim",
+		cmd = "Mason",
 		config = function()
 			require("mason").setup({ PATH = "append" })
 		end,
@@ -27,7 +28,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	{ "mfussenegger/nvim-dap" },
+	{ "mfussenegger/nvim-dap", event = "BufReadPre" },
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
@@ -36,12 +37,14 @@ return require("lazy").setup({
 	},
 	{
 		"rcarriga/nvim-dap-ui",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.lsp.dap-ui")
 		end,
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
+		event = "VeryLazy",
 		config = function()
 			require("nvim-dap-virtual-text").setup()
 		end,
@@ -62,12 +65,12 @@ return require("lazy").setup({
 				end,
 				dependencies = { "rafamadriz/friendly-snippets" },
 			},
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-path" },
 		},
 	},
-	{ "hrsh7th/cmp-buffer" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "saadparwaiz1/cmp_luasnip" },
-	{ "hrsh7th/cmp-path" },
 
 	-- Treesitter
 	{
@@ -77,11 +80,13 @@ return require("lazy").setup({
 		config = function()
 			require("plugins.treesitter")
 		end,
+		dependencies = {
+			{ "nvim-treesitter/nvim-treesitter-context" },
+			{ "JoosepAlviste/nvim-ts-context-commentstring" },
+			{ "nvim-treesitter/nvim-treesitter-refactor" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
 	},
-	{ "nvim-treesitter/nvim-treesitter-context" },
-	{ "JoosepAlviste/nvim-ts-context-commentstring" },
-	{ "nvim-treesitter/nvim-treesitter-refactor" },
-	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
 	-- Misc.
 	-- Auto-Pairs
@@ -114,7 +119,7 @@ return require("lazy").setup({
 	-- File Browser
 	{
 		"kyazdani42/nvim-tree.lua",
-		event = "CursorHold",
+		cmd = "NvimTreeToggle",
 		config = function()
 			require("plugins.nvim-tree")
 		end,
@@ -123,7 +128,7 @@ return require("lazy").setup({
 	-- Finder
 	{
 		"nvim-telescope/telescope.nvim",
-		event = "CursorHold",
+		cmd = "Telescope",
 		config = function()
 			require("plugins.telescope")
 		end,
@@ -194,7 +199,7 @@ return require("lazy").setup({
 	-- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "VeryLazy",
+		event = "BufEnter",
 		config = function()
 			require("plugins.lualine")
 		end,
@@ -223,6 +228,7 @@ return require("lazy").setup({
 	-- Todo
 	{
 		"folke/todo-comments.nvim",
+		cmd = "TodoTelescope",
 		event = "BufReadPost",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
