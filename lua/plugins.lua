@@ -120,6 +120,9 @@ return require("lazy").setup({
 	{
 		"kyazdani42/nvim-tree.lua",
 		cmd = "NvimTreeToggle",
+		keys = {
+			{ "<leader>t", "<CMD>lua require('notify').dismiss()<CR><CMD>NvimTreeToggle<CR>" },
+		},
 		config = function()
 			require("plugins.nvim-tree")
 		end,
