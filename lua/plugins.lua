@@ -11,7 +11,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	{ "neovim/nvim-lspconfig" },
+	{ "neovim/nvim-lspconfig", event = "BufReadPre" },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
@@ -19,7 +19,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	{ "jose-elias-alvarez/null-ls.nvim" },
+	{ "jose-elias-alvarez/null-ls.nvim", event = "BufReadPre" },
 	{
 		"jayp0521/mason-null-ls.nvim",
 		config = function()
@@ -72,7 +72,7 @@ return require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = "CursorHold",
+		event = "BufReadPost",
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
@@ -87,6 +87,7 @@ return require("lazy").setup({
 	-- Auto-Pairs
 	{
 		"echasnovski/mini.pairs",
+		event = "VeryLazy",
 		config = function()
 			require("mini.pairs").setup()
 		end,
@@ -104,6 +105,7 @@ return require("lazy").setup({
 	-- Commenting
 	{
 		"echasnovski/mini.comment",
+		event = "VeryLazy",
 		config = function()
 			require("mini.comment").setup()
 		end,
@@ -138,7 +140,7 @@ return require("lazy").setup({
 	-- Git
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufRead",
+		event = "BufReadPre",
 		config = function()
 			require("plugins.gitsigns")
 		end,
@@ -150,7 +152,7 @@ return require("lazy").setup({
 	-- Indentation Guides
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufRead",
+		event = "BufReadPre",
 		config = function()
 			require("plugins.indentline")
 		end,
@@ -159,12 +161,14 @@ return require("lazy").setup({
 	-- Navigation
 	{
 		"ggandor/leap.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("leap").add_default_mappings(true)
 		end,
 	},
 	{
 		"ggandor/leap-spooky.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("leap-spooky").setup()
 		end,
@@ -181,6 +185,7 @@ return require("lazy").setup({
 	-- Startscreen
 	{
 		"echasnovski/mini.starter",
+		event = "VimEnter",
 		config = function()
 			require("plugins.starter")
 		end,
@@ -189,7 +194,7 @@ return require("lazy").setup({
 	-- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.lualine")
 		end,
@@ -218,6 +223,7 @@ return require("lazy").setup({
 	-- Todo
 	{
 		"folke/todo-comments.nvim",
+		event = "BufReadPost",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
 		},
@@ -229,7 +235,7 @@ return require("lazy").setup({
 	-- UI Overhaul
 	{
 		"folke/noice.nvim",
-		event = "VimEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.noice")
 		end,
