@@ -101,7 +101,7 @@ return require("lazy").setup({
 	-- Colour Highlighter
 	{
 		"norcalli/nvim-colorizer.lua",
-		event = "CursorHold",
+		event = "BufReadPre",
 		config = function()
 			require("colorizer").setup()
 		end,
