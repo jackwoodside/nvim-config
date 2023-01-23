@@ -127,6 +127,7 @@ return require("lazy").setup({
 	-- Finder
 	{
 		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.telescope")
 		end,
@@ -230,7 +231,6 @@ return require("lazy").setup({
 	-- Todo
 	{
 		"folke/todo-comments.nvim",
-		cmd = "TodoTelescope",
 		event = "BufReadPost",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
