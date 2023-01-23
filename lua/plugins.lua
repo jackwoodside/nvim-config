@@ -59,7 +59,6 @@ return require("lazy").setup({
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
-				event = "InsertEnter",
 				config = function()
 					require("plugins.lsp.snippets")
 				end,
@@ -128,18 +127,19 @@ return require("lazy").setup({
 	-- Finder
 	{
 		"nvim-telescope/telescope.nvim",
-		cmd = "Telescope",
 		config = function()
 			require("plugins.telescope")
 		end,
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-		config = function()
-			---@diagnostic disable-next-line: different-requires
-			require("telescope").load_extension("fzf")
-		end,
+		dependencies = {
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("fzf")
+				end,
+			},
+		},
 	},
 
 	-- Git
