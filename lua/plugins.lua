@@ -119,10 +119,7 @@ return require("lazy").setup({
 	-- File Browser
 	{
 		"kyazdani42/nvim-tree.lua",
-		cmd = "NvimTreeToggle",
-		keys = {
-			{ "<leader>t", "<CMD>lua require('notify').dismiss()<CR><CMD>NvimTreeToggle<CR>" },
-		},
+		event = "VeryLazy",
 		config = function()
 			require("plugins.nvim-tree")
 		end,
@@ -155,7 +152,7 @@ return require("lazy").setup({
 	},
 
 	-- Icons
-	{ "kyazdani42/nvim-web-devicons" },
+	{ "kyazdani42/nvim-web-devicons", event = "VeryLazy" },
 
 	-- Indentation Guides
 	{
@@ -185,6 +182,7 @@ return require("lazy").setup({
 	-- Notifications
 	{
 		"rcarriga/nvim-notify",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.notify")
 		end,
@@ -211,6 +209,7 @@ return require("lazy").setup({
 	-- Terminal
 	{
 		"akinsho/toggleterm.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.toggleterm")
 		end,
