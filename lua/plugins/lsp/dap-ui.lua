@@ -38,5 +38,11 @@ map("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>")
 -- Leader-dd = debug ui toggle
 map("n", "<leader>dd", "<CMD>lua require('dapui').toggle()<CR>")
 
+-- Leader-dr = debug restart
+map("n", "<leader>dr", "<CMD>lua require('dap').restart()<CR>")
+
 -- Leader-ds = debug step
 map("n", "<leader>ds", "<CMD>lua require('dap').step_over()<CR>")
+
+-- Leader-du = debug undo
+map("n", "<leader>du", "<CMD>lua require('dap').step_back()<CR>")
