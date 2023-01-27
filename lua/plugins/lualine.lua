@@ -17,7 +17,9 @@ va.nvim_create_autocmd("BufWritePost", {
 	callback = function()
 		if vf.expand("%:e") == "tex" then
 			local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
-			if words == "1" then
+			if words:find("command not found") ~= nil then
+				va.nvim_buf_set_var(0, "words", "")
+			elseif words == "1" then
 				va.nvim_buf_set_var(0, "words", words .. " word")
 			else
 				va.nvim_buf_set_var(0, "words", words .. " words")
