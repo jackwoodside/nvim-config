@@ -1,4 +1,4 @@
-local settings = require("plugins.lsp.settings")
+local settings = require("plugins.language.settings")
 
 -- Servers
 require("mason-lspconfig").setup({
@@ -46,7 +46,7 @@ end
 
 -- Server-specific settings (after the loop to avoid being overwritten)
 local words = {}
-local path = vim.fn.stdpath("config") .. "/lua/plugins/lsp/words.txt"
+local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
 for word in io.open(path, "r"):lines() do
 	table.insert(words, word)
 end

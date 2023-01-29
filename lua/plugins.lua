@@ -16,7 +16,7 @@ return require("lazy").setup({
 	{
 		"williamboman/mason-lspconfig.nvim",
 		config = function()
-			require("plugins.lsp.servers")
+			require("plugins.language.lsp")
 		end,
 	},
 
@@ -24,7 +24,7 @@ return require("lazy").setup({
 	{
 		"jayp0521/mason-null-ls.nvim",
 		config = function()
-			require("plugins.lsp.linters")
+			require("plugins.language.null-ls")
 		end,
 	},
 
@@ -32,14 +32,14 @@ return require("lazy").setup({
 	{
 		"jay-babu/mason-nvim-dap.nvim",
 		config = function()
-			require("plugins.lsp.debuggers")
+			require("plugins.language.dap")
 		end,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
 		event = "VeryLazy",
 		config = function()
-			require("plugins.lsp.dap-ui")
+			require("plugins.language.dap-ui")
 		end,
 	},
 	{
@@ -54,13 +54,13 @@ return require("lazy").setup({
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",
 		config = function()
-			require("plugins.lsp.cmp")
+			require("plugins.language.cmp")
 		end,
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
 				config = function()
-					require("plugins.lsp.snippets")
+					require("plugins.language.snippets")
 				end,
 				dependencies = { "rafamadriz/friendly-snippets" },
 			},

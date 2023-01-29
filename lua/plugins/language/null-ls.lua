@@ -1,5 +1,5 @@
 local nls = require("null-ls")
-local settings = require("plugins.lsp.settings")
+local settings = require("plugins.language.settings")
 
 -- Linters
 require("mason-null-ls").setup({
