@@ -1,11 +1,12 @@
 local nls = require("null-ls")
 local settings = require("plugins.language.settings")
 
--- Linters
+-- Tools
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"black",
 		"clang-format",
+		"latexindent",
 		"shellcheck",
 		"shfmt",
 		"stylua",
@@ -15,10 +16,6 @@ require("mason-null-ls").setup({
 
 -- Settings
 nls.setup({
-	-- Non-mason sources
-	source = {
-		nls.builtins.formatting.latexindent,
-	},
 	on_attach = function(client, bufnr)
 		if client.supports_method("textDocument/formatting") then
 			vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
