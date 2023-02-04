@@ -41,8 +41,8 @@ cmp.setup({
 		["<C-PageUp>"] = cmp.mapping.scroll_docs(-4),
 		["<C-PageDown>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.confirm({ select = true }),
-		["<Tab>"] = cmp.mapping(cmp.select_next_item(), { "i", "s" }),
-		["<S-Tab>"] = cmp.mapping(cmp.select_prev_item(), { "i", "s" }),
+		["<Tab>"] = cmp.mapping.select_next_item(),
+		["<S-Tab>"] = cmp.mapping.select_prev_item(),
 	}),
 
 	sources = cmp.config.sources({
