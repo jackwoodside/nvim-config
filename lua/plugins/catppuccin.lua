@@ -9,7 +9,6 @@ require("catppuccin").setup({
 		gitsigns = true,
 		indent_blankline = {
 			enabled = true,
-			colored_indent_levels = true,
 		},
 		leap = true,
 		mason = true,
