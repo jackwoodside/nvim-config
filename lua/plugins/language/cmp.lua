@@ -2,38 +2,31 @@ local cmp = require("cmp")
 local luasnip = require("luasnip")
 
 local icons = {
-	Text = "",
-	Method = "",
-	Function = "",
-	Constructor = "",
-	Field = "ﰠ",
-	Variable = "",
 	Class = "ﴯ",
+	Color = "",
+	Constant = "",
+	Constructor = "",
+	Enum = "",
+	EnumMember = "",
+	Event = "",
+	Field = "ﰠ",
+	File = "",
+	Folder = "",
+	Function = "",
 	Interface = "",
+	Keyword = "",
+	Method = "",
 	Module = "",
+	Operator = "",
 	Property = "ﰠ",
+	Reference = "",
+	Snippet = "",
+	Struct = "פּ",
+	Text = "",
+	TypeParameter = "",
 	Unit = "塞",
 	Value = "",
-	Enum = "",
-	Keyword = "",
-	Snippet = "",
-	Color = "",
-	File = "",
-	Reference = "",
-	Folder = "",
-	EnumMember = "",
-	Constant = "",
-	Struct = "פּ",
-	Event = "",
-	Operator = "",
-	TypeParameter = "",
-}
-
-local aliases = {
-	buffer = "Buffer",
-	nvim_lsp = "LSP",
-	path = "Path",
-	luasnip = "Snippet",
+	Variable = "",
 }
 
 cmp.setup({
@@ -60,9 +53,8 @@ cmp.setup({
 	},
 
 	formatting = {
-		format = function(entry, item)
+		format = function(_, item)
 			item.kind = string.format("%s %s", icons[item.kind], item.kind)
-			item.menu = string.format("[%s]", aliases[entry.source.name] or entry.source.name)
 			return item
 		end,
 	},
