@@ -90,10 +90,9 @@ lspconfig["texlab"].setup({
 			},
 			diagnostics = {
 				ignoredPatterns = {
-					"Underfull",
-					"Overfull",
-					"Wrong length of dash",
-					"terminated with space",
+					"Command \\underline",
+					"Command \\underbar",
+					"No italic correction",
 					"Fira fonts",
 				},
 			},

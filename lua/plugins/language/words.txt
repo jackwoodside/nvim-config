@@ -4,13 +4,16 @@ Batchelder
 Benczer-Koller
 Bolotin
 Chamoli
+Coombes
 DSAM
 ENSDF
 Fe
 GOSIA
 Galindo-Uribarri
 Glasmacher
+Goeppert
 HIAF
+HPGe
 Hass
 Kibedi
 Kibédi
@@ -18,7 +21,9 @@ Kotila
 Krane
 LeVine
 Mantica
+Mathematisk-fysiske
 MeV
+Mottelson
 NUSHELLX
 Padilla-Rodal
 Radford
@@ -30,14 +35,18 @@ Warburton
 Weisskopf
 Woodside
 Yu
+boson
 cross section
+isotopical
 kT
 keV
+meddelelser
 multipolarities
 oblate
 observables
 octupole
 orbitals
+phoswich
 prolate
 quadrupole
 triaxial
