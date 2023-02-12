@@ -2,6 +2,7 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	ensure_installed = {
 		"bash",
+		"c",
 		"gitattributes",
 		"gitcommit",
 		"git_rebase",
@@ -10,7 +11,6 @@ require("nvim-treesitter.configs").setup({
 		"lua",
 		"markdown",
 		"markdown_inline",
-		"query",
 		"regex",
 		"vim",
 	},
