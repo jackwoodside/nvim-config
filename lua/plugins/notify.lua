@@ -1,5 +1,5 @@
 require("notify").setup({
-	render = "simple",
+	render = "minimal",
 	stages = "fade",
-	timeout = 3000, -- milliseconds
+	timeout = 500, -- milliseconds
 })
