@@ -91,9 +91,6 @@ lspconfig["texlab"].setup({
 			},
 			diagnostics = {
 				ignoredPatterns = {
-					"Command \\underline",
-					"Command \\underbar",
-					"No italic correction",
 					"Fira fonts",
 				},
 			},
