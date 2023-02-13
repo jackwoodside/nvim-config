@@ -45,7 +45,7 @@ require("lualine").setup({
 		globalstatus = true,
 		disabled_filetypes = { "starter", "toggleterm" },
 	},
-	extensions = { "quickfix", "nvim-tree" },
+	extensions = { "nvim-dap-ui", "nvim-tree" },
 	sections = {
 		lualine_a = {
 			{
