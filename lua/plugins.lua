@@ -231,6 +231,7 @@ return require("lazy").setup({
 	-- Todo
 	{
 		"folke/todo-comments.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
