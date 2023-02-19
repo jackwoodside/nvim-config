@@ -207,6 +207,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Surround Actions
+	{
+		"echasnovski/mini.surround",
+		event = "BufEnter",
+		config = function()
+			require("mini.surround")
+		end,
+	},
+
 	-- Terminal
 	{
 		"akinsho/toggleterm.nvim",
