@@ -167,6 +167,7 @@ return require("lazy").setup({
 	-- Navigation
 	{
 		"ggandor/leap.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		config = function()
 			require("leap").add_default_mappings(true)
@@ -174,6 +175,7 @@ return require("lazy").setup({
 	},
 	{
 		"ggandor/leap-spooky.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		config = function()
 			require("leap-spooky").setup()
@@ -212,7 +214,7 @@ return require("lazy").setup({
 		"echasnovski/mini.surround",
 		event = "BufEnter",
 		config = function()
-			require("mini.surround")
+			require("mini.surround").setup()
 		end,
 	},
 

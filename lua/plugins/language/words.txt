@@ -20,6 +20,7 @@ Kibédi
 Kotila
 Krane
 LeVine
+Lennard-Jones
 Mantica
 Mathematisk-fysiske
 MeV
@@ -37,6 +38,7 @@ Woodside
 Yu
 boson
 cross section
+fm
 isotopical
 kT
 keV

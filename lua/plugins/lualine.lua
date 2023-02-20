@@ -13,6 +13,29 @@ end
 -- Word count section for tex files
 local va = vim.api
 local vf = vim.fn
+
+local function wordcount()
+	if vf.expand("%:e") == "tex" then
+		return va.nvim_buf_get_var(0, "words")
+	else
+		return ""
+	end
+end
+
+va.nvim_create_autocmd("BufEnter", {
+	callback = function()
+		if vf.expand("%:e") == "tex" then
+			local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
+			if words:find("command not found") ~= nil then
+				va.nvim_buf_set_var(0, "words", "")
+			elseif words == "1" then
+				va.nvim_buf_set_var(0, "words", words .. " word")
+			else
+				va.nvim_buf_set_var(0, "words", words .. " words")
+			end
+		end
+	end,
+})
 va.nvim_create_autocmd("BufWritePost", {
 	callback = function()
 		if vf.expand("%:e") == "tex" then
@@ -27,14 +50,6 @@ va.nvim_create_autocmd("BufWritePost", {
 		end
 	end,
 })
-
-local function wordcount()
-	if vf.expand("%:e") == "tex" then
-		return va.nvim_buf_get_var(0, "words")
-	else
-		return ""
-	end
-end
 
 require("lualine").setup({
 	options = {
