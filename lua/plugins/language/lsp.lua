@@ -76,19 +76,19 @@ lspconfig["texlab"].setup({
 		texlab = {
 			build = {
 				onSave = true,
-				--forwardSearchAfter = true,
+				forwardSearchAfter = true,
 			},
 			chktex = { onOpenAndSave = true },
-			-- forwardSearch = {
-			-- 	executable = "sioyek",
-			-- 	args = {
-			-- 		"--forward-search-file",
-			-- 		"%f",
-			-- 		"--forward-search-line",
-			-- 		"%l",
-			-- 		"%p",
-			-- 	},
-			-- },
+			forwardSearch = {
+				executable = "sioyek",
+				args = {
+					"--forward-search-file",
+					"%f",
+					"--forward-search-line",
+					"%l",
+					"%p",
+				},
+			},
 			diagnostics = {
 				ignoredPatterns = {
 					"Fira fonts",
