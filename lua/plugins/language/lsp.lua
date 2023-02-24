@@ -6,7 +6,7 @@ require("mason-lspconfig").setup({
 		"clangd",
 		"jedi_language_server",
 		"ltex",
-		"sumneko_lua",
+		"lua_ls",
 		"texlab",
 	},
 })
@@ -98,7 +98,7 @@ lspconfig["texlab"].setup({
 	},
 })
 
-lspconfig["sumneko_lua"].setup({
+lspconfig["lua_ls"].setup({
 	on_attach = lsp_attach,
 	capabilities = lsp_capabilities,
 	flags = lsp_flags,
