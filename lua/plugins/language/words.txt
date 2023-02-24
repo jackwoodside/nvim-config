@@ -12,6 +12,7 @@ GOSIA
 Galindo-Uribarri
 Glasmacher
 Goeppert
+Gosia
 HIAF
 HPGe
 Hass
@@ -21,12 +22,15 @@ Kotila
 Krane
 LeVine
 Lennard-Jones
+Linardakis
+Lobanov
 Mantica
 Mathematisk-fysiske
 MeV
 Mottelson
 NUSHELLX
 Padilla-Rodal
+PixieSort
 Radford
 Schwalm
 Stuchbery
@@ -42,6 +46,7 @@ fm
 isotopical
 kT
 keV
+libpixie
 meddelelser
 multipolarities
 oblate
