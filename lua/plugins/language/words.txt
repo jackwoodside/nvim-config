@@ -10,6 +10,7 @@ ENSDF
 Fe
 GOSIA
 Galindo-Uribarri
+Gerathy
 Glasmacher
 Goeppert
 Gosia
@@ -32,6 +33,7 @@ NUSHELLX
 Padilla-Rodal
 PixieSort
 Radford
+Ratcliff
 Schwalm
 Stuchbery
 Tunningley
@@ -41,6 +43,7 @@ Weisskopf
 Woodside
 Yu
 boson
+closest approach
 cross section
 fm
 isotopical
