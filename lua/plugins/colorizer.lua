@@ -1,5 +1,3 @@
 require("colorizer").setup({
-	RGB = false,
-	RRGGBB = true,
-	names = false,
+	user_default_options = { names = false },
 })
