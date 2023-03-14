@@ -45,6 +45,7 @@ Yu
 boson
 closest approach
 cross section
+femtometre
 fm
 isotopical
 kT
@@ -56,7 +57,9 @@ oblate
 observables
 octupole
 orbitals
+overdamped
 phoswich
+polarisability
 prolate
 quadrupole
 triaxial
