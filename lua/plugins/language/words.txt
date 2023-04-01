@@ -43,11 +43,8 @@ Weisskopf
 Woodside
 Yu
 boson
-closest approach
-cross section
 femtometre
 fm
-isotopical
 kT
 keV
 libpixie
@@ -62,6 +59,7 @@ phoswich
 polarisability
 prolate
 quadrupole
+quantised
 triaxial
 wavefunction
 wavefunctions
