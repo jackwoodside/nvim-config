@@ -11,7 +11,7 @@ require("mason-null-ls").setup({
 		"shfmt",
 		"stylua",
 	},
-	automatic_setup = true,
+	handlers = {},
 })
 
 -- Settings

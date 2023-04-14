@@ -4,7 +4,7 @@ require("mason-nvim-dap").setup({
 		"bash", -- bash-debug-adapter
 		"cppdbg", -- cpptools
 	},
-	automatic_setup = true,
+	handlers = {},
 })
 
 -- Settings
