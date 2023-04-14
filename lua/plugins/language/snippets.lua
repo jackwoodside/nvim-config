@@ -18,10 +18,7 @@ require("luasnip").setup({
 	},
 })
 
-require("luasnip/loaders/from_vscode").load({ include = {
-	"cpp",
-	"latex",
-} })
+-- require("luasnip/loaders/from_vscode").lazy_load()
 
 map({ "i", "s" }, "<C-j>", '<CMD>lua require("luasnip").jump(1)<CR>')
 map({ "i", "s" }, "<C-k>", '<CMD>lua require("luasnip").jump(-1)<CR>')

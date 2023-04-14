@@ -4,7 +4,6 @@ local settings = require("plugins.language.settings")
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"clangd",
-		"jedi_language_server",
 		"ltex",
 		"lua_ls",
 		"texlab",
