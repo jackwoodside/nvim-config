@@ -198,6 +198,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Statuscolumn
+	{
+		"luukvbaal/statuscol.nvim",
+		event = "BufEnter",
+		config = function()
+			require("plugins.statuscol")
+		end,
+	},
+
 	-- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
