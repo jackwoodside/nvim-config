@@ -30,5 +30,3 @@ nls.setup({
 		settings.mappings(bufnr)
 	end,
 })
-
-require("mason-null-ls").setup_handlers()

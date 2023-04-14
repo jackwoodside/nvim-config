@@ -8,8 +8,6 @@ require("mason-nvim-dap").setup({
 })
 
 -- Settings
-require("mason-nvim-dap").setup_handlers()
-
 require("dap")
 local sign = vim.fn.sign_define
 sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint", linehl = "", numhl = "" })
