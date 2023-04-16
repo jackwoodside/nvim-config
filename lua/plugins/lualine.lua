@@ -79,7 +79,7 @@ require("lualine").setup({
 			{ "filename", file_status = true },
 			{
 				"diagnostics",
-				symbols = { error = " ", warn = " ", info = " ", hint = "󰌵 " },
+				symbols = { error = " ", warn = " ", info = " ", hint = "󱠂 " },
 			},
 		},
 		lualine_x = {},
