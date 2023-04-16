@@ -46,6 +46,14 @@ cmp.setup({
 		{ name = "path", max_item_count = 10 },
 	}),
 
+	matching = {
+		disallow_fuzzy_matching = true,
+		disallow_fullfuzzy_matching = true,
+		disallow_partial_fuzzy_matching = true,
+		disallow_partial_matching = true,
+		disallow_prefix_unmatching = false,
+	},
+
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
