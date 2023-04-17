@@ -6,4 +6,11 @@ require("noice").setup({
 			["vim.lsp.util.stylize_markdown"] = true,
 		},
 	},
+
+	-- Hidden notifications
+	routes = {
+		{ filter = { event = "msg_show", find = "B written" }, skip = true },
+		{ filter = { event = "msg_show", find = "clipboard: No provider" }, skip = true },
+		{ filter = { event = "msg_show", find = "search hit" }, skip = true },
+	},
 })

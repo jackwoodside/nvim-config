@@ -45,8 +45,14 @@ vim.fn.sign_define("DiagnosticSignHint", { text = "󱠂", texthl = "LspDiagnosti
 
 -- Virtual text
 vim.diagnostic.config({
-	virtual_text = { prefix = "● " },
+	float = {
+		header = "",
+		suffix = "",
+	},
 	severity_sort = true,
+	virtual_text = {
+		prefix = "● ",
+	},
 })
 
 return settings
