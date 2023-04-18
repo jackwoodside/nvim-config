@@ -10,11 +10,6 @@ require("nvim-tree").setup({
 	view = {
 		width = 35,
 		side = "right",
-		mappings = {
-			list = {
-				{ key = "<C-h>", action = "split" },
-			},
-		},
 	},
 	filters = {
 		custom = { ".git$" },
