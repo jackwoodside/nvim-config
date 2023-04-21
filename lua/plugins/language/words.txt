@@ -9,7 +9,6 @@ Coombes
 DSAM
 ENSDF
 Fe
-GOSIA
 Galindo-Uribarri
 Gerathy
 Glasmacher
@@ -46,6 +45,7 @@ Yu
 boson
 femtometre
 fm
+integrand
 kT
 keV
 libpixie
