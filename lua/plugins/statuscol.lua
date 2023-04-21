@@ -1,7 +1,7 @@
 local builtin = require("statuscol.builtin")
 require("statuscol").setup({
 	relculright = true,
-	ft_ignore = { "starter", "NvimTree" },
+	ft_ignore = { "man", "starter", "NvimTree" },
 	segments = {
 		-- Diagnostics
 		{
@@ -24,6 +24,7 @@ require("statuscol").setup({
 				maxwidth = 1,
 				colwidth = 1,
 				fillchar = "┃",
+				wrap = true,
 			},
 		},
 	},
