@@ -216,16 +216,6 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Surround Actions
-	{
-		"echasnovski/mini.surround",
-		enabled = false,
-		event = "BufEnter",
-		config = function()
-			require("mini.surround").setup()
-		end,
-	},
-
 	-- Terminal
 	{
 		"akinsho/toggleterm.nvim",
@@ -244,19 +234,6 @@ return require("lazy").setup({
 		config = function()
 			require("plugins.catppuccin")
 			vim.api.nvim_command("colorscheme catppuccin")
-		end,
-	},
-
-	-- Todo
-	{
-		"folke/todo-comments.nvim",
-		enabled = false,
-		event = "VeryLazy",
-		dependencies = {
-			{ "nvim-lua/plenary.nvim" },
-		},
-		config = function()
-			require("todo-comments").setup()
 		end,
 	},
 

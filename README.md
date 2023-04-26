@@ -37,7 +37,7 @@
 
 ## Misc.
 - Auto-Pairs: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
-- Colour Highlighter: [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
+- Colour Highlighter: [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua)
 - Commenting: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Finder: [telescope](https://github.com/nvim-telescope/telescope.nvim), [telescope-fzf-native](https://github.com/nvim-telescope/telescope-fzf-native.nvim)
@@ -48,7 +48,7 @@
 - Notifications: [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Startscreen: [mini.starter](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-starter.md)
 - Statusline: [lualine](https://github.com/nvim-lualine/lualine.nvim)
+- Statuscolumn: [statuscol](https://github.com/luukvbaal/statuscol.nvim)
 - Terminal: [toggleterm](https://github.com/akinsho/toggleterm.nvim)
 - Theme: [catppuccin](https://github.com/catppuccin/nvim)
-- Todo: [todo-comments](https://github.com/folke/todo-comments.nvim)
 - UI Overhaul: [noice](https://github.com/folke/noice.nvim)
