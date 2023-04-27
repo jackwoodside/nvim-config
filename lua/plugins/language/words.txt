@@ -57,11 +57,14 @@ observables
 octupole
 orbitals
 overdamped
+parametrisation
 phoswich
 polarisability
 prolate
 quadrupole
 quantised
+quaternion
+quaternions
 triaxial
 wavefunction
 wavefunctions
