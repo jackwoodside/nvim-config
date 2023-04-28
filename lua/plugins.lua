@@ -178,6 +178,16 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Macros
+	{
+		"ecthelionvi/NeoComposer.nvim",
+		event = "VeryLazy",
+		dependencies = { "kkharji/sqlite.lua" },
+		config = function()
+			require("NeoComposer").setup()
+		end,
+	},
+
 	-- Navigation
 	{
 		"ggandor/leap.nvim",
