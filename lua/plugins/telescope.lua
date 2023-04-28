@@ -69,8 +69,5 @@ map("n", "<leader>fh", Telescope.help_tags)
 -- Leader-fn = find notifications
 map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>")
 
--- Leader-ft = find todos (todo-comments)
-map("n", "<leader>ft", "<CMD>TodoTelescope<CR>")
-
 -- Leader-/ = live grep
-map("n", "<leader>/", Telescope.live_grep)
+map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")

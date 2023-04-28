@@ -12,5 +12,6 @@ require("noice").setup({
 		{ filter = { event = "msg_show", find = "B written" }, skip = true },
 		{ filter = { event = "msg_show", find = "clipboard: No provider" }, skip = true },
 		{ filter = { event = "msg_show", find = "search hit" }, skip = true },
+		{ filter = { event = "msg_show", find = "Workspace edit" }, skip = true },
 	},
 })

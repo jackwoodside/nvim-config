@@ -140,6 +140,20 @@ return require("lazy").setup({
 					require("telescope").load_extension("fzf")
 				end,
 			},
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("live_grep_args")
+				end,
+			},
+			{
+				"nvim-telescope/telescope-ui-select.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("ui-select")
+				end,
+			},
 		},
 	},
 
