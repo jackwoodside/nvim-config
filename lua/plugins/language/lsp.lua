@@ -111,7 +111,7 @@ lspconfig["lua_ls"].setup({
 				version = "LuaJIT",
 			},
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "vim", "xplr" },
 			},
 			workspace = {
 				library = { os.getenv("VIMRUNTIME") },
