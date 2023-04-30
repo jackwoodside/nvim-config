@@ -82,7 +82,8 @@ require("lualine").setup({
 				symbols = { error = " ", warn = " ", info = " ", hint = "󱠂 " },
 			},
 		},
-		lualine_x = { require("NeoComposer.ui").status_recording },
+		-- lualine_x = { require("NeoComposer.ui").status_recording },
+		lualine_x = {},
 		lualine_y = {
 			{ wordcount },
 		},
