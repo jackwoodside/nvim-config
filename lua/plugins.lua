@@ -181,6 +181,7 @@ return require("lazy").setup({
 	-- Macros
 	{
 		"ecthelionvi/NeoComposer.nvim",
+		enabled = false,
 		event = "VeryLazy",
 		dependencies = { "kkharji/sqlite.lua" },
 		config = function()
