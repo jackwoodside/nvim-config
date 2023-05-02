@@ -58,11 +58,13 @@ lspconfig["ltex"].setup({
 	filetypes = { "bib", "plaintex", "tex" },
 	settings = {
 		ltex = {
-			language = "en-AU",
+			additionalRules = { enablePickyRules = true },
+			checkFrequency = "save",
 			dictionary = {
 				["en-AU"] = words,
 			},
-			checkFrequency = "save",
+			language = "en-AU",
+			latex = { environments = '{"pgfplotsset": "ignore"}' },
 		},
 	},
 })
