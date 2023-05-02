@@ -8,6 +8,7 @@ Chamoli
 Coombes
 DSAM
 ENSDF
+Eq
 Fe
 Galindo-Uribarri
 Gerathy
