@@ -44,6 +44,7 @@ Weisskopf
 Woodside
 Yu
 boson
+collimator
 femtometre
 fm
 integrand
