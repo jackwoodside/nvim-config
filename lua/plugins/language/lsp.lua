@@ -65,8 +65,13 @@ lspconfig["ltex"].setup({
 			},
 			language = "en-AU",
 			latex = {
-				commands = '{"\\pgfplotsset{}": "ignore"}',
-				environments = '{"align": "ignore", "equation": "ignore"}',
+				commands = {
+					["\\pgfplotsset{}"] = "ignore",
+				},
+				environments = {
+					["align"] = "ignore",
+					["equation"] = "ignore",
+				},
 			},
 		},
 	},
