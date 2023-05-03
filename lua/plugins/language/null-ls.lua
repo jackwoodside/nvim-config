@@ -22,7 +22,7 @@ local latex_sentence_splitting = {
 		fn = function(params)
 			local diagnostics = {}
 			for i, line in ipairs(params.content) do
-				local col, end_col = line:find(".*\\. .*\\.")
+				local col, end_col = line:find(".+%. .+%.")
 				if col and end_col then
 					table.insert(diagnostics, {
 						row = i,
