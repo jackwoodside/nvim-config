@@ -14,6 +14,33 @@ require("mason-null-ls").setup({
 	handlers = {},
 })
 
+-- Latex sentence splitting
+local latex_sentence_splitting = {
+	method = nls.methods.DIAGNOSTICS,
+	filetypes = { "plaintex", "tex" },
+	generator = {
+		fn = function(params)
+			local diagnostics = {}
+			for i, line in ipairs(params.content) do
+				local col, end_col = line:find(".*\\. .*\\.")
+				if col and end_col then
+					table.insert(diagnostics, {
+						row = i,
+						col = col,
+						end_col = end_col + 1,
+						source = "latex_sentence_splitting",
+						message = "Split sentences across lines.",
+						severity = vim.diagnostic.severity.HINT,
+					})
+				end
+			end
+			return diagnostics
+		end,
+	},
+}
+
+nls.register(latex_sentence_splitting)
+
 -- Settings
 nls.setup({
 	on_attach = function(client, bufnr)
