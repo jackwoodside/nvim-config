@@ -6,6 +6,7 @@ require("mason-lspconfig").setup({
 		"clangd",
 		"ltex",
 		"lua_ls",
+		"nil_ls",
 		"texlab",
 	},
 })
