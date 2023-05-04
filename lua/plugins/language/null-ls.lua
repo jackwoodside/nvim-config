@@ -6,7 +6,6 @@ require("mason-null-ls").setup({
 	ensure_installed = {
 		"clang-format",
 		"latexindent",
-		"nixpkgs_fmt",
 		"shellcheck",
 		"shfmt",
 		"stylua",
@@ -39,6 +38,9 @@ local latex_sentence_splitting = {
 	},
 }
 nls.register(latex_sentence_splitting)
+
+-- Nix formatting
+nls.setup({ sources = { nls.builtins.formatting.nixpkgs_fmt } })
 
 -- Settings
 nls.setup({
