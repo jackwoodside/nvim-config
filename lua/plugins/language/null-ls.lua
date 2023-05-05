@@ -4,7 +4,6 @@ local settings = require("plugins.language.settings")
 -- Tools
 require("mason-null-ls").setup({
 	ensure_installed = {
-		"black",
 		"clang-format",
 		"latexindent",
 		"shellcheck",
@@ -38,8 +37,10 @@ local latex_sentence_splitting = {
 		end,
 	},
 }
-
 nls.register(latex_sentence_splitting)
+
+-- Nix formatting
+nls.setup({ sources = { nls.builtins.formatting.nixpkgs_fmt } })
 
 -- Settings
 nls.setup({
