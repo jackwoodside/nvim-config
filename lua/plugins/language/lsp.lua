@@ -63,6 +63,9 @@ lspconfig["ltex"].setup({
 			dictionary = {
 				["en-AU"] = words,
 			},
+			disabledRules = {
+				["en-AU"] = { "UNPAIRED_SYMBOL" },
+			},
 			language = "en-AU",
 			latex = {
 				commands = {
