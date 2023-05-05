@@ -65,7 +65,7 @@ lspconfig["ltex"].setup({
 				["en-AU"] = words,
 			},
 			disabledRules = {
-				["en-AU"] = { "UNPAIRED_SYMBOL" },
+				["en-AU"] = { "EN_UNPAIRED_BRACKETS" },
 			},
 			language = "en-AU",
 			latex = {
