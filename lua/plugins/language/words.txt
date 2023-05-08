@@ -46,6 +46,7 @@ Yu
 boson
 collimator
 collimators
+exponentiating
 femtometre
 fm
 homoclinic
@@ -69,6 +70,7 @@ quadrupole
 quantised
 quaternion
 quaternions
+resolvent
 triaxial
 wavefunction
 wavefunctions
