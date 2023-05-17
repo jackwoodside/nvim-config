@@ -1,5 +1,6 @@
 (c)
 ANU
+photodiodes
 Allmond
 Batchelder
 Benczer-Koller
@@ -46,8 +47,11 @@ Yu
 boson
 collimator
 collimators
+de-excitation
+exponentiating
 femtometre
 fm
+homoclinic
 integrand
 kT
 keV
@@ -68,6 +72,7 @@ quadrupole
 quantised
 quaternion
 quaternions
+resolvent
 triaxial
 wavefunction
 wavefunctions
