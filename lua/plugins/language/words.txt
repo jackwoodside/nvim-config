@@ -1,6 +1,5 @@
 (c)
 ANU
-photodiodes
 Allmond
 Batchelder
 Benczer-Koller
@@ -66,6 +65,8 @@ orbitals
 overdamped
 parametrisation
 phoswich
+photodiodes
+photodiodes
 polarisability
 prolate
 quadrupole
@@ -76,3 +77,4 @@ resolvent
 triaxial
 wavefunction
 wavefunctions
+wavenumber
