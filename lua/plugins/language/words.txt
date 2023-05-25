@@ -78,3 +78,4 @@ resolvent
 triaxial
 wavefunction
 wavefunctions
+wavenumber
