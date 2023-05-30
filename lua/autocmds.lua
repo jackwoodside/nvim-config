@@ -31,7 +31,8 @@ ac("FileType", { pattern = { "gitcommit", "gitrebase" }, command = [[ startinser
 ac("VimEnter", {
 	callback = function()
 		local arg = vim.api.nvim_eval("argv(0)")
-		if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") then
+		local man = vim.bo.filetype == "man"
+		if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") and not man then
 			vim.defer_fn(function()
 				require("telescope.builtin").find_files()
 			end, 10)
