@@ -5,6 +5,7 @@ BGOs
 Batchelder
 Benczer-Koller
 Bolotin
+BrIcc
 Chamoli
 Coombes
 DSAM
@@ -19,6 +20,7 @@ Goeppert
 Gosia
 HIAF
 HPGe
+HPGe-photodiode
 Hass
 Jacobian
 Kibedi
@@ -42,12 +44,14 @@ PixieSort
 RadWare
 Radford
 Ratcliff
+SRIM
 Schwalm
 Stuchbery
 Tunningley
 Varner
 Warburton
 Weisskopf
+Winther-de-Boer
 Woodside
 Yu
 aluminised
@@ -58,6 +62,7 @@ boson
 collimator
 collimators
 de-excitation
+deorientation
 digitiser
 exponentiating
 femtometre
@@ -72,6 +77,7 @@ meddelelser
 multipolarities
 mylar
 nm
+ns
 oblate
 observables
 octupole
