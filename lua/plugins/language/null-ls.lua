@@ -14,12 +14,14 @@ require("mason-null-ls").setup({
 })
 
 -- Latex sentence splitting
-local latex_sentence_splitting = {
+local latex_writing = {
 	method = nls.methods.DIAGNOSTICS,
 	filetypes = { "plaintex", "tex" },
 	generator = {
 		fn = function(params)
 			local diagnostics = {}
+
+			-- Line splitting
 			for i, line in ipairs(params.content) do
 				local col, end_col = line:find(".+%. .+%.")
 				if col and end_col then
@@ -27,17 +29,32 @@ local latex_sentence_splitting = {
 						row = i,
 						col = col,
 						end_col = end_col + 1,
-						source = "latex_sentence_splitting",
+						source = "latex_writing",
 						message = "Split sentences across lines.",
 						severity = vim.diagnostic.severity.HINT,
 					})
 				end
 			end
+
+			for i, line in ipairs(params.content) do
+				local col, end_col = line:find("whilst")
+				if col and end_col then
+					table.insert(diagnostics, {
+						row = i,
+						col = col,
+						end_col = end_col + 1,
+						source = "latex_writing",
+						message = "You probably mean 'while'.",
+						severity = vim.diagnostic.severity.HINT,
+					})
+				end
+			end
+
 			return diagnostics
 		end,
 	},
 }
-nls.register(latex_sentence_splitting)
+nls.register(latex_writing)
 
 -- Nix formatting
 nls.setup({ sources = { nls.builtins.formatting.nixpkgs_fmt } })
