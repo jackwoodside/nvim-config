@@ -64,6 +64,7 @@ collimators
 de-excitation
 deorientation
 digitiser
+eb
 exponentiating
 femtometre
 fm
@@ -97,6 +98,7 @@ quaternion
 quaternions
 resolvent
 triaxial
+vacuum-deorientation
 wavefunction
 wavefunctions
 wavenumber
