@@ -13,6 +13,7 @@ function settings.formatting(bufnr)
 			return client.name == "null-ls"
 		end,
 		bufnr = bufnr,
+		timeout_ms = 5000,
 	})
 end
 
