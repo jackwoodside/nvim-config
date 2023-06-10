@@ -58,5 +58,3 @@
 - Terminal: [toggleterm](https://github.com/akinsho/toggleterm.nvim)
 - Theme: [catppuccin](https://github.com/catppuccin/nvim)
 - UI Overhaul: [noice](https://github.com/folke/noice.nvim)
-
-Others: [modicator](https://github.com/mawkler/modicator.nvim)

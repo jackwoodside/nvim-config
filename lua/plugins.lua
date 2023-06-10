@@ -270,12 +270,4 @@ return require("lazy").setup({
 			require("plugins.noice")
 		end,
 	},
-
-	-- Others
-	{
-		"mawkler/modicator.nvim",
-		config = function()
-			require("modicator").setup()
-		end,
-	},
 }, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json" })
