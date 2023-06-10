@@ -4,6 +4,7 @@ local settings = require("plugins.language.settings")
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"clangd",
+		"julials",
 		"ltex",
 		"lua_ls",
 		"nil_ls",
