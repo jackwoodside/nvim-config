@@ -27,10 +27,12 @@ Gopakumar
 Gosia
 HIAF
 HPGe
+HPGe-HPGe
 HPGe-photodiode
 Hanaa
 Hass
 Heighway
+IJCLab
 Jacobian
 Kibedi
 Kibédi
@@ -71,6 +73,7 @@ Yiyi
 Yu
 Zhong
 aluminised
+backscattered
 backscattering
 beamline
 beamtime
@@ -91,6 +94,7 @@ keV
 libpixie
 linearisation
 meddelelser
+msr
 multipolarities
 mylar
 nm
@@ -108,11 +112,13 @@ photodiodes
 pixie2root
 polarisability
 prolate
+ps
 quadrupole
 quantised
 quaternion
 quaternions
 resolvent
+rostered
 triaxial
 vacuum-deorientation
 wavefunction
