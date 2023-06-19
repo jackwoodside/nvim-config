@@ -88,16 +88,7 @@ return require("lazy").setup({
 	},
 
 	-- Misc.
-	-- Auto-Pairs
-	{
-		"echasnovski/mini.pairs",
-		event = "VeryLazy",
-		config = function()
-			require("mini.pairs").setup()
-		end,
-	},
-
-	-- Commenting
+	---- Comments
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
@@ -106,7 +97,16 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- File Browser
+	---- Delimiters
+	{
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.pairs")
+		end,
+	},
+
+	---- File Browser
 	{
 		"kyazdani42/nvim-tree.lua",
 		event = "VeryLazy",
@@ -115,7 +115,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Finder
+	---- Finder
 	{
 		"nvim-telescope/telescope.nvim",
 		event = "VeryLazy",
@@ -148,7 +148,7 @@ return require("lazy").setup({
 		},
 	},
 
-	-- Git
+	---- Git
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufReadPre",
@@ -157,10 +157,10 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Icons
+	---- Icons
 	{ "kyazdani42/nvim-web-devicons", event = "VeryLazy" },
 
-	-- Indentation Guides
+	---- Indentation Guides
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "BufReadPre",
@@ -169,7 +169,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Macros
+	---- Macros
 	{
 		"ecthelionvi/NeoComposer.nvim",
 		enabled = false,
@@ -180,7 +180,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Navigation
+	---- Navigation
 	{
 		"ggandor/leap.nvim",
 		event = "VeryLazy",
@@ -196,7 +196,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Notifications
+	---- Notifications
 	{
 		"rcarriga/nvim-notify",
 		event = "VeryLazy",
@@ -205,7 +205,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Startscreen
+	---- Startscreen
 	{
 		"echasnovski/mini.starter",
 		event = "VimEnter",
@@ -214,7 +214,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Statuscolumn
+	---- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
 		event = "BufEnter",
@@ -223,7 +223,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Statusline
+	---- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "BufEnter",
@@ -232,7 +232,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Terminal
+	---- Terminal
 	{
 		"akinsho/toggleterm.nvim",
 		event = "VeryLazy",
@@ -241,7 +241,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Theme
+	---- Theme
 	{
 		"catppuccin/nvim",
 		lazy = false,

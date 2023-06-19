@@ -42,8 +42,8 @@
 - [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects)
 
 ## Misc.
-- Auto-Pairs: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
-- Commenting: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
+- Comments: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
+- Delimiters: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
