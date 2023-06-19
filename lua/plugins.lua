@@ -105,6 +105,13 @@ return require("lazy").setup({
 			require("plugins.pairs")
 		end,
 	},
+	{
+		"echasnovski/mini.surround",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.surround")
+		end,
+	},
 
 	---- File Browser
 	{
