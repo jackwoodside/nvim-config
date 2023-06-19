@@ -176,6 +176,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Keymaps
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.which-key")
+		end,
+	},
+
 	---- Macros
 	{
 		"ecthelionvi/NeoComposer.nvim",

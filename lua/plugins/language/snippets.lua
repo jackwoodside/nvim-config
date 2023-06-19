@@ -1,6 +1,6 @@
 local types = require("luasnip.util.types")
-local function map(m, k, v, opts)
-	vim.keymap.set(m, k, v, opts)
+local function map(m, k, v)
+	vim.keymap.set(m, k, v)
 end
 
 require("luasnip").setup({

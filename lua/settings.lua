@@ -38,6 +38,7 @@ for _, plugin in pairs(default_plugins) do
 end
 
 -- Decrease update time
+o.timeout = true
 o.timeoutlen = 500
 o.updatetime = 200
 

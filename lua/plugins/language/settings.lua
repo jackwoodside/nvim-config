@@ -21,21 +21,20 @@ end
 settings.augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 -- Keybinds
-local function map(m, k, v, opts)
-	vim.keymap.set(m, k, v, opts)
+local function map(m, k, v, b, d)
+	vim.keymap.set(m, k, v, { buffer = b, desc = d, silent = true })
 end
 
 function settings.mappings(bufnr)
-	local opts = { buffer = bufnr }
-	map("n", "[d", vim.diagnostic.goto_prev, opts)
-	map("n", "]d", vim.diagnostic.goto_next, opts)
-	map("n", "gD", vim.lsp.buf.declaration, opts)
-	map("n", "gd", vim.lsp.buf.definition, opts)
-	map("n", "gh", vim.lsp.buf.hover, opts)
-	map("n", "<C-h>", vim.lsp.buf.signature_help, opts)
-	map("n", "gi", vim.lsp.buf.implementation, opts)
-	map("n", "<leader>c", vim.lsp.buf.code_action, opts)
-	map("n", "<leader>r", vim.lsp.buf.rename, opts)
+	map("n", "[d", vim.diagnostic.goto_prev, bufnr, "Next diagnostic")
+	map("n", "]d", vim.diagnostic.goto_next, bufnr, "Previous diagnostic")
+	map("n", "gd", vim.lsp.buf.definition, bufnr, "Go to definition")
+	map("n", "gD", vim.lsp.buf.declaration, bufnr, "Go to declaration")
+	map("n", "gh", vim.lsp.buf.hover, bufnr, "Hover information")
+	map("n", "<C-h>", vim.lsp.buf.signature_help, bufnr)
+	map("n", "gi", vim.lsp.buf.implementation, bufnr, "Go to implementation")
+	map("n", "<leader>c", vim.lsp.buf.code_action, bufnr, "Code action")
+	map("n", "<leader>r", vim.lsp.buf.rename, bufnr, "Rename")
 end
 
 -- Diagnostics signs

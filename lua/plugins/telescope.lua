@@ -1,5 +1,5 @@
-local function map(m, k, v)
-	vim.keymap.set(m, k, v, { silent = true })
+local function map(m, k, v, d)
+	vim.keymap.set(m, k, v, { desc = d, silent = true })
 end
 local actions = require("telescope.actions")
 local finders = require("telescope.builtin")
@@ -45,10 +45,10 @@ local Telescope = setmetatable({}, {
 -- Mnemonic is 'f'ind
 
 -- Leader-fb = find buffers
-map("n", "<leader>fb", Telescope.buffers)
+map("n", "<leader>fb", Telescope.buffers, "Buffers")
 
 -- Leader-fd = find diagnostics
-map("n", "<leader>fd", Telescope.diagnostics)
+map("n", "<leader>fd", Telescope.diagnostics, "Diagnostics")
 
 -- Leader-ff = find files
 map("n", "<leader>ff", function()
@@ -58,16 +58,16 @@ map("n", "<leader>ff", function()
 	else
 		Telescope.find_files()
 	end
-end)
+end, "Files")
 
 -- Leader-fg = find git
-map("n", "<leader>fg", Telescope.git_status)
+map("n", "<leader>fg", Telescope.git_status, "Git changes")
 
 -- Leader-fh = find help
-map("n", "<leader>fh", Telescope.help_tags)
+map("n", "<leader>fh", Telescope.help_tags, "Help")
 
 -- Leader-fn = find notifications
-map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>")
+map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Notifications")
 
 -- Leader-/ = live grep
-map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Search project")

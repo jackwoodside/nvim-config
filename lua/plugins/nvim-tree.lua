@@ -52,7 +52,12 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>t", "<CMD>lua require('notify').dismiss()<CR><CMD>NvimTreeToggle<CR>")
+vim.keymap.set(
+	"n",
+	"<leader>t",
+	"<CMD>lua require('notify').dismiss()<CR><CMD>NvimTreeToggle<CR>",
+	{ desc = "Toggle file tree", silent = true }
+)
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = vim.api.nvim_create_augroup("NVIM_TREE", { clear = true }),
