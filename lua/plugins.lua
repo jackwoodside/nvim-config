@@ -157,22 +157,6 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Highlights
-	{
-		"tzachar/highlight-undo.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.highlight-undo")
-		end,
-	},
-	{
-		"NvChad/nvim-colorizer.lua",
-		event = "BufReadPre",
-		config = function()
-			require("plugins.colorizer")
-		end,
-	},
-
 	-- Icons
 	{ "kyazdani42/nvim-web-devicons", event = "VeryLazy" },
 
@@ -269,12 +253,44 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- UI Overhaul
+	-- UI Miscellany
+	---- Highlight undo/redo changes
+	{
+		"tzachar/highlight-undo.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.highlight-undo")
+		end,
+	},
+	---- UI Overhaul
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.noice")
+		end,
+	},
+	---- Highlight rgb/hex colours
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = "BufReadPre",
+		config = function()
+			require("plugins.colorizer")
+		end,
+	},
+	---- Dim inactive code regions
+	{
+		"folke/twilight.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("twilight").setup()
+		end,
+	},
+	---- Simplify UI
+	{
+		"folke/zen-mode.nvim",
+		config = function()
+			require("plugins.zen-mode")
 		end,
 	},
 }, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json" })
