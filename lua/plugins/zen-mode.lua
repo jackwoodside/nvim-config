@@ -1,4 +1,4 @@
-require("statuscol").setup({
+require("zen-mode").setup({
 	vim.keymap.set("n", "<leader>zz", "<CMD>ZenMode<CR>", { silent = true }),
 	plugins = {
 		gitsigns = { enabled = true },
