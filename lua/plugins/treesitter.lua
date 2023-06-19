@@ -41,7 +41,6 @@ require("nvim-treesitter.configs").setup({
 			enable = true,
 			clear_on_cursor_move = false,
 		},
-		highlight_current_scope = { enable = true },
 	},
 
 	-- nvim-treesitter/nvim-treesitter-textobjects
