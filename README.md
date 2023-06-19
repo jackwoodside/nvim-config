@@ -43,10 +43,10 @@
 
 ## Misc.
 - Auto-Pairs: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
-- Colour Highlighter: [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua)
 - Commenting: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- Highlights: [highlight-undo](https://github.com/tzachar/highlight-undo.nvim), [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Indentation Guides: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - Macros: [NeoComposer](https://github.com/ecthelionvi/NeoComposer.nvim)

@@ -97,15 +97,6 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- Colour Highlighter
-	{
-		"NvChad/nvim-colorizer.lua",
-		event = "BufReadPre",
-		config = function()
-			require("plugins.colorizer")
-		end,
-	},
-
 	-- Commenting
 	{
 		"echasnovski/mini.comment",
@@ -163,6 +154,22 @@ return require("lazy").setup({
 		event = "BufReadPre",
 		config = function()
 			require("plugins.gitsigns")
+		end,
+	},
+
+	-- Highlights
+	{
+		"tzachar/highlight-undo.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.highlight-undo")
+		end,
+	},
+	{
+		"NvChad/nvim-colorizer.lua",
+		event = "BufReadPre",
+		config = function()
+			require("plugins.colorizer")
 		end,
 	},
 
