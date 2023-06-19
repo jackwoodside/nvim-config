@@ -111,7 +111,7 @@ return require("lazy").setup({
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
 		config = function()
-			require("mini.comment").setup()
+			require("plugins.comment")
 		end,
 	},
 

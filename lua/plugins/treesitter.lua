@@ -3,99 +3,66 @@ require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"bash",
 		"c",
+		"git_rebase",
 		"gitattributes",
 		"gitcommit",
-		"git_rebase",
 		"help",
 		"json",
 		"lua",
 		"markdown",
 		"markdown_inline",
+		"query",
 		"regex",
 		"vim",
+		"vimdoc",
 	},
+
 	highlight = {
 		enable = true,
-		additional_vim_regex_highlighting = false,
+		-- Disable for files larger than 100 KB
+		disable = function(_, buf)
+			local max_filesize = 100 * 1024 -- 100 KB
+			local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+			if ok and stats and stats.size > max_filesize then
+				return true
+			end
+		end,
 	},
-	indent = {
-		enable = true,
-	},
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "gs",
-			node_incremental = "gs",
-			node_decremental = "gS",
-			scope_incremental = "<leader>gc",
-		},
-	},
-	-- nvim-treesitter/nvim-treesitter-textobjects
-	textobjects = {
-		select = {
-			enable = true,
-			-- Automatically jump forward to textobj, similar to targets.vim
-			lookahead = true,
-			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
-				["al"] = "@loop.outer",
-				["il"] = "@loop.inner",
-				["aa"] = "@parameter.outer",
-				["ia"] = "@parameter.inner",
-				["uc"] = "@comment.outer",
 
-				-- Or you can define your own textobjects like this
-				-- ['iF'] = {
-				--     python = '(function_definition) @function',
-				--     cpp = '(function_definition) @function',
-				--     c = '(function_definition) @function',
-				--     java = '(method_declaration) @function',
-				-- },
-			},
-		},
-		move = {
-			enable = true,
-			set_jumps = true, -- whether to set jumps in the jumplist
-			goto_next_start = {
-				["]f"] = "@function.outer",
-				["]]"] = "@class.outer",
-			},
-			goto_next_end = {
-				["]F"] = "@function.outer",
-				["]["] = "@class.outer",
-			},
-			goto_previous_start = {
-				["[f"] = "@function.outer",
-				["[["] = "@class.outer",
-			},
-			goto_previous_end = {
-				["[F"] = "@function.outer",
-				["[]"] = "@class.outer",
-			},
-		},
-	},
-	-- windwp/nvim-ts-autotag
-	autotag = {
-		enable = true,
-	},
-	-- nvim-treesitter/playground
-	playground = {
-		enable = true,
-		disable = {},
-		updatetime = 25, -- Debounced time for highlighting nodes in the playground from source code
-		persist_queries = false, -- Whether the query persists across vim sessions
-	},
-	-- nvim-treesitter/nvim-treesitter-refactor
-	refactor = {
-		highlight_definitions = { enable = true },
-		-- highlight_current_scope = { enable = false },
-	},
+	-- JoosepAlviste/nvim-ts-context-commentstring
 	context_commentstring = {
 		enable = true,
 		enable_autocmd = false,
 	},
+
+	-- nvim-treesitter/nvim-treesitter-refactor
+	refactor = {
+		highlight_definitions = {
+			enable = true,
+			clear_on_cursor_move = false,
+		},
+		highlight_current_scope = { enable = true },
+	},
+
+	-- nvim-treesitter/nvim-treesitter-textobjects
+	textobjects = {
+		select = {
+			enable = true,
+			lookahead = true,
+			keymaps = {
+				["ac"] = "@class.outer", -- around class
+				["ic"] = "@class.inner", -- inner class
+
+				["af"] = "@function.outer", -- around function
+				["if"] = "@function.inner", -- inner function
+
+				["ai"] = "@conditional.outer", -- around if
+				["ii"] = "@conditional.inner", -- inner if
+
+				["al"] = "@loop.outer", -- around loop
+				["il"] = "@loop.inner", -- inner loop
+			},
+		},
+	},
 })
+require("treesitter-context").setup({ enable = true })
