@@ -6,6 +6,7 @@
 ### Language Servers (LSP)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
+- [clangd_extensions](https://github.com/p00f/clangd_extensions.nvim)
 
 ### Language Servers (non-LSP)
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)
@@ -43,7 +44,7 @@
 
 ## Misc.
 - Comments: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
-- Delimiters: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md)
+- Delimiters: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md), [mini.surround](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
