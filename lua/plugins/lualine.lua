@@ -13,9 +13,10 @@ end
 -- Word count section for tex files
 local va = vim.api
 local vf = vim.fn
+local ft = vim.bo.filetype
 
 local function wordcount()
-	if vf.expand("%:e") == "tex" then
+	if ft == "tex" then
 		return va.nvim_buf_get_var(0, "words")
 	else
 		return ""
@@ -23,7 +24,7 @@ local function wordcount()
 end
 
 local function updatewords()
-	if vf.expand("%:e") == "tex" then
+	if ft == "tex" then
 		local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
 		if words:find("command not found") ~= nil then
 			va.nvim_buf_set_var(0, "words", "")

@@ -35,21 +35,6 @@ local latex_writing = {
 					})
 				end
 			end
-
-			for i, line in ipairs(params.content) do
-				local col, end_col = line:find("whilst")
-				if col and end_col then
-					table.insert(diagnostics, {
-						row = i,
-						col = col,
-						end_col = end_col + 1,
-						source = "latex_writing",
-						message = "You probably mean 'while'.",
-						severity = vim.diagnostic.severity.HINT,
-					})
-				end
-			end
-
 			return diagnostics
 		end,
 	},

@@ -1,5 +1,6 @@
 local ac = vim.api.nvim_create_autocmd
-local vf = vim.fn
+local fn = vim.fn
+local ft = vim.bo.filetype
 
 -- Highlight on yank
 ac("TextYankPost", {
@@ -18,8 +19,8 @@ ac("BufEnter", {
 -- Clear extra latex files
 ac("VimLeave", {
 	callback = function()
-		if vf.expand("%:e") == "tex" then
-			io.popen("tex-clear " .. vf.shellescape(vf.expand("%:p")))
+		if ft == "tex" then
+			io.popen("tex-clear " .. fn.shellescape(fn.expand("%:p")))
 		end
 	end,
 })
@@ -31,8 +32,8 @@ ac("FileType", { pattern = { "gitcommit", "gitrebase" }, command = [[ startinser
 ac("VimEnter", {
 	callback = function()
 		local arg = vim.api.nvim_eval("argv(0)")
-		local man = vim.bo.filetype == "man"
-		if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") and not man then
+		local man = (ft == "man")
+		if arg and (fn.isdirectory(arg) ~= 0 or arg == "") and not man then
 			vim.defer_fn(function()
 				require("telescope.builtin").find_files()
 			end, 10)

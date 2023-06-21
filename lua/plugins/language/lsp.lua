@@ -11,13 +11,6 @@ require("mason-lspconfig").setup({
 		"texlab",
 	},
 })
-
--- Flags
-local lsp_flags = {
-	allow_incremental_sync = true,
-	debounce_text_changes = 200,
-}
-
 -- Configure servers
 local lspconfig = require("lspconfig")
 local get_servers = require("mason-lspconfig").get_installed_servers
@@ -35,7 +28,7 @@ local function lsp_attach(client, bufnr)
 	settings.mappings(bufnr)
 end
 local lsp_capabilities = settings.capabilities()
-lsp_capabilities.offsetEncoding = { "utf-16" }
+local lsp_flags = settings.flags
 
 -- Loop over all servers
 for _, server_name in ipairs(get_servers()) do
@@ -46,7 +39,8 @@ for _, server_name in ipairs(get_servers()) do
 	})
 end
 
--- Server-specific settings (after the loop to avoid being overwritten)
+-- Server-specific settings
+---- C++
 require("clangd_extensions").setup({
 	extensions = {
 		autoSetHints = true,
@@ -54,6 +48,7 @@ require("clangd_extensions").setup({
 	},
 })
 
+---- LaTeX
 local words = {}
 local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
 for word in io.open(path, "r"):lines() do
@@ -121,6 +116,7 @@ lspconfig["texlab"].setup({
 	},
 })
 
+---- Lua
 lspconfig["lua_ls"].setup({
 	on_attach = lsp_attach,
 	capabilities = lsp_capabilities,

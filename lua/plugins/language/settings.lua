@@ -1,10 +1,17 @@
 local settings = {}
 
--- Capabilities with nvim-cmp
+-- Capabilities
 function settings.capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities.offsetEncoding = { "utf-16" }
 	return require("cmp_nvim_lsp").default_capabilities(capabilities)
 end
+
+-- Flags
+settings.flags = {
+	allow_incremental_sync = true,
+	debounce_text_changes = 200,
+}
 
 -- Disable LSP formatting, only use null-ls
 function settings.formatting(bufnr)
