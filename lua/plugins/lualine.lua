@@ -22,45 +22,30 @@ local function wordcount()
 	end
 end
 
-va.nvim_create_autocmd("BufEnter", {
-	callback = function()
-		if vf.expand("%:e") == "tex" then
-			local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
-			if words:find("command not found") ~= nil then
-				va.nvim_buf_set_var(0, "words", "")
-			elseif words == "1" then
-				va.nvim_buf_set_var(0, "words", words .. " word")
-			else
-				va.nvim_buf_set_var(0, "words", words .. " words")
-			end
+local function updatewords()
+	if vf.expand("%:e") == "tex" then
+		local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
+		if words:find("command not found") ~= nil then
+			va.nvim_buf_set_var(0, "words", "")
+		elseif words == "1" then
+			va.nvim_buf_set_var(0, "words", words .. " word")
+		else
+			va.nvim_buf_set_var(0, "words", words .. " words")
 		end
-	end,
-})
-va.nvim_create_autocmd("BufWritePost", {
-	callback = function()
-		if vf.expand("%:e") == "tex" then
-			local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
-			if words:find("command not found") ~= nil then
-				va.nvim_buf_set_var(0, "words", "")
-			elseif words == "1" then
-				va.nvim_buf_set_var(0, "words", words .. " word")
-			else
-				va.nvim_buf_set_var(0, "words", words .. " words")
-			end
-		end
-	end,
-})
+	end
+end
+va.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, { callback = updatewords })
 
 require("lualine").setup({
 	options = {
 		theme = "catppuccin",
-		component_separators = "",
+		component_separators = "┃",
 		section_separators = "",
 		icons_enabled = true,
 		globalstatus = true,
-		disabled_filetypes = { "starter", "toggleterm" },
+		disabled_filetypes = { "starter" },
 	},
-	extensions = { "nvim-dap-ui", "nvim-tree" },
+	extensions = { "lazy", "man", "nvim-dap-ui", "nvim-tree", "toggleterm" },
 	sections = {
 		lualine_a = {
 			{
@@ -74,14 +59,15 @@ require("lualine").setup({
 		lualine_b = {
 			{ "branch" },
 			{ "diff", source = diff_source, colored = true },
-		},
-		lualine_c = {
-			{ "filename", file_status = true },
 			{
 				"diagnostics",
 				symbols = { error = " ", warn = " ", info = " ", hint = "󱠂 " },
 			},
 		},
+		lualine_c = {
+			{ "filename", file_status = true },
+		},
+
 		-- lualine_x = { require("NeoComposer.ui").status_recording },
 		lualine_x = {},
 		lualine_y = {
@@ -100,6 +86,13 @@ require("lualine").setup({
 				symbols = {
 					modified = " [+]",
 					alternate_file = "",
+				},
+
+				filetype_names = {
+					lazy = "Lazy",
+					mason = "Mason",
+					NvimTree = "File Tree",
+					TelescopePrompt = "Telescope",
 				},
 			},
 		},

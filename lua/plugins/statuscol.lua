@@ -1,7 +1,7 @@
 local builtin = require("statuscol.builtin")
 require("statuscol").setup({
 	relculright = true,
-	ft_ignore = { "man", "starter", "NvimTree" },
+	ft_ignore = { "man", "NvimTree", "starter", "TelescopePrompt" },
 	segments = {
 		-- Diagnostics
 		{
