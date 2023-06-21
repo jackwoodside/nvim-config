@@ -1,6 +1,6 @@
--- Neovim settings, bindings and autocmds
+-- Neovim settings, mappings and autocmds
 require("settings")
-require("keybinds")
+require("keymaps")
 require("autocmds")
 
 -- Bootstrap plugin manager
@@ -17,7 +17,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.runtimepath:prepend(lazypath)
 
--- Plugin settings and bindings
+-- Plugin settings and mappings
 require("plugins")
 
 --Pretty print lua table

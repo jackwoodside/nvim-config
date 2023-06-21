@@ -47,6 +47,7 @@
 - Delimiters: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md), [mini.surround](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md)
 - File Browser: [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- Highlighting: [highlight-undo](https://github.com/tzachar/highlight-undo.nvim), [mini.hipatterns](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-hipatterns.md)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Indentation Guides: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - Keymaps: [which-key](https://github.com/folke/which-key.nvim)
@@ -58,4 +59,4 @@
 - Statuscolumn: [statuscol](https://github.com/luukvbaal/statuscol.nvim)
 - Terminal: [toggleterm](https://github.com/akinsho/toggleterm.nvim)
 - Theme: [catppuccin](https://github.com/catppuccin/nvim)
-- UI Miscellany: [highlight-undo](https://github.com/tzachar/highlight-undo.nvim), [noice](https://github.com/folke/noice.nvim), [nvim-colorizer](https://github.com/NvChad/nvim-colorizer.lua), [twilight](https://github.com/folke/twilight.nvim), [zen-mode](https://github.com/folke/zen-mode.nvim)
+- UI Overhaul: [noice](https://github.com/folke/noice.nvim), [twilight](https://github.com/folke/twilight.nvim), [zen-mode](https://github.com/folke/zen-mode.nvim)

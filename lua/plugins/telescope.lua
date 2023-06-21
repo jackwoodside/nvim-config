@@ -3,8 +3,9 @@ local function map(m, k, v, d)
 end
 local actions = require("telescope.actions")
 local finders = require("telescope.builtin")
+local telescope = require("telescope")
 
-require("telescope").setup({
+telescope.setup({
 	defaults = {
 		prompt_prefix = " ❯ ",
 		initial_mode = "insert",
@@ -33,6 +34,8 @@ require("telescope").setup({
 	},
 })
 
+-- Mappings
+
 local Telescope = setmetatable({}, {
 	__index = function(_, k)
 		if vim.bo.filetype == "NvimTree" then
@@ -41,8 +44,6 @@ local Telescope = setmetatable({}, {
 		return finders[k]
 	end,
 })
-
--- Mnemonic is 'f'ind
 
 -- Leader-fb = find buffers
 map("n", "<leader>fb", Telescope.buffers, "Buffers")

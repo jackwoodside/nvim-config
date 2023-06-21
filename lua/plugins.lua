@@ -165,6 +165,22 @@ return require("lazy").setup({
 		end,
 	},
 
+	-- Highlighting
+	{
+		"tzachar/highlight-undo.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.highlight-undo")
+		end,
+	},
+	{
+		"echasnovski/mini.hipatterns",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.hipatterns")
+		end,
+	},
+
 	---- Icons
 	{ "kyazdani42/nvim-web-devicons", event = "VeryLazy" },
 
@@ -270,16 +286,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- UI Miscellany
-	---- Highlight undo/redo changes
-	{
-		"tzachar/highlight-undo.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.highlight-undo")
-		end,
-	},
-	---- UI Overhaul
+	-- UI Overhaul
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -287,15 +294,6 @@ return require("lazy").setup({
 			require("plugins.noice")
 		end,
 	},
-	---- Highlight rgb/hex colours
-	{
-		"NvChad/nvim-colorizer.lua",
-		event = "BufReadPre",
-		config = function()
-			require("plugins.colorizer")
-		end,
-	},
-	---- Dim inactive code regions
 	{
 		"folke/twilight.nvim",
 		event = "VeryLazy",
@@ -303,7 +301,6 @@ return require("lazy").setup({
 			require("twilight").setup()
 		end,
 	},
-	---- Simplify UI
 	{
 		"folke/zen-mode.nvim",
 		config = function()
