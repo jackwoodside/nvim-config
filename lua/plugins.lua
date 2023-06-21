@@ -19,6 +19,7 @@ return require("lazy").setup({
 			require("plugins.language.lsp")
 		end,
 	},
+	{ "p00f/clangd_extensions.nvim" },
 
 	{ "jose-elias-alvarez/null-ls.nvim", event = "BufReadPre" },
 	{

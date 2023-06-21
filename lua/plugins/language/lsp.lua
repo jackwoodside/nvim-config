@@ -47,6 +47,13 @@ for _, server_name in ipairs(get_servers()) do
 end
 
 -- Server-specific settings (after the loop to avoid being overwritten)
+require("clangd_extensions").setup({
+	extensions = {
+		autoSetHints = true,
+		inlay_hints = { only_current_line = true },
+	},
+})
+
 local words = {}
 local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
 for word in io.open(path, "r"):lines() do
@@ -71,6 +78,8 @@ lspconfig["ltex"].setup({
 			language = "en-AU",
 			latex = {
 				commands = {
+					["\\author{}"] = "ignore",
+					["\\note{}"] = "ignore",
 					["\\pgfplotsset{}"] = "ignore",
 				},
 				environments = {
