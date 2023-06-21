@@ -6,7 +6,6 @@
 ### Language Servers (LSP)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
-- [clangd_extensions](https://github.com/p00f/clangd_extensions.nvim)
 
 ### Language Servers (non-LSP)
 - [null-ls](https://github.com/jose-elias-alvarez/null-ls.nvim)

@@ -40,14 +40,6 @@ for _, server_name in ipairs(get_servers()) do
 end
 
 -- Server-specific settings
----- C++
-require("clangd_extensions").setup({
-	extensions = {
-		autoSetHints = true,
-		inlay_hints = { only_current_line = true },
-	},
-})
-
 ---- LaTeX
 local words = {}
 local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
