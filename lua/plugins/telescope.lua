@@ -38,7 +38,6 @@ telescope.setup({
 })
 
 -- Mappings
-
 local Telescope = setmetatable({}, {
 	__index = function(_, k)
 		if vim.bo.filetype == "NvimTree" then

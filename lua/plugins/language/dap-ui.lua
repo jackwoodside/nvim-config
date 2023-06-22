@@ -27,22 +27,29 @@ require("dapui").setup({
 })
 
 -- Mappings
--- Mnemonic is 'd'ebug
+local hydra = require("hydra")
+local hint = [[
+_b_: Toggle breakpoint _c_: Continue _s_: Step forward
+_d_: Toggle interface  _r_: Restart  _S_: Step backward
+                     _q_: Quit
+]]
 
--- Leader-db = debug breakpoint
-map("n", "<leader>db", "<CMD>lua require('dap').toggle_breakpoint()<CR>", "Toggle breakpoint")
+hydra({
+	name = "DAP",
+	hint = hint,
+	config = {
+		color = "pink",
+		invoke_on_body = true,
+	},
 
--- Leader-dc = debug continue
-map("n", "<leader>dc", "<CMD>lua require('dap').continue()<CR>", "Continue")
-
--- Leader-dd = debug ui toggle
-map("n", "<leader>dd", "<CMD>lua require('dapui').toggle()<CR>", "Toggle UI")
-
--- Leader-dr = debug restart
-map("n", "<leader>dr", "<CMD>lua require('dap').restart()<CR>", "Restart")
-
--- Leader-df = debug step forward
-map("n", "<leader>df", "<CMD>lua require('dap').step_over()<CR>", "Step forward")
-
--- Leader-db = debug step backward
-map("n", "<leader>du", "<CMD>lua require('dap').step_back()<CR>", "Step backward")
+	body = "<leader>d",
+	heads = {
+		{ "b", "<CMD>lua require('dap').toggle_breakpoint()<CR>", { desc = "Toggle breakpoint", nowait = true } },
+		{ "c", "<CMD>lua require('dap').continue()<CR>", { desc = "Continue", nowait = true } },
+		{ "d", "<CMD>lua require('dapui').toggle()<CR>", { desc = "Toggle UI", nowait = true } },
+		{ "r", "<CMD>lua require('dap').restart()<CR>", { desc = "Restart", nowait = true } },
+		{ "s", "<CMD>lua require('dap').step_over()<CR>", { desc = "Step forward", nowait = true } },
+		{ "S", "<CMD>lua require('dap').step_back()<CR>", { desc = "Step backward", nowait = true } },
+		{ "q", nil, { desc = "Exit", exit = true, nowait = true } },
+	},
+})
