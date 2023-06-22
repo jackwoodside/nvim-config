@@ -193,6 +193,7 @@ return require("lazy").setup({
 	},
 
 	---- Keymaps
+	{ "anuvyklack/hydra.nvim", event = "VeryLazy" },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
