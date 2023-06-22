@@ -2,9 +2,8 @@ local gs = require("gitsigns")
 local hydra = require("hydra")
 
 local hint = [[
-_]_: Next hunk    _s_: Stage hunk   _r_: Reset hunk
-_[_: Prev hunk    _S_: Stage buffer _u_: Undo hunk
-_p_: Preview hunk _g_: Lazygit      _q_: Quit
+_]_: Next hunk    _s_: Stage hunk   _p_: Preview hunk _g_: Lazygit
+_[_: Prev hunk    _S_: Stage buffer _u_: Undo hunk    _q_: Quit
 ]]
 local vc = vim.cmd
 
@@ -42,7 +41,6 @@ gs.setup({
 				{ "p", gs.preview_hunk, { desc = "Preview hunk", nowait = true } },
 				{ "s", gs.stage_hunk, { desc = "Stage hunk", nowait = true, silent = true } },
 				{ "S", gs.stage_buffer, { desc = "Stage buffer", nowait = true } },
-				{ "r", gs.reset_hunk, { desc = "Reset hunk", nowait = true } },
 				{ "u", gs.undo_stage_hunk, { desc = "Undo hunk", nowait = true } },
 				-- Navigation
 				{
