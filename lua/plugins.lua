@@ -1,51 +1,54 @@
 return require("lazy").setup({
 	-- Dependencies
-	"MunifTanjim/nui.nvim",
-	"nvim-lua/popup.nvim",
-	"nvim-lua/plenary.nvim",
+	{ "MunifTanjim/nui.nvim", lazy = true },
+	{ "nvim-lua/popup.nvim", lazy = true },
+	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
 	{
 		"williamboman/mason.nvim",
-		cmd = "Mason",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("mason").setup({ PATH = "append" })
 		end,
 	},
 
-	{ "neovim/nvim-lspconfig", event = "BufReadPre" },
+	{ "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
 	{
 		"williamboman/mason-lspconfig.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.lsp")
 		end,
 	},
 
-	{ "jose-elias-alvarez/null-ls.nvim", event = "BufReadPre" },
+	{ "jose-elias-alvarez/null-ls.nvim", event = { "BufReadPre", "BufNewFile" } },
 	{
 		"jayp0521/mason-null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.null-ls")
 		end,
 	},
 
-	{ "mfussenegger/nvim-dap", event = "BufReadPre" },
+	{ "mfussenegger/nvim-dap", event = { "BufReadPre", "BufNewFile" } },
 	{
 		"jay-babu/mason-nvim-dap.nvim",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.dap")
 		end,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.dap-ui")
 		end,
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("nvim-dap-virtual-text").setup()
 		end,
@@ -75,7 +78,7 @@ return require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = "BufReadPost",
+		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
@@ -117,7 +120,7 @@ return require("lazy").setup({
 	---- File Browser
 	{
 		"echasnovski/mini.files",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 			require("plugins.files")
 		end,
@@ -166,7 +169,7 @@ return require("lazy").setup({
 	---- Git
 	{
 		"lewis6991/gitsigns.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.gitsigns")
 		end,
@@ -175,33 +178,33 @@ return require("lazy").setup({
 	-- Highlighting
 	{
 		"tzachar/highlight-undo.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.highlight-undo")
 		end,
 	},
 	{
 		"echasnovski/mini.hipatterns",
-		event = "VeryLazy",
+		event = "BufReadPre",
 		config = function()
 			require("plugins.hipatterns")
 		end,
 	},
 
 	---- Icons
-	{ "kyazdani42/nvim-web-devicons", event = "VeryLazy" },
+	{ "kyazdani42/nvim-web-devicons", lazy = true },
 
 	---- Indentation Guides
 	{
 		"lukas-reineke/indent-blankline.nvim",
-		event = "BufReadPre",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("plugins.indentline")
 		end,
 	},
 
 	---- Keymaps
-	{ "anuvyklack/hydra.nvim", event = "VeryLazy" },
+	{ "anuvyklack/hydra.nvim", lazy = true },
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -214,7 +217,6 @@ return require("lazy").setup({
 	{
 		"ecthelionvi/NeoComposer.nvim",
 		enabled = false,
-		event = "VeryLazy",
 		dependencies = { "kkharji/sqlite.lua" },
 		config = function()
 			require("NeoComposer").setup()
@@ -224,14 +226,14 @@ return require("lazy").setup({
 	---- Navigation
 	{
 		"ggandor/leap.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("plugins.leap")
 		end,
 	},
 	{
 		"ggandor/leap-spooky.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPost", "BufNewFile" },
 		config = function()
 			require("leap-spooky").setup()
 		end,
@@ -258,7 +260,7 @@ return require("lazy").setup({
 	---- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
-		event = "BufEnter",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.statuscol")
 		end,
@@ -267,7 +269,7 @@ return require("lazy").setup({
 	---- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
-		event = "BufEnter",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.lualine")
 		end,
@@ -311,8 +313,25 @@ return require("lazy").setup({
 	},
 	{
 		"folke/zen-mode.nvim",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.zen-mode")
 		end,
 	},
-}, { lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json" })
+}, {
+	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"matchit",
+				"matchparen",
+				"netrwPlugin",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
+			},
+		},
+	},
+})
