@@ -120,7 +120,7 @@ return require("lazy").setup({
 	---- File Browser
 	{
 		"echasnovski/mini.files",
-		event = "VeryLazy",
+		lazy = false,
 		config = function()
 			require("plugins.files")
 		end,
