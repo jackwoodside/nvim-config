@@ -6,7 +6,6 @@ require("nvim-treesitter.configs").setup({
 		"git_rebase",
 		"gitattributes",
 		"gitcommit",
-		"help",
 		"json",
 		"lua",
 		"markdown",
