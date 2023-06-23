@@ -100,7 +100,8 @@ require("lualine").setup({
 				filetype_names = {
 					lazy = "Lazy",
 					mason = "Mason",
-					NvimTree = "File Tree",
+					minifiles = "File Tree",
+					starter = "",
 					TelescopePrompt = "Telescope",
 				},
 			},

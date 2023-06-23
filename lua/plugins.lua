@@ -116,10 +116,10 @@ return require("lazy").setup({
 
 	---- File Browser
 	{
-		"kyazdani42/nvim-tree.lua",
-		event = "VeryLazy",
+		"echasnovski/mini.files",
+		lazy = false,
 		config = function()
-			require("plugins.nvim-tree")
+			require("plugins.files")
 		end,
 	},
 
