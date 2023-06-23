@@ -1,6 +1,7 @@
 return require("lazy").setup({
 	-- Dependencies
 	"MunifTanjim/nui.nvim",
+	"nvim-lua/popup.nvim",
 	"nvim-lua/plenary.nvim",
 
 	-- LSP
@@ -143,6 +144,13 @@ return require("lazy").setup({
 				config = function()
 					---@diagnostic disable-next-line: different-requires
 					require("telescope").load_extension("live_grep_args")
+				end,
+			},
+			{
+				"nvim-telescope/telescope-media-files.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("media_files")
 				end,
 			},
 			{

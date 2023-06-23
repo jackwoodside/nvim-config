@@ -48,8 +48,8 @@ local Telescope = setmetatable({}, {
 map("n", "<leader>fb", Telescope.buffers, "Buffers")
 map("n", "<leader>fd", Telescope.diagnostics, "Diagnostics")
 map("n", "<leader>ff", function()
-	local ok = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
-	if ok then
+	local git = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
+	if git then
 		Telescope.git_files()
 	else
 		Telescope.find_files()
@@ -61,16 +61,3 @@ map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()
 
 -- Leader-/ = live grep
 map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Search project")
-
--- Open telescope if folder or no file specified
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		local arg = vim.api.nvim_eval("argv(0)")
-		local man = (vim.bo.filetype == "man")
-		if arg and (vim.fn.isdirectory(arg) ~= 0 or arg == "") and not man then
-			vim.defer_fn(function()
-				require("telescope.builtin").find_files()
-			end, 10)
-		end
-	end,
-})
