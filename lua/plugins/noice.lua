@@ -11,7 +11,7 @@ require("noice").setup({
 	routes = {
 		{ filter = { event = "msg_show", find = "B written" }, skip = true },
 		{ filter = { event = "msg_show", find = "clipboard: No provider" }, skip = true },
-		{ filter = { event = "msg_show", find = "Format request failed" }, skip = true },
+		{ filter = { event = "notify.info", find = "Format request failed" }, skip = true },
 		{ filter = { event = "msg_show", find = "Macro Recording" }, skip = true },
 		{ filter = { event = "msg_show", find = "search hit" }, skip = true },
 		{ filter = { event = "msg_show", find = "Workspace edit" }, skip = true },
