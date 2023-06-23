@@ -27,16 +27,3 @@ ac("VimLeave", {
 
 -- Start git commits in insert mode
 ac("FileType", { pattern = { "gitcommit", "gitrebase" }, command = [[ startinsert | 1 ]] })
-
--- Open telescope if folder or no file specified
-ac("VimEnter", {
-	callback = function()
-		local arg = vim.api.nvim_eval("argv(0)")
-		local man = (ft == "man")
-		if arg and (fn.isdirectory(arg) ~= 0 or arg == "") and not man then
-			vim.defer_fn(function()
-				require("telescope.builtin").find_files()
-			end, 10)
-		end
-	end,
-})
