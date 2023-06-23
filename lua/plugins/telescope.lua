@@ -1,5 +1,3 @@
-local hydra = require("hydra")
-
 local function map(m, k, v, d)
 	vim.keymap.set(m, k, v, { desc = d, silent = true })
 end
@@ -47,48 +45,19 @@ local Telescope = setmetatable({}, {
 	end,
 })
 
-local hint = [[
-_b_: Buffers     _d_: Diagnostics _f_: Files
-_g_: Git changes _h_: Help        _n_: Notifications
-               _q_: Quit
-]]
-
-hydra({
-	hint = hint,
-	config = {
-		color = "teal",
-		invoke_on_body = true,
-		hint = { position = "middle" },
-	},
-
-	body = "<leader>f",
-	heads = {
-		-- Finders
-		{ "b", Telescope.buffers, { desc = "Buffers", silent = true } },
-		{ "d", Telescope.diagnostics, { desc = "Diagnostics", silent = true } },
-		{
-			"f",
-			function()
-				local ok = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
-				if ok then
-					Telescope.git_files()
-				else
-					Telescope.find_files()
-				end
-			end,
-			{ desc = "Files", silent = true },
-		},
-		{ "g", Telescope.git_status, { desc = "Git changes", silent = true } },
-		{ "h", Telescope.help_tags, { desc = "Help", silent = true } },
-		{
-			"n",
-			"<CMD>lua require('telescope').extensions.notify.notify()<CR>",
-			{ desc = "Notifications", silent = true },
-		},
-		-- Exit
-		{ "q", nil, { desc = "Exit", exit = true } },
-	},
-})
+map("n", "<leader>fb", Telescope.buffers, "Buffers")
+map("n", "<leader>fd", Telescope.diagnostics, "Diagnostics")
+map("n", "<leader>ff", function()
+	local ok = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
+	if ok then
+		Telescope.git_files()
+	else
+		Telescope.find_files()
+	end
+end, "Files")
+map("n", "<leader>fg", Telescope.git_status, "Git changes")
+map("n", "<leader>fh", Telescope.help_tags, "Help")
+map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Notifications")
 
 -- Leader-/ = live grep
 map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Search project")
