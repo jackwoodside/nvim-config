@@ -36,4 +36,47 @@ require("catppuccin").setup({
 		treesitter_context = true,
 		which_key = true,
 	},
+	custom_highlights = function(colors)
+		return {
+			TelescopeBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+
+			TelescopePreviewNormal = {
+				fg = colors.text,
+				bg = colors.mantle,
+			},
+			TelescopePreviewTitle = {
+				fg = colors.mantle,
+				bg = colors.blue,
+			},
+
+			TelescopeResultsNormal = {
+				fg = colors.text,
+				bg = colors.mantle,
+			},
+			TelescopeResultsTitle = {
+				fg = colors.mantle,
+				bg = colors.green,
+			},
+
+			TelescopePromptBorder = {
+				fg = colors.crust,
+				bg = colors.crust,
+			},
+			TelescopePromptNormal = {
+				fg = colors.text,
+				bg = colors.crust,
+			},
+			TelescopePromptPrefix = {
+				fg = colors.red,
+				bg = colors.crust,
+			},
+			TelescopePromptTitle = {
+				fg = colors.crust,
+				bg = colors.red,
+			},
+		}
+	end,
 })

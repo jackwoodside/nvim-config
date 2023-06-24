@@ -8,20 +8,26 @@ local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = " ❯ ",
+		prompt_prefix = " 󰍉 ",
+		selection_caret = "❯ ",
 		initial_mode = "insert",
 		sorting_strategy = "ascending",
+
+		-- Layout
+		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		layout_config = {
-			prompt_position = "top",
+			horizontal = {
+				prompt_position = "top",
+				preview_width = 0.55,
+				results_width = 0.8,
+			},
 		},
+
 		mappings = {
 			i = {
 				["<ESC>"] = actions.close,
 				["<C-j>"] = actions.move_selection_next,
 				["<C-k>"] = actions.move_selection_previous,
-				["<TAB>"] = actions.toggle_selection + actions.move_selection_next,
-				["<C-s>"] = actions.send_selected_to_qflist,
-				["<C-q>"] = actions.send_to_qflist,
 			},
 		},
 	},
