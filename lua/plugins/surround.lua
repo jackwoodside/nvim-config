@@ -1,11 +1,11 @@
 require("mini.surround").setup({
 	mappings = {
-		add = "ys",
-		delete = "ds",
-		find = "",
-		find_left = "",
-		highlight = "vs",
-		replace = "cs",
+		add = "gsa",
+		delete = "gsd",
+		find = "gsf",
+		find_left = "gsF",
+		highlight = "gsh",
+		replace = "gsr",
 		update_n_lines = "",
 	},
 	custom_surroundings = {
