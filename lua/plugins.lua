@@ -225,17 +225,10 @@ return require("lazy").setup({
 
 	---- Navigation
 	{
-		"ggandor/leap.nvim",
+		"folke/flash.nvim",
 		event = { "BufReadPost", "BufNewFile" },
 		config = function()
-			require("plugins.leap")
-		end,
-	},
-	{
-		"ggandor/leap-spooky.nvim",
-		event = { "BufReadPost", "BufNewFile" },
-		config = function()
-			require("leap-spooky").setup()
+			require("plugins.flash")
 		end,
 	},
 
