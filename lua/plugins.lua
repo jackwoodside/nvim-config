@@ -75,6 +75,46 @@ return require("lazy").setup({
 		},
 	},
 
+	-- Telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.telescope")
+		end,
+		dependencies = {
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("fzf")
+				end,
+			},
+			{
+				"nvim-telescope/telescope-live-grep-args.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("live_grep_args")
+				end,
+			},
+			{
+				"nvim-telescope/telescope-media-files.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("media_files")
+				end,
+			},
+			{
+				"nvim-telescope/telescope-ui-select.nvim",
+				config = function()
+					---@diagnostic disable-next-line: different-requires
+					require("telescope").load_extension("ui-select")
+				end,
+			},
+		},
+	},
+
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -124,46 +164,6 @@ return require("lazy").setup({
 		config = function()
 			require("plugins.files")
 		end,
-	},
-
-	---- Finder
-	{
-		"nvim-telescope/telescope.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.telescope")
-		end,
-		dependencies = {
-			{
-				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "make",
-				config = function()
-					---@diagnostic disable-next-line: different-requires
-					require("telescope").load_extension("fzf")
-				end,
-			},
-			{
-				"nvim-telescope/telescope-live-grep-args.nvim",
-				config = function()
-					---@diagnostic disable-next-line: different-requires
-					require("telescope").load_extension("live_grep_args")
-				end,
-			},
-			{
-				"nvim-telescope/telescope-media-files.nvim",
-				config = function()
-					---@diagnostic disable-next-line: different-requires
-					require("telescope").load_extension("media_files")
-				end,
-			},
-			{
-				"nvim-telescope/telescope-ui-select.nvim",
-				config = function()
-					---@diagnostic disable-next-line: different-requires
-					require("telescope").load_extension("ui-select")
-				end,
-			},
-		},
 	},
 
 	---- Git
