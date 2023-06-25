@@ -22,10 +22,10 @@ require("catppuccin").setup({
 				information = { "italic" },
 			},
 			underlines = {
-				errors = { "underline" },
-				hints = { "underline" },
-				warnings = { "underline" },
-				information = { "underline" },
+				errors = { "undercurl" },
+				hints = { "undercurl" },
+				warnings = { "undercurl" },
+				information = { "undercurl" },
 			},
 		},
 		noice = true,
@@ -38,6 +38,7 @@ require("catppuccin").setup({
 	},
 	custom_highlights = function(colors)
 		return {
+			-- Telescope
 			TelescopeBorder = {
 				fg = colors.mantle,
 				bg = colors.mantle,
@@ -76,6 +77,10 @@ require("catppuccin").setup({
 			TelescopePromptTitle = {
 				fg = colors.crust,
 				bg = colors.red,
+			},
+
+			TelescopeSelectionCaret = {
+				fg = colors.green,
 			},
 		}
 	end,
