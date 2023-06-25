@@ -1,5 +1,17 @@
 local hydra = require("hydra.statusline")
 
+-- Use gitsigns for diff source
+local function diff_source()
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
+end
+
 -- Word count section for tex files
 local va = vim.api
 local vf = vim.fn
@@ -55,7 +67,7 @@ require("lualine").setup({
 		},
 		lualine_b = {
 			{ "branch" },
-			{ "diff" },
+			{ "diff", source = diff_source },
 			{
 				"diagnostics",
 				symbols = { error = " ", warn = " ", info = " ", hint = "󱠂 " },
