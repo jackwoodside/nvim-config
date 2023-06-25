@@ -1,4 +1,21 @@
 require("noice").setup({
+	cmdline = {
+		enabled = true,
+		format = {
+			cmdline = { pattern = "^:", icon = "❯", title = " Command ", lang = "vim" },
+			search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
+			search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
+			filter = { pattern = "^:%s*!", icon = "$", title = " Shell Command ", lang = "bash" },
+			lua = {
+				pattern = { "^:%s*lua%s+", "^:%s*lua%s*=%s*", "^:%s*=%s*" },
+				icon = "",
+				title = " Lua Command ",
+				lang = "lua",
+			},
+		},
+		view = "cmdline_popup",
+	},
+
 	lsp = {
 		override = {
 			["cmp.entry.get_documentation"] = true,

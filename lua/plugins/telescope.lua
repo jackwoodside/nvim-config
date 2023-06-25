@@ -8,7 +8,7 @@ local telescope = require("telescope")
 
 telescope.setup({
 	defaults = {
-		prompt_prefix = " 󰍉 ",
+		prompt_prefix = "  ",
 		selection_caret = "❯ ",
 		initial_mode = "insert",
 		sorting_strategy = "ascending",

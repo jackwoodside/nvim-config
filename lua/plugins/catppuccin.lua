@@ -38,6 +38,50 @@ require("catppuccin").setup({
 	},
 	custom_highlights = function(colors)
 		return {
+			-- Noice
+			NoiceCmdlinePopup = {
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderCmdline = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderFilter = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderHelp = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderIncRename = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderInput = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderLua = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupBorderSearch = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NoiceCmdlinePopupTitle = {
+				fg = colors.mantle,
+				bg = colors.blue,
+			},
+			NoiceCmdlinePrompt = {
+				bg = colors.mantle,
+			},
+
 			-- Notify
 			NotifyERRORBorder = {
 				fg = colors.mantle,
