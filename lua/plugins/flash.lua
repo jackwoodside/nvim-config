@@ -8,14 +8,11 @@ flash.setup({
 		nohlsearch = true,
 		autojump = true,
 	},
-	search = {
-		multi_window = false,
-	},
-
 	modes = {
 		char = {
 			keys = { "f", "F", "t", "T" },
 		},
+		search = { enabled = false },
 	},
 })
 map({ "n", "x", "o" }, "s", function()
