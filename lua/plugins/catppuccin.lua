@@ -38,6 +38,44 @@ require("catppuccin").setup({
 	},
 	custom_highlights = function(colors)
 		return {
+			-- Notify
+			NotifyERRORBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NotifyWARNBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NotifyINFOBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NotifyDEBUGBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			NotifyTRACEBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+
+			NotifyERRORBody = {
+				bg = colors.mantle,
+			},
+			NotifyWARNBody = {
+				bg = colors.mantle,
+			},
+			NotifyINFOBody = {
+				bg = colors.mantle,
+			},
+			NotifyDEBUGBody = {
+				bg = colors.mantle,
+			},
+			NotifyTRACEBody = {
+				bg = colors.mantle,
+			},
+
 			-- Telescope
 			TelescopeBorder = {
 				fg = colors.mantle,
