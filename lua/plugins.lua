@@ -312,6 +312,7 @@ return require("lazy").setup({
 		end,
 	},
 }, {
+	colorscheme = { "catppuccin", "habamax" },
 	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
 	performance = {
 		rtp = {
