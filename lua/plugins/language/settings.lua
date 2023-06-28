@@ -3,7 +3,6 @@ local settings = {}
 -- Capabilities
 function settings.capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.offsetEncoding = { "utf-16" }
 	return require("cmp_nvim_lsp").default_capabilities(capabilities)
 end
 
