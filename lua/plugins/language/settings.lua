@@ -43,22 +43,15 @@ function settings.mappings(bufnr)
 	map("n", "<leader>r", vim.lsp.buf.rename, bufnr, "Rename")
 end
 
--- Diagnostics signs
+-- Diagnostic visuals
 vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "LspDiagnosticsDefaultError" })
 vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "LspDiagnosticsDefaultWarning" })
 vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "LspDiagnosticsDefaultInformation" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "󱠂", texthl = "LspDiagnosticsDefaultHint" })
-
--- Virtual text
 vim.diagnostic.config({
-	float = {
-		header = "",
-		suffix = "",
-	},
+	float = false,
 	severity_sort = true,
-	virtual_text = {
-		prefix = "● ",
-	},
+	virtual_text = false,
 })
 
 return settings
