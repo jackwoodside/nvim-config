@@ -1,79 +1,23 @@
+-- Bootstrap plugin manager
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--single-branch",
+		"https://github.com/folke/lazy.nvim.git",
+		lazypath,
+	})
+end
+vim.opt.runtimepath:prepend(lazypath)
+
 return require("lazy").setup({
 	-- Dependencies
-	{ "MunifTanjim/nui.nvim", lazy = true },
-	{ "nvim-lua/popup.nvim", lazy = true },
-	{ "nvim-lua/plenary.nvim", lazy = true },
+    require("plugins.dependencies"),
 
-	-- LSP
-	{
-		"williamboman/mason.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("mason").setup({ PATH = "append" })
-		end,
-	},
-
-	{ "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"williamboman/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.lsp")
-		end,
-	},
-
-	{ "jose-elias-alvarez/null-ls.nvim", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"jayp0521/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.null-ls")
-		end,
-	},
-
-	{ "mfussenegger/nvim-dap", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.dap")
-		end,
-	},
-	{
-		"rcarriga/nvim-dap-ui",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.dap-ui")
-		end,
-	},
-	{
-		"theHamsta/nvim-dap-virtual-text",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("nvim-dap-virtual-text").setup()
-		end,
-	},
-
-	{
-		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
-		config = function()
-			require("plugins.language.cmp")
-		end,
-		dependencies = {
-			{
-				"L3MON4D3/LuaSnip",
-				config = function()
-					require("plugins.language.snippets")
-				end,
-				dependencies = { "rafamadriz/friendly-snippets" },
-			},
-			{ "hrsh7th/cmp-buffer" },
-			{ "hrsh7th/cmp-nvim-lsp" },
-			{ "saadparwaiz1/cmp_luasnip" },
-			{ "hrsh7th/cmp-path" },
-		},
-	},
+	-- Language Tools
+    require("plugins.language"),
 
 	-- Telescope
 	{
