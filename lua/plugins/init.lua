@@ -14,10 +14,10 @@ vim.opt.runtimepath:prepend(lazypath)
 
 return require("lazy").setup({
 	-- Dependencies
-	require("plugins.dependencies"),
+    require("plugins.dependencies"),
 
 	-- Language Tools
-	require("plugins.language"),
+    require("plugins.language"),
 
 	-- Telescope
 	{
@@ -234,9 +234,27 @@ return require("lazy").setup({
 	},
 
 	-- UI Overhaul
-	require("plugins.noice"),
-	{ "folke/twilight.nvim", event = "VeryLazy" },
-	require("plugins.zen-mode"),
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.noice")
+		end,
+	},
+	{
+		"folke/twilight.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("twilight").setup()
+		end,
+	},
+	{
+		"folke/zen-mode.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.zen-mode")
+		end,
+	},
 }, {
 	colorscheme = { "catppuccin", "habamax" },
 	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
