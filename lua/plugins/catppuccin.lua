@@ -75,8 +75,8 @@ require("catppuccin").setup({
 				bg = colors.mantle,
 			},
 			NoiceCmdlinePopupTitle = {
-				fg = colors.mantle,
-				bg = colors.blue,
+				fg = colors.blue,
+				bg = colors.mantle,
 			},
 			NoiceCmdlinePrompt = {
 				bg = colors.mantle,

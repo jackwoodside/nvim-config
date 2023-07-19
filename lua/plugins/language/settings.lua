@@ -49,10 +49,7 @@ vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "LspDiagnostic
 vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "LspDiagnosticsDefaultInformation" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "󱠂", texthl = "LspDiagnosticsDefaultHint" })
 vim.diagnostic.config({
-	float = {
-        header = "",
-        suffix = "",
-    },
+	float = false,
 	severity_sort = true,
 	virtual_text = false,
 })
