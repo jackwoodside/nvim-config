@@ -28,7 +28,6 @@ local function lsp_attach(client, bufnr)
 	settings.mappings(bufnr)
 end
 local lsp_capabilities = settings.capabilities()
-lsp_capabilities.offsetEncoding = { "utf-16" }
 local lsp_flags = settings.flags
 
 -- Loop over all servers

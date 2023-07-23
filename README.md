@@ -46,6 +46,7 @@
 - Comments: [mini.comment](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-comment.md)
 - Delimiters: [mini.pairs](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-pairs.md), [mini.surround](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-surround.md)
 - File Browser: [mini.files](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-files.md)
+- Folding: [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo)
 - Git: [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - Highlighting: [highlight-undo](https://github.com/tzachar/highlight-undo.nvim), [mini.hipatterns](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-hipatterns.md)
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)

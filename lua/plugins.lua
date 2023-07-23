@@ -166,6 +166,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Folding
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = { "kevinhwang91/promise-async" },
+		config = function()
+			require("plugins.ufo")
+		end,
+	},
+
 	---- Git
 	{
 		"lewis6991/gitsigns.nvim",
