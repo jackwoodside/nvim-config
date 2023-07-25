@@ -2,6 +2,10 @@ local function map(m, k, v)
 	vim.keymap.set(m, k, v, { silent = true })
 end
 
+-- Black hole mappings
+map("n", "c", '"_c')
+map("n", "x", '"_x')
+
 -- Change leader to ,
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","
