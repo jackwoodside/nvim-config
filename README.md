@@ -52,7 +52,6 @@
 - Icons: [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons)
 - Indentation Guides: [indent-blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - Keymaps: [hydra](https://github.com/anuvyklack/hydra.nvim), [which-key](https://github.com/folke/which-key.nvim)
-- Macros: [NeoComposer](https://github.com/ecthelionvi/NeoComposer.nvim)
 - Navigation: [leap](https://github.com/folke/flash.nvim)
 - Notifications: [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - Startscreen: [mini.starter](https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-starter.md)
