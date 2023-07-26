@@ -77,7 +77,6 @@ require("lualine").setup({
 			{ "filename", file_status = true },
 		},
 
-		-- lualine_x = { require("NeoComposer.ui").status_recording },
 		lualine_x = {},
 		lualine_y = {
 			{ wordcount },
