@@ -6,5 +6,5 @@ end
 ufo.setup()
 
 map("n", "<SPACE>", "za", "Toggle fold under cursor")
-map("n", "zR", ufo.openAllFolds, "Open all folds")
-map("n", "zM", ufo.closeAllFolds, "Close all folds")
+map("n", "zO", ufo.openAllFolds, "Open all folds")
+map("n", "zC", ufo.closeAllFolds, "Close all folds")

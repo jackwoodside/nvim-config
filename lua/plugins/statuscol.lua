@@ -11,9 +11,14 @@ require("statuscol").setup({
 			},
 		},
 
+		-- Folds
+		{
+			text = { builtin.foldfunc },
+		},
+
 		-- Relative Line Numbers
 		{
-			text = { builtin.lnumfunc, " " },
+			text = { builtin.lnumfunc },
 			condition = { true, builtin.not_empty },
 		},
 
