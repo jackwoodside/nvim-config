@@ -27,11 +27,15 @@ clue.setup({
 	},
 
 	clues = {
-		clue.gen_clues.builtin_completion(),
 		clue.gen_clues.g(),
 		clue.gen_clues.marks(),
 		clue.gen_clues.registers(),
 		clue.gen_clues.z(),
+
+		{ mode = "n", keys = "<leader>d", desc = "+DAP" },
+		{ mode = "n", keys = "<leader>f", desc = "+Find" },
+		{ mode = "n", keys = "<leader>g", desc = "+Git" },
+		{ mode = "n", keys = "<leader>l", desc = "+Language" },
 	},
 
 	window = {

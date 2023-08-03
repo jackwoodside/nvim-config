@@ -42,13 +42,15 @@ end
 function settings.mappings(bufnr)
 	map("n", "[d", diagnostic.goto_prev, bufnr, "Next diagnostic")
 	map("n", "]d", diagnostic.goto_next, bufnr, "Previous diagnostic")
+
 	map("n", "gd", buf.definition, bufnr, "Go to definition")
 	map("n", "gD", buf.declaration, bufnr, "Go to declaration")
-	map("n", "gh", buf.hover, bufnr, "Hover information")
-	map("n", "<C-h>", buf.signature_help, bufnr)
 	map("n", "gi", buf.implementation, bufnr, "Go to implementation")
-	map("n", "<leader>c", buf.code_action, bufnr, "Code action")
-	map("n", "<leader>r", buf.rename, bufnr, "Rename")
+
+	map("n", "<leader>la", buf.code_action, bufnr, "Action")
+	map("n", "<leader>li", buf.hover, bufnr, "Information")
+	map("n", "<leader>lr", buf.rename, bufnr, "Rename")
+	map("n", "<leader>ls", buf.signature_help, bufnr, "Signature")
 end
 
 -- Diagnostic visuals

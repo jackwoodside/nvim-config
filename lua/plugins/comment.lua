@@ -4,4 +4,10 @@ require("mini.comment").setup({
 			return require("ts_context_commentstring.internal").calculate_commentstring() or vim.bo.commentstring
 		end,
 	},
+
+	mappings = {
+		comment = "<leader>lc",
+		comment_line = "<leader>lcc",
+		textobject = "",
+	},
 })
