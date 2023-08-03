@@ -13,3 +13,5 @@ local lazygit = Terminal:new({ cmd = "lazygit", hidden = true })
 function _Lazygit_toggle()
 	lazygit:toggle()
 end
+
+vim.keymap.set("n", "<leader>gg", _Lazygit_toggle, { desc = "Git UI", silent = true })
