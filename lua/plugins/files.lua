@@ -1,4 +1,6 @@
-require("mini.files").setup({
+local files = require("mini.files")
+
+files.setup({
 	mappings = {
 		close = "q",
 		go_in_plus = "l",
@@ -9,9 +11,6 @@ require("mini.files").setup({
 		trim_right = ">",
 	},
 })
-vim.keymap.set(
-	"n",
-	"<leader>t",
-	"<CMD>lua require('mini.files').open(nil, false)<CR>",
-	{ desc = "File browser", silent = true }
-)
+vim.keymap.set("n", "<leader>t", function()
+	files.open(nil, false)
+end, { desc = "File browser", silent = true })

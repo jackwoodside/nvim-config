@@ -16,12 +16,6 @@ flash.setup({
 	},
 })
 
-map({ "n", "x", "o" }, "gs", function()
-	flash.jump()
-end, "Flash")
-map({ "n", "x", "o" }, "gS", function()
-	flash.treesitter()
-end, "Flash Treesitter")
-map("o", "r", function()
-	flash.remote()
-end, "Remote Flash")
+map({ "n", "x", "o" }, "gs", flash.jump, "Flash")
+map({ "n", "x", "o" }, "gS", flash.treesitter, "Flash Treesitter")
+map("o", "r", flash.remote, "Remote Flash")

@@ -1,9 +1,10 @@
+local luasnip = require("luasnip")
 local types = require("luasnip.util.types")
 local function map(m, k, v)
 	vim.keymap.set(m, k, v)
 end
 
-require("luasnip").setup({
+luasnip.setup({
 	ext_opts = {
 		[types.choiceNode] = {
 			active = {
@@ -20,5 +21,9 @@ require("luasnip").setup({
 
 -- require("luasnip/loaders/from_vscode").lazy_load()
 
-map({ "i", "s" }, "<C-j>", '<CMD>lua require("luasnip").jump(1)<CR>')
-map({ "i", "s" }, "<C-k>", '<CMD>lua require("luasnip").jump(-1)<CR>')
+map({ "i", "s" }, "<C-j>", function()
+	luasnip.jump(1)
+end)
+map({ "i", "s" }, "<C-k>", function()
+	luasnip.jump(-1)
+end)

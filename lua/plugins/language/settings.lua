@@ -1,4 +1,6 @@
 local settings = {}
+local diagnostic = vim.diagnostic
+local buf = vim.lsp.buf
 
 -- Capabilities
 function settings.capabilities()
@@ -20,7 +22,7 @@ settings.flags = {
 
 -- Disable LSP formatting, only use null-ls
 function settings.formatting(bufnr)
-	vim.lsp.buf.format({
+	buf.format({
 		filter = function(client)
 			return client.name == "null-ls"
 		end,
@@ -38,15 +40,15 @@ local function map(m, k, v, b, d)
 end
 
 function settings.mappings(bufnr)
-	map("n", "[d", vim.diagnostic.goto_prev, bufnr, "Next diagnostic")
-	map("n", "]d", vim.diagnostic.goto_next, bufnr, "Previous diagnostic")
-	map("n", "gd", vim.lsp.buf.definition, bufnr, "Go to definition")
-	map("n", "gD", vim.lsp.buf.declaration, bufnr, "Go to declaration")
-	map("n", "gh", vim.lsp.buf.hover, bufnr, "Hover information")
-	map("n", "<C-h>", vim.lsp.buf.signature_help, bufnr)
-	map("n", "gi", vim.lsp.buf.implementation, bufnr, "Go to implementation")
-	map("n", "<leader>c", vim.lsp.buf.code_action, bufnr, "Code action")
-	map("n", "<leader>r", vim.lsp.buf.rename, bufnr, "Rename")
+	map("n", "[d", diagnostic.goto_prev, bufnr, "Next diagnostic")
+	map("n", "]d", diagnostic.goto_next, bufnr, "Previous diagnostic")
+	map("n", "gd", buf.definition, bufnr, "Go to definition")
+	map("n", "gD", buf.declaration, bufnr, "Go to declaration")
+	map("n", "gh", buf.hover, bufnr, "Hover information")
+	map("n", "<C-h>", buf.signature_help, bufnr)
+	map("n", "gi", buf.implementation, bufnr, "Go to implementation")
+	map("n", "<leader>c", buf.code_action, bufnr, "Code action")
+	map("n", "<leader>r", buf.rename, bufnr, "Rename")
 end
 
 -- Diagnostic visuals

@@ -14,7 +14,6 @@ telescope.setup({
 		sorting_strategy = "ascending",
 
 		-- Layout
-		borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 		layout_config = {
 			horizontal = {
 				prompt_position = "top",
@@ -63,7 +62,7 @@ map("n", "<leader>ff", function()
 end, "Files")
 map("n", "<leader>fg", Telescope.git_status, "Git changes")
 map("n", "<leader>fh", Telescope.help_tags, "Help")
-map("n", "<leader>fn", "<CMD>lua require('telescope').extensions.notify.notify()<CR>", "Notifications")
+map("n", "<leader>fn", telescope.extensions.notify.notify, "Notifications")
 
 -- Leader-/ = live grep
-map("n", "<leader>/", "<CMD>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Search project")
+map("n", "<leader>/", telescope.extensions.live_grep_args.live_grep_args, "Notifications")

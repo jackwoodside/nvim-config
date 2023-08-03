@@ -38,6 +38,16 @@ require("catppuccin").setup({
 	},
 	custom_highlights = function(colors)
 		return {
+			-- Clue
+			MiniClueBorder = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+			MiniClueTitle = {
+				fg = colors.mantle,
+				bg = colors.mantle,
+			},
+
 			-- Noice
 			NoiceCmdlinePopup = {
 				bg = colors.mantle,
@@ -75,8 +85,8 @@ require("catppuccin").setup({
 				bg = colors.mantle,
 			},
 			NoiceCmdlinePopupTitle = {
-				fg = colors.blue,
-				bg = colors.mantle,
+				fg = colors.mantle,
+				bg = colors.blue,
 			},
 			NoiceCmdlinePrompt = {
 				bg = colors.mantle,
