@@ -14,5 +14,3 @@ mp.setup()
 -- 		})
 -- 	end,
 -- })
-
--- ["`"] = { action = "closeopen", pair = "`'", neigh_pattern = "[^\\].", register = { cr = false } },

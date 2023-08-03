@@ -213,12 +213,11 @@ return require("lazy").setup({
 	},
 
 	---- Keymaps
-	{ "anuvyklack/hydra.nvim", lazy = true },
 	{
-		"folke/which-key.nvim",
+		"echasnovski/mini.clue",
 		event = "VeryLazy",
 		config = function()
-			require("plugins.which-key")
+			require("plugins.clue")
 		end,
 	},
 

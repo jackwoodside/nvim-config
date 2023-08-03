@@ -15,10 +15,11 @@ flash.setup({
 		search = { enabled = false },
 	},
 })
-map({ "n", "x", "o" }, "s", function()
+
+map({ "n", "x", "o" }, "gs", function()
 	flash.jump()
 end, "Flash")
-map({ "n", "x", "o" }, "S", function()
+map({ "n", "x", "o" }, "gS", function()
 	flash.treesitter()
 end, "Flash Treesitter")
 map("o", "r", function()

@@ -1,5 +1,3 @@
-local hydra = require("hydra.statusline")
-
 -- Use gitsigns for diff source
 local function diff_source()
 	local gitsigns = vim.b.gitsigns_status_dict
@@ -56,13 +54,6 @@ require("lualine").setup({
 				fmt = function(m)
 					return m:sub(1, 3)
 				end,
-				cond = function()
-					return not hydra.is_active()
-				end,
-			},
-			{
-				hydra.get_name,
-				cond = hydra.is_active,
 			},
 		},
 		lualine_b = {
