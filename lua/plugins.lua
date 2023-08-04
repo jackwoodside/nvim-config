@@ -118,7 +118,7 @@ return require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = { "BufReadPre", "BufNewFile" },
+		event = "VimEnter",
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
