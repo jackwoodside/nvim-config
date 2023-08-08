@@ -63,6 +63,8 @@ end, "Files")
 map("n", "<leader>fg", Telescope.git_status, "Git changes")
 map("n", "<leader>fh", Telescope.help_tags, "Help")
 map("n", "<leader>fn", telescope.extensions.notify.notify, "Notifications")
+map("n", "<leader>fr", Telescope.lsp_references, "References")
+map("n", "<leader>fs", Telescope.lsp_dynamic_workspace_symbols, "Symbols")
 
 -- Leader-/ = live grep
 map("n", "<leader>/", telescope.extensions.live_grep_args.live_grep_args, "Notifications")
