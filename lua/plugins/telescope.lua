@@ -5,6 +5,7 @@ end
 local actions = require("telescope.actions")
 local finders = require("telescope.builtin")
 local telescope = require("telescope")
+local extensions = telescope.extensions
 
 telescope.setup({
 	defaults = {
@@ -33,38 +34,29 @@ telescope.setup({
 	extensions = {
 		fzf = {
 			fuzzy = true,
-			override_generic_sorter = true, -- override the generic sorter
-			override_file_sorter = true, -- override the file sorter
+			override_generic_sorter = true,
+			override_file_sorter = true,
 			case_mode = "smart_case",
 		},
 	},
 })
 
 -- Mappings
-local Telescope = setmetatable({}, {
-	__index = function(_, k)
-		if vim.bo.filetype == "NvimTree" then
-			vim.cmd.wincmd("l")
-		end
-		return finders[k]
-	end,
-})
-
-map("n", "<leader>fb", Telescope.buffers, "Buffers")
-map("n", "<leader>fd", Telescope.diagnostics, "Diagnostics")
+map("n", "<leader>fb", finders.buffers, "Buffers")
+map("n", "<leader>fd", finders.diagnostics, "Diagnostics")
 map("n", "<leader>ff", function()
 	local git = vim.loop.fs_stat(vim.loop.cwd() .. "/.git")
 	if git then
-		Telescope.git_files()
+		finders.git_files()
 	else
-		Telescope.find_files()
+		finders.find_files()
 	end
 end, "Files")
-map("n", "<leader>fg", Telescope.git_status, "Git changes")
-map("n", "<leader>fh", Telescope.help_tags, "Help")
-map("n", "<leader>fn", telescope.extensions.notify.notify, "Notifications")
-map("n", "<leader>fr", Telescope.lsp_references, "References")
-map("n", "<leader>fs", Telescope.lsp_dynamic_workspace_symbols, "Symbols")
+map("n", "<leader>fg", finders.git_status, "Git changes")
+map("n", "<leader>fh", finders.help_tags, "Help")
+map("n", "<leader>fn", extensions.notify.notify, "Notifications")
+map("n", "<leader>fr", finders.lsp_references, "References")
+map("n", "<leader>fs", finders.lsp_dynamic_workspace_symbols, "Symbols")
 
 -- Leader-/ = live grep
-map("n", "<leader>/", telescope.extensions.live_grep_args.live_grep_args, "Notifications")
+map("n", "<leader>/", extensions.live_grep_args.live_grep_args, "Notifications")
