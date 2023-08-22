@@ -83,6 +83,7 @@ return require("lazy").setup({
 			require("plugins.telescope")
 		end,
 		dependencies = {
+			{ "aznhe21/actions-preview.nvim" },
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "make",
