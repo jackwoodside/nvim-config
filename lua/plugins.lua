@@ -133,6 +133,14 @@ return require("lazy").setup({
 	},
 
 	-- Misc.
+	{
+		"echasnovski/mini.align",
+		event = "VeryLazy",
+		config = function()
+			require("mini.align").setup()
+		end,
+	},
+
 	---- Comments
 	{
 		"echasnovski/mini.comment",
