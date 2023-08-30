@@ -59,4 +59,4 @@ map("n", "<leader>fr", finders.lsp_references, "References")
 map("n", "<leader>fs", finders.lsp_dynamic_workspace_symbols, "Symbols")
 
 -- Leader-/ = live grep
-map("n", "<leader>/", extensions.live_grep_args.live_grep_args, "Notifications")
+map("n", "<leader>/", extensions.live_grep_args.live_grep_args, "Live Grep")
