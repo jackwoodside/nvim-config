@@ -67,6 +67,8 @@ lspconfig["ltex"].setup({
 			latex = {
 				commands = {
 					["\\author{}"] = "ignore",
+					["\\bibliographystyle{}"] = "ignore",
+					["\\documentclass{}"] = "ignore",
 					["\\note{}"] = "ignore",
 					["\\pgfplotsset{}"] = "ignore",
 				},
