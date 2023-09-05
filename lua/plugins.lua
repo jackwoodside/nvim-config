@@ -304,20 +304,6 @@ return require("lazy").setup({
 			require("plugins.noice")
 		end,
 	},
-	{
-		"folke/twilight.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("twilight").setup()
-		end,
-	},
-	{
-		"folke/zen-mode.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("plugins.zen-mode")
-		end,
-	},
 }, {
 	colorscheme = { "catppuccin", "habamax" },
 	lockfile = vim.fn.stdpath("data") .. "/lazy/lazy-lock.json",
