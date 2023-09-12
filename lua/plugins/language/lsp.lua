@@ -104,6 +104,7 @@ lspconfig["texlab"].setup({
 			},
 			diagnostics = {
 				ignoredPatterns = {
+					"booktabs",
 					"Fira fonts",
 				},
 			},
