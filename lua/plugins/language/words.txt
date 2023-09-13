@@ -33,6 +33,7 @@ HPGe-photodiode
 Hanaa
 Hass
 Heighway
+Hyperfine
 IJCLab
 Jacobian
 Kibedi
@@ -89,7 +90,9 @@ eb
 exponentiating
 femtometre
 fm
+gyromagnetic
 homoclinic
+hyperfine
 integrand
 kT
 keV
