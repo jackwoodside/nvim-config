@@ -99,6 +99,7 @@ keV
 libpixie
 linearisation
 meddelelser
+midshell
 msr
 multipolarities
 mylar
@@ -115,6 +116,7 @@ phoswich
 photodiode
 photodiodes
 pixie2root
+pnA
 polarisability
 prolate
 ps
@@ -125,6 +127,7 @@ quaternions
 resolvent
 rostered
 triaxial
+triaxial-rotor
 vacuum-deorientation
 wavefunction
 wavefunctions
