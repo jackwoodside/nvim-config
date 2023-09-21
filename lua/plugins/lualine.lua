@@ -16,11 +16,7 @@ local vf = vim.fn
 local ft = vim.bo.filetype
 
 local function wordcount()
-	if ft == "tex" then
-		return va.nvim_buf_get_var(0, "words")
-	else
-		return ""
-	end
+	return va.nvim_buf_get_var(0, "words")
 end
 
 local function updatewords()
