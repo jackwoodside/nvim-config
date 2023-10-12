@@ -21,7 +21,11 @@ end
 
 local function updatewords()
 	if ft == "tex" then
-		local words = vf.system("texcount " .. vf.shellescape(vf.expand("%:p")) .. " | awk 'FNR==3 {printf $NF}'")
+		local words = vf.system(
+			"texcount "
+				.. vf.shellescape(vf.expand("%:p"))
+				.. " | awk 'FNR>=3 && FNR<=5 {words+=$NF} END {printf words}'"
+		)
 		if words:find("command not found") ~= nil then
 			va.nvim_buf_set_var(0, "words", "")
 		elseif words == "1" then

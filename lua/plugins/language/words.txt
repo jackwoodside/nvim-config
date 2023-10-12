@@ -9,6 +9,7 @@ Batchelder
 Benczer-Koller
 Bolotin
 BrIcc
+Cavallaro
 Center
 Chamoli
 Coombes
@@ -38,11 +39,13 @@ IJCLab
 Jacobian
 Kibedi
 Kibédi
+Kosyak
 Kotila
 Krane
 LeVine
 Lennard-Jones
 Linardakis
+Lindhard
 Lobanov
 Mantica
 Mathematisk-fysiske
@@ -116,6 +119,8 @@ pelletron
 phoswich
 photodiode
 photodiodes
+picosecond
+picoseconds
 pixie2root
 pnA
 polarisability
