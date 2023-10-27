@@ -71,6 +71,7 @@ lspconfig["ltex"].setup({
 					["\\documentclass[]{}"] = "ignore",
 					["\\note{}"] = "ignore",
 					["\\pgfplotsset{}"] = "ignore",
+					["\\usepgfplotslibrary{}"] = "ignore",
 				},
 				environments = {
 					["align"] = "ignore",
