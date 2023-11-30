@@ -195,13 +195,6 @@ return require("lazy").setup({
 
 	-- Highlighting
 	{
-		"tzachar/highlight-undo.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.highlight-undo")
-		end,
-	},
-	{
 		"echasnovski/mini.hipatterns",
 		event = "BufReadPre",
 		config = function()
