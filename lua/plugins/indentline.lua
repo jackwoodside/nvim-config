@@ -1,4 +1,9 @@
-require("indent_blankline").setup({
-	show_first_indent_level = false,
-	show_current_context = true,
+require("ibl").setup({
+	scope = {
+		show_start = false,
+		show_end = false,
+	},
 })
+
+local hooks = require("ibl.hooks")
+-- hooks.register(hooks.builtin.hide_first_space_indent_level)

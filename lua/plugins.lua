@@ -209,6 +209,7 @@ return require("lazy").setup({
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = { "BufReadPost", "BufNewFile" },
+		main = "ibl",
 		config = function()
 			require("plugins.indentline")
 		end,
