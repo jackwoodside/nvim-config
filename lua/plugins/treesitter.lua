@@ -28,12 +28,6 @@ require("nvim-treesitter.configs").setup({
 		end,
 	},
 
-	-- JoosepAlviste/nvim-ts-context-commentstring
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
-
 	-- nvim-treesitter/nvim-treesitter-refactor
 	refactor = {
 		highlight_definitions = {
@@ -64,3 +58,8 @@ require("nvim-treesitter.configs").setup({
 	},
 })
 require("treesitter-context").setup({ enable = true })
+
+-- JoosepAlviste/nvim-ts-context-commentstring
+require("ts_context_commentstring").setup = {
+	enable_autocmd = false,
+}

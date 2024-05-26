@@ -45,6 +45,9 @@ return require("lazy").setup({
 		config = function()
 			require("plugins.language.dap-ui")
 		end,
+		dependencies = {
+			"nvim-neotest/nvim-nio",
+		},
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
