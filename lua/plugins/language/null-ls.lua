@@ -42,7 +42,7 @@ local latex_writing = {
 nls.register(latex_writing)
 
 -- Nix formatting
-nls.setup({ sources = { nls.builtins.formatting.nixpkgs_fmt } })
+nls.setup({ sources = { nls.builtins.formatting.nixfmt } })
 
 -- Settings
 nls.setup({
