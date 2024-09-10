@@ -4,7 +4,7 @@ local settings = require("plugins.language.settings")
 -- Tools
 require("mason-null-ls").setup({
 	ensure_installed = {
-		"clang-format",
+		-- "clang-format",
 		"latexindent",
 		"shellcheck",
 		"shfmt",
