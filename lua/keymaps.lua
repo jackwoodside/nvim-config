@@ -7,8 +7,8 @@ map("n", "c", '"_c')
 map("n", "x", '"_x')
 
 -- Change leader to ,
-vim.g.mapleader = ","
-vim.g.maplocalleader = ","
+vim.g.mapleader = "<Space>"
+vim.g.maplocalleader = "<Space>"
 
 -- Clear search highlighting
 map("n", "<esc>", "<CMD>nohlsearch<CR>")
