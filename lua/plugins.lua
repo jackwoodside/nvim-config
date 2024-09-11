@@ -257,7 +257,7 @@ return require("lazy").setup({
 	---- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
-        commit = "e8ab7ce9e114d7bab0e6ccf988a0ae2c62e8f014",
+    commit = "51428469218c3b382cab793a2d53c72014627fbe",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.statuscol")
