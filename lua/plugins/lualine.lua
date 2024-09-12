@@ -61,7 +61,7 @@ require("lualine").setup({
 			{ "diff", source = diff_source },
 			{
 				"diagnostics",
-				symbols = { error = " ", warn = " ", info = " ", hint = "󱠂 " },
+				symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			},
 		},
 		lualine_c = {
