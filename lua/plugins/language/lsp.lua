@@ -122,7 +122,7 @@ lspconfig["lua_ls"].setup({
 -- Unconfigured servers
 local servers = {
 	"clangd", -- C++
-	"nil", -- Nix
+	"nil_ls", -- Nix
 }
 
 for _, server in ipairs(servers) do
