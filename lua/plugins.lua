@@ -5,10 +5,22 @@ return require("lazy").setup({
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
-	{ "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.language.lsp")
+		end,
+	},
 
-	{ "jose-elias-alvarez/null-ls.nvim", event = { "BufReadPre", "BufNewFile" } },
-	
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.language.null-ls")
+		end,
+	},
+
 	{ "mfussenegger/nvim-dap", event = { "BufReadPre", "BufNewFile" } },
 	{
 		"rcarriga/nvim-dap-ui",
@@ -228,7 +240,8 @@ return require("lazy").setup({
 	---- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
-        commit = "51428469218c3b382cab793a2d53c72014627fbe",
+		enabled = false,
+		commit = "51428469218c3b382cab793a2d53c72014627fbe",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.statuscol")
