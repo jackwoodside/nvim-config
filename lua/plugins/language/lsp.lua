@@ -131,3 +131,4 @@ for _, server in ipairs(servers) do
         capabilities = lsp_capabilities,
         flags = lsp_flags,
     })
+end
