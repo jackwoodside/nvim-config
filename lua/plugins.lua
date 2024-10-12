@@ -5,40 +5,11 @@ return require("lazy").setup({
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
-	{
-		"williamboman/mason.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("mason").setup({ PATH = "append" })
-		end,
-	},
-
 	{ "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"williamboman/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.lsp")
-		end,
-	},
 
 	{ "jose-elias-alvarez/null-ls.nvim", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"jayp0521/mason-null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.null-ls")
-		end,
-	},
-
+	
 	{ "mfussenegger/nvim-dap", event = { "BufReadPre", "BufNewFile" } },
-	{
-		"jay-babu/mason-nvim-dap.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.dap")
-		end,
-	},
 	{
 		"rcarriga/nvim-dap-ui",
 		event = { "BufReadPre", "BufNewFile" },
@@ -257,7 +228,7 @@ return require("lazy").setup({
 	---- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
-    commit = "51428469218c3b382cab793a2d53c72014627fbe",
+        commit = "51428469218c3b382cab793a2d53c72014627fbe",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.statuscol")

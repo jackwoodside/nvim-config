@@ -1,19 +1,7 @@
 local settings = require("plugins.language.settings")
 
--- Servers
-require("mason-lspconfig").setup({
-	ensure_installed = {
-		"clangd",
-		"julials",
-		"ltex",
-		"lua_ls",
-		"nil_ls",
-		"texlab",
-	},
-})
--- Configure servers
+-- Grab settings
 local lspconfig = require("lspconfig")
-local get_servers = require("mason-lspconfig").get_installed_servers
 local function lsp_attach(client, bufnr)
 	if client.supports_method("textDocument/formatting") then
 		vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
@@ -31,16 +19,7 @@ local lsp_capabilities = settings.capabilities()
 lsp_capabilities.offsetEncoding = { "utf-16" }
 local lsp_flags = settings.flags
 
--- Loop over all servers
-for _, server_name in ipairs(get_servers()) do
-	lspconfig[server_name].setup({
-		on_attach = lsp_attach,
-		capabilities = lsp_capabilities,
-		flags = lsp_flags,
-	})
-end
-
--- Server-specific settings
+-- Configured servers
 ---- LaTeX
 local words = {}
 local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
@@ -128,7 +107,7 @@ lspconfig["lua_ls"].setup({
 				version = "LuaJIT",
 			},
 			diagnostics = {
-				globals = { "vim", "xplr" },
+				globals = { "vim" },
 			},
 			workspace = {
 				library = { os.getenv("VIMRUNTIME") },
@@ -139,3 +118,16 @@ lspconfig["lua_ls"].setup({
 		},
 	},
 })
+
+-- Unconfigured servers
+local servers = {
+    "clangd", -- C++
+    "nil", -- Nix
+}
+
+for _, server in ipairs(servers) do
+    lsp[server].setup({
+        on_attach = lsp_attach,
+        capabilities = lsp_capabilities,
+        flags = lsp_flags,
+    })

@@ -1,19 +1,22 @@
 local nls = require("null-ls")
+local actions = nls.builtins.code_actions
+local formatters = nls.builtins.formatting
 local settings = require("plugins.language.settings")
 
--- Tools
-require("mason-null-ls").setup({
-	ensure_installed = {
-		-- "clang-format",
-		"latexindent",
-		"shellcheck",
-		"shfmt",
-		"stylua",
-	},
-	handlers = {},
-})
+-- Included sources
+local sources = {
+    -- Bash
+    actions.shellcheck
+    formatters.shfmt
+    -- Lua
+    formatters.stylua
+    -- Nix
+    formatters.nixfmt
+}
+nls.setup({ sources = sources })
 
--- Latex sentence splitting
+-- Custom servers
+---- Latex sentence splitting
 local latex_writing = {
 	method = nls.methods.DIAGNOSTICS,
 	filetypes = { "plaintex", "tex" },
@@ -40,9 +43,6 @@ local latex_writing = {
 	},
 }
 nls.register(latex_writing)
-
--- Nix formatting
-nls.setup({ sources = { nls.builtins.formatting.nixfmt } })
 
 -- Settings
 nls.setup({
