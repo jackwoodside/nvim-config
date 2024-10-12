@@ -5,13 +5,13 @@ local settings = require("plugins.language.settings")
 
 -- Included sources
 local sources = {
-    -- Bash
-    actions.shellcheck,
-    formatters.shfmt,
-    -- Lua
-    formatters.stylua,
-    -- Nix
-    formatters.nixfmt,
+	-- Bash
+	actions.shellcheck,
+	formatters.shfmt,
+	-- Lua
+	formatters.stylua,
+	-- Nix
+	formatters.nixfmt,
 }
 nls.setup({ sources = sources })
 
