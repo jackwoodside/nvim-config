@@ -8,6 +8,8 @@ local sources = {
 	-- Bash
 	actions.shellcheck,
 	formatters.shfmt,
+	-- LaTeX
+	formatters.latexindent,
 	-- Lua
 	formatters.stylua,
 	-- Nix
