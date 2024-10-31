@@ -123,6 +123,7 @@ lspconfig["lua_ls"].setup({
 local servers = {
 	"clangd", -- C++
 	"nil_ls", -- Nix
+	"pyright", -- Python
 }
 
 for _, server in ipairs(servers) do

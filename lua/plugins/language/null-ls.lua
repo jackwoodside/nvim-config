@@ -14,6 +14,8 @@ local sources = {
 	formatters.stylua,
 	-- Nix
 	formatters.nixfmt,
+	-- Python
+	formatters.black,
 }
 nls.setup({ sources = sources })
 
