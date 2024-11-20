@@ -18,11 +18,8 @@ ac("BufEnter", {
 
 -- Clear extra latex files
 ac("VimLeave", {
-	callback = function()
-		if ft == "tex" then
-			io.popen("tex-clear " .. fn.shellescape(fn.expand("%:p")))
-		end
-	end,
+	pattern = { "*.tex" },
+	command = "TexlabCleanArtifacts",
 })
 
 -- Start git commits in insert mode
