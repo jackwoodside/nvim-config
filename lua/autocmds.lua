@@ -1,6 +1,4 @@
 local ac = vim.api.nvim_create_autocmd
-local fn = vim.fn
-local ft = vim.bo.filetype
 
 -- Highlight on yank
 ac("TextYankPost", {
@@ -16,11 +14,11 @@ ac("BufEnter", {
 	end,
 })
 
--- Clear extra latex files
-ac("VimLeave", {
-	pattern = { "*.tex" },
-	command = "TexlabCleanArtifacts",
-})
+-- -- Clear extra latex files
+-- ac("VimLeave", {
+-- 	pattern = { "*.tex" },
+-- 	command = "TexlabCleanArtifacts",
+-- })
 
 -- Start git commits in insert mode
 ac("FileType", { pattern = { "gitcommit", "gitrebase" }, command = [[ startinsert | 1 ]] })
