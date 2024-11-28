@@ -5,6 +5,21 @@ return require("lazy").setup({
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
+	{
+		"neovim/nvim-lspconfig",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.language.lsp")
+		end,
+	},
+
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.language.null-ls")
+		end,
+	},
 
 	-- Telescope
 
