@@ -6,10 +6,13 @@ local buf = vim.lsp.buf
 function settings.capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+	capabilities.offsetEncoding = { "utf-16" }
 	capabilities.textDocument.foldingRange = {
 		dynamicRegistration = false,
 		lineFoldingOnly = true,
 	}
+
+	return capabilities
 end
 
 -- Flags
