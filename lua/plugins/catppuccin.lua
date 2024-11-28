@@ -1,7 +1,7 @@
 require("catppuccin").setup({
 	flavour = "mocha",
 	integrations = {
-	  -- TODO Finalise integrations
+		-- TODO Finalise integrations
 	},
 	custom_highlights = function(colors)
 		return {
