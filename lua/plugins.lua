@@ -24,7 +24,7 @@ return require("lazy").setup({
 	{
 		"saghen/blink.cmp",
 		lazy = false,
-		version = 'v0.*',
+		version = "v0.*",
 		config = function()
 			require("plugins.language.cmp")
 		end,
@@ -66,6 +66,15 @@ return require("lazy").setup({
 		lazy = false,
 		config = function()
 			require("plugins.files")
+		end,
+	},
+
+	----Folding
+	{
+		"kevinhwang91/nvim-ufo",
+		dependencies = { "kevinhwang91/promise-async" },
+		config = function()
+			require("plugins.ufo")
 		end,
 	},
 
