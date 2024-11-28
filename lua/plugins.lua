@@ -18,7 +18,7 @@ return require("lazy").setup({
 		priority = 1000,
 		name = "catppuccin",
 		config = function()
-			-- require("plugins.catppuccin")
+			require("plugins.catppuccin")
 			vim.api.nvim_command("colorscheme catppuccin")
 		end,
 	},
@@ -28,7 +28,7 @@ return require("lazy").setup({
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		config = function()
-			-- require("plugins.noice")
+			require("plugins.noice")
 		end,
 	},
 }, {
