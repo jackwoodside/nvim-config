@@ -85,12 +85,28 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Statusline
+	{
+		"echasnovski/mini.statusline",
+		config = function()
+			require("plugins.statusline")
+		end,
+	},
+
 	---- Surroundings
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.pairs")
+		end,
+	},
+
+	---- Tabline
+	{
+		"echasnovski/mini.tabline",
+		config = function()
+			require("plugins.tabline")
 		end,
 	},
 
@@ -106,7 +122,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- UI Overhaul
+	---- UI Overhaul
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
