@@ -21,6 +21,18 @@ return require("lazy").setup({
 		end,
 	},
 
+	{
+		"saghen/blink.cmp",
+		lazy = false,
+		version = 'v0.*',
+		config = function()
+			require("plugins.language.cmp")
+		end,
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
+	},
+
 	-- Telescope
 
 	-- Treesitter

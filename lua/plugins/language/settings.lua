@@ -4,7 +4,8 @@ local buf = vim.lsp.buf
 
 -- Capabilities
 function settings.capabilities()
-	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	-- local capabilities = vim.lsp.protocol.make_client_capabilities()
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 	capabilities.offsetEncoding = { "utf-16" }
 	capabilities.textDocument.foldingRange = {
