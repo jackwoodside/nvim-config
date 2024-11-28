@@ -33,8 +33,6 @@ return require("lazy").setup({
 		},
 	},
 
-	-- Telescope
-
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
@@ -66,6 +64,15 @@ return require("lazy").setup({
 		lazy = false,
 		config = function()
 			require("plugins.files")
+		end,
+	},
+
+	---- Finder
+	{
+		"echasnovski/mini.pick",
+		dependencies = { "echasnovski/mini.icons" },
+		config = function()
+			require("plugins.pick")
 		end,
 	},
 
