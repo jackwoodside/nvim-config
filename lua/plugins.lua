@@ -39,6 +39,15 @@ return require("lazy").setup({
 		},
 	},
 	-- Misc.
+	---- Comments
+	{
+		"echasnovski/mini.comment",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.comment")
+		end,
+	},
+
 	---- File Browser
 	{
 		"echasnovski/mini.files",
