@@ -48,6 +48,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Surroundings
+	{
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.pairs")
+		end,
+	},
+
 	---- Theme
 	{
 		"catppuccin/nvim",
