@@ -97,6 +97,7 @@ return require("lazy").setup({
 	---- Statusline
 	{
 		"echasnovski/mini.statusline",
+		dependencies = { "echasnovski/mini.icons" },
 		config = function()
 			require("plugins.statusline")
 		end,
@@ -114,6 +115,7 @@ return require("lazy").setup({
 	---- Tabline
 	{
 		"echasnovski/mini.tabline",
+		dependencies = { "echasnovski/mini.icons" },
 		config = function()
 			require("plugins.tabline")
 		end,

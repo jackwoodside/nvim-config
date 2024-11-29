@@ -123,50 +123,66 @@ require("catppuccin").setup({
 				bg = colors.mantle,
 			},
 
+			-- Tabline
+			MiniTablineCurrent = {
+				fg = colors.text,
+				bg = colors.surface0,
+				style = { "bold" },
+			},
+			MiniTablineModifiedCurrent = {
+				fg = colors.text,
+				bg = colors.surface0,
+				style = { "bold" },
+			},
+			MiniTablineModifiedVisible = {
+				fg = colors.text,
+				style = {},
+			},
+
 			-- Telescope
-			TelescopeBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-
-			TelescopePreviewNormal = {
-				fg = colors.text,
-				bg = colors.mantle,
-			},
-			TelescopePreviewTitle = {
-				fg = colors.mantle,
-				bg = colors.blue,
-			},
-
-			TelescopeResultsNormal = {
-				fg = colors.text,
-				bg = colors.mantle,
-			},
-			TelescopeResultsTitle = {
-				fg = colors.mantle,
-				bg = colors.green,
-			},
-
-			TelescopePromptBorder = {
-				fg = colors.crust,
-				bg = colors.crust,
-			},
-			TelescopePromptNormal = {
-				fg = colors.text,
-				bg = colors.crust,
-			},
-			TelescopePromptPrefix = {
-				fg = colors.red,
-				bg = colors.crust,
-			},
-			TelescopePromptTitle = {
-				fg = colors.crust,
-				bg = colors.red,
-			},
-
-			TelescopeSelectionCaret = {
-				fg = colors.green,
-			},
+			-- TelescopeBorder = {
+			-- 	fg = colors.mantle,
+			-- 	bg = colors.mantle,
+			-- },
+			--
+			-- TelescopePreviewNormal = {
+			-- 	fg = colors.text,
+			-- 	bg = colors.mantle,
+			-- },
+			-- TelescopePreviewTitle = {
+			-- 	fg = colors.mantle,
+			-- 	bg = colors.blue,
+			-- },
+			--
+			-- TelescopeResultsNormal = {
+			-- 	fg = colors.text,
+			-- 	bg = colors.mantle,
+			-- },
+			-- TelescopeResultsTitle = {
+			-- 	fg = colors.mantle,
+			-- 	bg = colors.green,
+			-- },
+			--
+			-- TelescopePromptBorder = {
+			-- 	fg = colors.crust,
+			-- 	bg = colors.crust,
+			-- },
+			-- TelescopePromptNormal = {
+			-- 	fg = colors.text,
+			-- 	bg = colors.crust,
+			-- },
+			-- TelescopePromptPrefix = {
+			-- 	fg = colors.red,
+			-- 	bg = colors.crust,
+			-- },
+			-- TelescopePromptTitle = {
+			-- 	fg = colors.crust,
+			-- 	bg = colors.red,
+			-- },
+			--
+			-- TelescopeSelectionCaret = {
+			-- 	fg = colors.green,
+			-- },
 		}
 	end,
 })
