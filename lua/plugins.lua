@@ -58,6 +58,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Diffs
+	{
+		"echasnovski/mini.diff",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.diff")
+		end,
+	},
+
 	---- File Browser
 	{
 		"echasnovski/mini.files",
