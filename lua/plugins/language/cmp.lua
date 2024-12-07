@@ -35,6 +35,7 @@ blink.setup({
 
 		["<C-Space>"] = { "select_and_accept", "fallback" },
 
+		["<C-h>"] = { "show", "show_documentation", "hide_documentation" },
 		["<C-PageUp>"] = { "scroll_documentation_up", "fallback" },
 		["<C-PageDown>"] = { "scroll_documentation_down", "fallback" },
 	},
