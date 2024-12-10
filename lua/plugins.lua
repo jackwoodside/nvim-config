@@ -58,6 +58,14 @@ return require("lazy").setup({
 		end,
 	},
 
+	{
+		"echasnovski/mini.icons",
+		event = "VeryLazy",
+		config = function()
+			require("mini.icons").setup()
+		end,
+	},
+
 	---- Comments
 	{
 		"echasnovski/mini.comment",
@@ -88,13 +96,12 @@ return require("lazy").setup({
 	---- Finder
 	{
 		"echasnovski/mini.pick",
-		dependencies = { "echasnovski/mini.icons" },
 		config = function()
 			require("plugins.pick")
 		end,
 	},
 
-	----Folding
+	---- Folding
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = { "kevinhwang91/promise-async" },
@@ -103,10 +110,17 @@ return require("lazy").setup({
 		end,
 	},
 
+	---- Git
+	{
+		"echasnovski/mini-git",
+		config = function()
+			require("plugins.git")
+		end,
+	},
+
 	---- Statusline
 	{
 		"echasnovski/mini.statusline",
-		dependencies = { "echasnovski/mini.icons" },
 		config = function()
 			require("plugins.statusline")
 		end,
@@ -124,7 +138,6 @@ return require("lazy").setup({
 	---- Tabline
 	{
 		"echasnovski/mini.tabline",
-		dependencies = { "echasnovski/mini.icons" },
 		config = function()
 			require("plugins.tabline")
 		end,

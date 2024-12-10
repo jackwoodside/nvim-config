@@ -17,6 +17,7 @@ ac("BufEnter", {
 -- Start git commits in insert mode
 ac("FileType", { pattern = { "gitcommit", "gitrebase" }, command = [[ startinsert | 1 ]] })
 
+-- TODO
 -- Open telescope if no file specified
 -- vim.api.nvim_create_autocmd("VimEnter", {
 -- 	callback = function()
