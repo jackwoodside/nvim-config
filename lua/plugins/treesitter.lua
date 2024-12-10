@@ -42,8 +42,7 @@ require("nvim-treesitter.configs").setup({
 			enable = true,
 			lookahead = true,
 			keymaps = {
-				["ac"] = "@class.outer", -- around class
-				["ic"] = "@class.inner", -- inner class
+				-- Comments are handled by mini.comment
 
 				["af"] = "@function.outer", -- around function
 				["if"] = "@function.inner", -- inner function

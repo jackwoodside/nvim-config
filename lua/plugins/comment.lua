@@ -6,9 +6,9 @@ require("mini.comment").setup({
 	},
 
 	mappings = {
-		comment = "<leader>lc",
-		comment_line = "<leader>lcc",
-		comment_visual = "<leader>lc",
-		textobject = "",
+		comment = "<leader>c",
+		comment_line = "<leader>cc",
+		-- comment_visual = "<leader>c",
+		textobject = "c",
 	},
 })
