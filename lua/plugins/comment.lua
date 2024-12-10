@@ -9,6 +9,6 @@ require("mini.comment").setup({
 		comment = "<leader>c",
 		comment_line = "<leader>cc",
 		-- comment_visual = "<leader>c",
-		textobject = "c",
+		textobject = "gc",
 	},
 })

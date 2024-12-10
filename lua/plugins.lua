@@ -128,6 +128,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Keymaps
+	{
+		"echasnovski/mini.clue",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.clue")
+		end,
+	},
+
 	--- Statusline
 	{
 		"echasnovski/mini.statusline",
