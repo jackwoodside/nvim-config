@@ -45,13 +45,13 @@ require("nvim-treesitter.configs").setup({
 				-- Comments are handled by mini.comment
 
 				["af"] = "@function.outer", -- around function
-				["if"] = "@function.inner", -- inner function
+				["if"] = "@function.inner", -- inside function
 
 				["ai"] = "@conditional.outer", -- around if
-				["ii"] = "@conditional.inner", -- inner if
+				["ii"] = "@conditional.inner", -- inside if
 
 				["al"] = "@loop.outer", -- around loop
-				["il"] = "@loop.inner", -- inner loop
+				["il"] = "@loop.inner", -- inside loop
 			},
 		},
 	},

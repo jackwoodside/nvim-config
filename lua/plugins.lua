@@ -49,7 +49,7 @@ return require("lazy").setup({
 		},
 	},
 	-- Misc.
-	---- Mini Extras
+	--- Mini Extras
 	{
 		"echasnovski/mini.extra",
 		event = "VeryLazy",
@@ -66,7 +66,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Comments
+	--- Comments
 	{
 		"echasnovski/mini.comment",
 		event = "VeryLazy",
@@ -75,7 +75,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Diffs
+	--- Diffs
 	{
 		"echasnovski/mini.diff",
 		event = "VeryLazy",
@@ -84,7 +84,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- File Browser
+	--- File Browser
 	{
 		"echasnovski/mini.files",
 		lazy = false,
@@ -93,7 +93,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Finder
+	--- Finder
 	{
 		"echasnovski/mini.pick",
 		config = function()
@@ -101,7 +101,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Folding
+	--- Folding
 	{
 		"kevinhwang91/nvim-ufo",
 		dependencies = { "kevinhwang91/promise-async" },
@@ -110,7 +110,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Git
+	--- Git
 	{
 		"echasnovski/mini-git",
 		config = function()
@@ -118,7 +118,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Statusline
+	--- Statusline
 	{
 		"echasnovski/mini.statusline",
 		config = function()
@@ -126,7 +126,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Surroundings
+	--- Surroundings
 	{
 		"echasnovski/mini.pairs",
 		event = "VeryLazy",
@@ -135,7 +135,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Tabline
+	--- Tabline
 	{
 		"echasnovski/mini.tabline",
 		config = function()
@@ -143,7 +143,15 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- Theme
+	--- Textobjects
+	{
+		"echasnovski/mini.ai",
+		config = function()
+			require("plugins.ai")
+		end,
+	},
+
+	--- Theme
 	{
 		"catppuccin/nvim",
 		lazy = false,
@@ -155,7 +163,7 @@ return require("lazy").setup({
 		end,
 	},
 
-	---- UI Overhaul
+	--- UI Overhaul
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
