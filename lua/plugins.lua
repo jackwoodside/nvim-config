@@ -1,3 +1,4 @@
+-- TODO check all events
 return require("lazy").setup({
 	-- Dependencies
 	{ "MunifTanjim/nui.nvim", lazy = true },
@@ -63,6 +64,15 @@ return require("lazy").setup({
 		event = "VeryLazy",
 		config = function()
 			require("mini.icons").setup()
+		end,
+	},
+
+	--- Alignment
+	{
+		"echasnovski/mini.align",
+		event = "VeryLazy",
+		config = function()
+			require("mini.align").setup()
 		end,
 	},
 
