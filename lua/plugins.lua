@@ -49,6 +49,15 @@ return require("lazy").setup({
 		},
 	},
 	-- Misc.
+	---- Mini Extras
+	{
+		"echasnovski/mini.extra",
+		event = "VeryLazy",
+		config = function()
+			require("mini.extra").setup()
+		end,
+	},
+
 	---- Comments
 	{
 		"echasnovski/mini.comment",
