@@ -14,7 +14,6 @@ local active_content = function()
 	local filename = statusline.section_filename({})
 
 	local fileinfo = statusline.section_fileinfo({ trunc_width = 99999 }) -- always show short output
-	local location = statusline.section_location({ trunc_width = 99999 }) -- always show short output
 
 	return statusline.combine_groups({
 		{ hl = mode_hl, strings = { string.upper(mode:sub(1, 3)) } },
@@ -23,7 +22,6 @@ local active_content = function()
 
 		"%=", -- Middle split
 		{ hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
-		{ hl = mode_hl, strings = { location } },
 	})
 end
 
