@@ -136,6 +136,14 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Indents
+	{
+		"echasnovski/mini.indentscope",
+		config = function()
+			require("plugins.indents")
+		end,
+	},
+
 	--- Keymaps
 	{
 		"echasnovski/mini.clue",

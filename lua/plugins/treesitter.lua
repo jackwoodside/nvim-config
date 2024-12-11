@@ -44,11 +44,11 @@ require("nvim-treesitter.configs").setup({
 			keymaps = {
 				-- Comments are handled by mini.comment
 
+				["ac"] = "@conditional.outer", -- around conditional
+				["ic"] = "@conditional.inner", -- inside conditional
+
 				["af"] = "@function.outer", -- around function
 				["if"] = "@function.inner", -- inside function
-
-				["ai"] = "@conditional.outer", -- around if
-				["ii"] = "@conditional.inner", -- inside if
 
 				["al"] = "@loop.outer", -- around loop
 				["il"] = "@loop.inner", -- inside loop
