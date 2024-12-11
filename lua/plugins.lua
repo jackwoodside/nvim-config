@@ -128,6 +128,14 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Highlights
+	{
+		"echasnovski/mini.hipatterns",
+		config = function()
+			require("plugins.highlights")
+		end,
+	},
+
 	--- Keymaps
 	{
 		"echasnovski/mini.clue",
