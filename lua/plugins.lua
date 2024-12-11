@@ -79,6 +79,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Animations
+	{
+		"echasnovski/mini.animate",
+		event = "VeryLazy",
+		config = function()
+			require("mini.animate").setup()
+		end,
+	},
+
 	--- Comments
 	{
 		"echasnovski/mini.comment",
