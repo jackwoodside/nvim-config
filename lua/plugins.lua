@@ -162,6 +162,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Notifications
+	{
+		"echasnovski/mini.notify",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.notify")
+		end,
+	},
+
 	--- Statusline
 	{
 		"echasnovski/mini.statusline",
