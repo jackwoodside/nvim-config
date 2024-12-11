@@ -15,10 +15,10 @@ vim.g.maplocalleader = " "
 map("n", "<esc>", "<CMD>nohlsearch<CR>")
 
 -- Move between splits
-map("n", "<A-h>", "<CMD>wincmd h<CR>")
-map("n", "<A-j>", "<CMD>wincmd j<CR>")
-map("n", "<A-k>", "<CMD>wincmd k<CR>")
-map("n", "<A-l>", "<CMD>wincmd l<CR>")
+map("n", "<C-h>", "<CMD>wincmd h<CR>")
+map("n", "<C-j>", "<CMD>wincmd j<CR>")
+map("n", "<C-k>", "<CMD>wincmd k<CR>")
+map("n", "<C-l>", "<CMD>wincmd l<CR>")
 
 -- Buffer switching
 map("n", "<Tab>", "<CMD>bn<CR>")

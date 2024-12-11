@@ -175,7 +175,7 @@ return require("lazy").setup({
 		"echasnovski/mini.move",
 		event = "VeryLazy",
 		config = function()
-			require("plugins.move")
+			require("mini.move").setup()
 		end,
 	},
 
