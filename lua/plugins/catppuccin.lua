@@ -1,7 +1,6 @@
 require("catppuccin").setup({
 	flavour = "mocha",
 	integrations = {
-		-- TODO Finalise integrations
 		blink_cmp = true,
 		mini = {
 			enabled = true,
@@ -27,6 +26,9 @@ require("catppuccin").setup({
 			},
 		},
 		noice = true,
+		treesitter = true,
+		treesitter_context = true,
+		ufo = true,
 	},
 
 	custom_highlights = function(colors)
@@ -37,7 +39,7 @@ require("catppuccin").setup({
 				bg = colors.mantle,
 			},
 			MiniClueTitle = {
-				fg = colors.mantle,
+				fg = colors.text,
 				bg = colors.mantle,
 			},
 
@@ -85,44 +87,6 @@ require("catppuccin").setup({
 				bg = colors.mantle,
 			},
 
-			-- Notify
-			NotifyERRORBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-			NotifyWARNBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-			NotifyINFOBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-			NotifyDEBUGBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-			NotifyTRACEBorder = {
-				fg = colors.mantle,
-				bg = colors.mantle,
-			},
-
-			NotifyERRORBody = {
-				bg = colors.mantle,
-			},
-			NotifyWARNBody = {
-				bg = colors.mantle,
-			},
-			NotifyINFOBody = {
-				bg = colors.mantle,
-			},
-			NotifyDEBUGBody = {
-				bg = colors.mantle,
-			},
-			NotifyTRACEBody = {
-				bg = colors.mantle,
-			},
-
 			-- Tabline
 			MiniTablineCurrent = {
 				fg = colors.text,
@@ -138,51 +102,6 @@ require("catppuccin").setup({
 				fg = colors.text,
 				style = {},
 			},
-
-			-- Telescope
-			-- TelescopeBorder = {
-			-- 	fg = colors.mantle,
-			-- 	bg = colors.mantle,
-			-- },
-			--
-			-- TelescopePreviewNormal = {
-			-- 	fg = colors.text,
-			-- 	bg = colors.mantle,
-			-- },
-			-- TelescopePreviewTitle = {
-			-- 	fg = colors.mantle,
-			-- 	bg = colors.blue,
-			-- },
-			--
-			-- TelescopeResultsNormal = {
-			-- 	fg = colors.text,
-			-- 	bg = colors.mantle,
-			-- },
-			-- TelescopeResultsTitle = {
-			-- 	fg = colors.mantle,
-			-- 	bg = colors.green,
-			-- },
-			--
-			-- TelescopePromptBorder = {
-			-- 	fg = colors.crust,
-			-- 	bg = colors.crust,
-			-- },
-			-- TelescopePromptNormal = {
-			-- 	fg = colors.text,
-			-- 	bg = colors.crust,
-			-- },
-			-- TelescopePromptPrefix = {
-			-- 	fg = colors.red,
-			-- 	bg = colors.crust,
-			-- },
-			-- TelescopePromptTitle = {
-			-- 	fg = colors.crust,
-			-- 	bg = colors.red,
-			-- },
-			--
-			-- TelescopeSelectionCaret = {
-			-- 	fg = colors.green,
-			-- },
 		}
 	end,
 })
