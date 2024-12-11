@@ -153,6 +153,15 @@ return require("lazy").setup({
 		end,
 	},
 
+	--- Moving
+	{
+		"echasnovski/mini.move",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.move")
+		end,
+	},
+
 	--- Statusline
 	{
 		"echasnovski/mini.statusline",
