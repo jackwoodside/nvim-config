@@ -5,7 +5,6 @@
 return require("lazy").setup({
 	-- Dependencies
 	{ "MunifTanjim/nui.nvim", lazy = true },
-	{ "nvim-lua/popup.nvim", lazy = true },
 	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
@@ -194,6 +193,15 @@ return require("lazy").setup({
 		event = "VimEnter",
 		config = function()
 			require("plugins.starter")
+		end,
+	},
+
+	--- Statuscolumn
+	{
+		"luukvbaal/statuscol.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.statuscolumn")
 		end,
 	},
 

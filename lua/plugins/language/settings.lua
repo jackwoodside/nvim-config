@@ -57,20 +57,24 @@ function settings.mappings(bufnr)
 end
 
 -- Diagnostic visuals
-vim.fn.sign_define("DiagnosticSignError", { text = "", texthl = "LspDiagnosticsDefaultError" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = "", texthl = "LspDiagnosticsDefaultWarning" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = "", texthl = "LspDiagnosticsDefaultInformation" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "󱠂", texthl = "LspDiagnosticsDefaultHint" })
 vim.diagnostic.config({
 	float = {
 		header = "",
 		suffix = "",
 	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󱠂",
+		},
+	},
 	severity_sort = true,
+	update_in_insert = false,
 	virtual_text = {
 		prefix = "● ",
 	},
-	update_in_insert = false,
 })
 
 return settings
