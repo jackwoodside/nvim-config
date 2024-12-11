@@ -188,6 +188,14 @@ return require("lazy").setup({
 		end,
 	},
 
+	{
+		"echasnovski/mini.surround",
+		event = "VeryLazy",
+		config = function()
+			require("plugins.surround")
+		end,
+	},
+
 	--- Tabline
 	{
 		"echasnovski/mini.tabline",
