@@ -1,4 +1,7 @@
 -- TODO check all events
+-- TODO leap
+-- TODO statuscolumn
+-- TODO toggleterm
 return require("lazy").setup({
 	-- Dependencies
 	{ "MunifTanjim/nui.nvim", lazy = true },
@@ -168,6 +171,15 @@ return require("lazy").setup({
 		event = "VeryLazy",
 		config = function()
 			require("plugins.notify")
+		end,
+	},
+
+	--- Startscreen
+	{
+		"echasnovski/mini.starter",
+		event = "VimEnter",
+		config = function()
+			require("plugins.starter")
 		end,
 	},
 
