@@ -27,7 +27,7 @@ return require("lazy").setup({
 
 	{
 		"saghen/blink.cmp",
-		lazy = false,
+		event = { "BufReadPre", "BufNewFile" },
 		version = "v0.*",
 		config = function()
 			require("plugins.language.cmp")
@@ -40,7 +40,7 @@ return require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
-		event = "VimEnter",
+		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
@@ -100,7 +100,7 @@ return require("lazy").setup({
 	--- File Browser
 	{
 		"echasnovski/mini.files",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 			require("plugins.files")
 		end,
@@ -109,6 +109,7 @@ return require("lazy").setup({
 	--- Finder
 	{
 		"echasnovski/mini.pick",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.pick")
 		end,
@@ -117,6 +118,7 @@ return require("lazy").setup({
 	--- Folding
 	{
 		"kevinhwang91/nvim-ufo",
+		event = "VeryLazy",
 		dependencies = { "kevinhwang91/promise-async" },
 		config = function()
 			require("plugins.ufo")
@@ -126,6 +128,7 @@ return require("lazy").setup({
 	--- Git
 	{
 		"echasnovski/mini-git",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.git")
 		end,
@@ -134,6 +137,7 @@ return require("lazy").setup({
 	--- Highlights
 	{
 		"echasnovski/mini.hipatterns",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.highlights")
 		end,
@@ -142,6 +146,7 @@ return require("lazy").setup({
 	--- Indents
 	{
 		"echasnovski/mini.indentscope",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.indents")
 		end,
@@ -186,6 +191,7 @@ return require("lazy").setup({
 	--- Statusline
 	{
 		"echasnovski/mini.statusline",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.statusline")
 		end,
@@ -211,6 +217,7 @@ return require("lazy").setup({
 	--- Tabline
 	{
 		"echasnovski/mini.tabline",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.tabline")
 		end,
@@ -219,6 +226,7 @@ return require("lazy").setup({
 	--- Textobjects
 	{
 		"echasnovski/mini.ai",
+		event = "VeryLazy",
 		config = function()
 			require("plugins.ai")
 		end,
