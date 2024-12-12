@@ -199,7 +199,7 @@ return require("lazy").setup({
 	--- Statuscolumn
 	{
 		"luukvbaal/statuscol.nvim",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.statuscolumn")
 		end,
