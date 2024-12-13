@@ -18,10 +18,6 @@ blink.setup({
 			enabled = true,
 		},
 
-		keyword = {
-			range = "full",
-		},
-
 		list = {
 			selection = "auto_insert",
 		},
