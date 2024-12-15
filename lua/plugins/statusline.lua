@@ -1,4 +1,5 @@
 -- TODO add latex wordcount
+-- TODO add formatting disabled indicator
 local statusline = require("mini.statusline")
 
 local active_content = function()
@@ -21,6 +22,7 @@ local active_content = function()
 		{ hl = "MiniStatuslineFilename", strings = { filename } },
 
 		"%=", -- Middle split
+
 		{ hl = "MiniStatuslineFileinfo", strings = { fileinfo } },
 	})
 end

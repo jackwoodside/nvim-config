@@ -16,13 +16,13 @@ return require("lazy").setup({
 		end,
 	},
 
-	-- {
-	-- 	"stevearc/conform.nvim",
-	-- 	event = { "BufReadPre", "BufNewFile" },
-	-- 	config = function()
-	-- 		require("plugins.language.conform")
-	-- 	end,
-	-- },
+	{
+		"stevearc/conform.nvim",
+		event = { "BufReadPre", "BufNewFile" },
+		config = function()
+			require("plugins.language.conform")
+		end,
+	},
 
 	{
 		"saghen/blink.cmp",
