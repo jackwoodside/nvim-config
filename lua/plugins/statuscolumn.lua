@@ -5,9 +5,9 @@ require("statuscol").setup({
 
 	segments = {
 		-- Folds
-		-- {
-		-- 	text = { builtin.foldfunc },
-		-- },
+		{
+			text = { builtin.foldfunc },
+		},
 
 		-- Diagnostics
 		{

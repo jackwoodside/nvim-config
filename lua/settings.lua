@@ -22,8 +22,8 @@ o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
 vim.opt.fillchars = {
-	foldclose = "",
-	foldopen = "",
+	foldclose = "󰅂",
+	foldopen = "󰅀",
 	foldsep = " ",
 }
 
