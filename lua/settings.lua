@@ -32,7 +32,7 @@ o.tabstop = 4
 o.softtabstop = -1
 o.shiftwidth = 0
 opt.list = true
-opt.listchars = { tab = "󰌒 ", trail = "·", nbsp = "󱁐" }
+opt.listchars = { tab = "  ", trail = "·", nbsp = "󱁐" }
 
 -- Clipboard
 o.clipboard = "unnamedplus"

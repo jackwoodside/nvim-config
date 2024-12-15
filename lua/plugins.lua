@@ -1,6 +1,6 @@
 -- TODO check all events
+-- TODO DAP
 -- TODO leap
--- TODO statuscolumn
 -- TODO toggleterm
 return require("lazy").setup({
 	-- Dependencies
@@ -16,13 +16,13 @@ return require("lazy").setup({
 		end,
 	},
 
-	{
-		"jose-elias-alvarez/null-ls.nvim",
-		event = { "BufReadPre", "BufNewFile" },
-		config = function()
-			require("plugins.language.null-ls")
-		end,
-	},
+	-- {
+	-- 	"stevearc/conform.nvim",
+	-- 	event = { "BufReadPre", "BufNewFile" },
+	-- 	config = function()
+	-- 		require("plugins.language.conform")
+	-- 	end,
+	-- },
 
 	{
 		"saghen/blink.cmp",

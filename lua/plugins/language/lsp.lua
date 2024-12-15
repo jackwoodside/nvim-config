@@ -1,25 +1,63 @@
-local settings = require("plugins.language.settings")
-
--- Grab settings
-local lspconfig = require("lspconfig")
-local function lsp_attach(client, bufnr)
-	if client.supports_method("textDocument/formatting") then
-		vim.api.nvim_clear_autocmds({ group = settings.augroup, buffer = bufnr })
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			group = settings.augroup,
-			buffer = bufnr,
-			callback = function()
-				settings.formatting(bufnr)
-			end,
-		})
-	end
-	settings.mappings(bufnr)
+local buf = vim.lsp.buf
+local diagnostic = vim.diagnostic
+local function map(m, k, v, b, d)
+	vim.keymap.set(m, k, v, { buffer = b, desc = d, silent = true })
 end
-local lsp_capabilities = settings.capabilities()
-local lsp_flags = settings.flags
+
+local lspconfig = require("lspconfig")
+
+-- Settings
+local function lsp_attach(_, bufnr) -- _ is client
+	map("n", "[d", diagnostic.goto_prev, bufnr, "Next diagnostic")
+	map("n", "]d", diagnostic.goto_next, bufnr, "Previous diagnostic")
+
+	map("n", "gd", buf.definition, bufnr, "Go to definition")
+	map("n", "gD", buf.declaration, bufnr, "Go to declaration")
+	map("n", "gi", buf.implementation, bufnr, "Go to implementation")
+
+	map("n", "<leader>la", buf.code_action, bufnr, "Action")
+	-- map("n", "<leader>la", require("actions-preview").code_actions, bufnr, "Action")
+	map("n", "<leader>li", buf.hover, bufnr, "Information")
+	map("n", "<leader>lr", buf.rename, bufnr, "Rename")
+	map("n", "<leader>ls", buf.signature_help, bufnr, "Signature")
+end
+local lsp_capabilities = function()
+	local capabilities = require("blink.cmp").get_lsp_capabilities()
+
+	capabilities.offsetEncoding = { "utf-16" }
+	capabilities.textDocument.foldingRange = {
+		dynamicRegistration = false,
+		lineFoldingOnly = true,
+	}
+
+	return capabilities
+end
+local lsp_flags = {
+	allow_incremental_sync = true,
+	debounce_text_changes = 200,
+}
+diagnostic.config({
+	float = {
+		header = "",
+		suffix = "",
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "",
+			[vim.diagnostic.severity.WARN] = "",
+			[vim.diagnostic.severity.INFO] = "",
+			[vim.diagnostic.severity.HINT] = "󱠂",
+		},
+	},
+	severity_sort = true,
+	update_in_insert = false,
+	virtual_text = {
+		prefix = "● ",
+	},
+})
 
 -- Configured servers
----- LaTeX
+--- LaTeX
 local words = {}
 local path = vim.fn.stdpath("config") .. "/lua/plugins/language/words.txt"
 for word in io.open(path, "r"):lines() do
@@ -27,8 +65,8 @@ for word in io.open(path, "r"):lines() do
 end
 
 lspconfig["ltex"].setup({
-	on_attach = lsp_attach,
-	capabilities = lsp_capabilities,
+	on_attach = lsp_attach(),
+	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
 	filetypes = { "bib", "plaintex", "tex" },
 	settings = {
@@ -61,8 +99,8 @@ lspconfig["ltex"].setup({
 })
 
 lspconfig["texlab"].setup({
-	on_attach = lsp_attach,
-	capabilities = lsp_capabilities,
+	on_attach = lsp_attach(),
+	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
 	settings = {
 		texlab = {
@@ -92,10 +130,10 @@ lspconfig["texlab"].setup({
 	},
 })
 
----- Lua
+--- Lua
 lspconfig["lua_ls"].setup({
-	on_attach = lsp_attach,
-	capabilities = lsp_capabilities,
+	on_attach = lsp_attach(),
+	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
 	settings = {
 		Lua = {
@@ -128,8 +166,8 @@ local servers = {
 
 for _, server in ipairs(servers) do
 	lspconfig[server].setup({
-		on_attach = lsp_attach,
-		capabilities = lsp_capabilities,
+		on_attach = lsp_attach(),
+		capabilities = lsp_capabilities(),
 		flags = lsp_flags,
 	})
 end
