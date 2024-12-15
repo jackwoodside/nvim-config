@@ -1,4 +1,5 @@
 local o = vim.o
+local opt = vim.opt
 
 o.termguicolors = true
 
@@ -21,11 +22,7 @@ o.foldcolumn = "1"
 o.foldlevel = 99
 o.foldlevelstart = 99
 o.foldenable = true
-vim.opt.fillchars = {
-	foldclose = "󰅂",
-	foldopen = "󰅀",
-	foldsep = " ",
-}
+opt.fillchars = { foldclose = "󰅂", foldopen = "󰅀", foldsep = " " }
 
 -- Tabs and indents
 o.expandtab = true
@@ -34,6 +31,8 @@ o.wrap = true
 o.tabstop = 4
 o.softtabstop = -1
 o.shiftwidth = 0
+opt.list = true
+opt.listchars = { tab = "󰌒 ", trail = "·", nbsp = "󱁐" }
 
 -- Clipboard
 o.clipboard = "unnamedplus"
