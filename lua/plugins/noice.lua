@@ -1,3 +1,4 @@
+-- Reconfigure
 require("noice").setup({
 	cmdline = {
 		enabled = true,

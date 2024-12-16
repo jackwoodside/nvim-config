@@ -5,7 +5,6 @@
 return require("lazy").setup({
 	-- Dependencies
 	{ "MunifTanjim/nui.nvim", lazy = true },
-	{ "nvim-lua/plenary.nvim", lazy = true },
 
 	-- LSP
 	{
