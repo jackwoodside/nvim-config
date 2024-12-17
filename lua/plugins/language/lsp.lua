@@ -16,7 +16,6 @@ local function lsp_attach(_, bufnr) -- _ is client
 	map("n", "gi", buf.implementation, bufnr, "Go to implementation")
 
 	map("n", "<leader>la", buf.code_action, bufnr, "Action")
-	-- map("n", "<leader>la", require("actions-preview").code_actions, bufnr, "Action")
 	map("n", "<leader>li", buf.hover, bufnr, "Information")
 	map("n", "<leader>lr", buf.rename, bufnr, "Rename")
 	map("n", "<leader>ls", buf.signature_help, bufnr, "Signature")

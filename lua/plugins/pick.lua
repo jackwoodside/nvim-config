@@ -21,6 +21,7 @@ pick.setup({
 		config = win_config,
 	},
 })
+vim.ui.select = pick.ui_select
 
 local function map(m, k, v, d)
 	vim.keymap.set(m, k, v, { desc = d, silent = true })
