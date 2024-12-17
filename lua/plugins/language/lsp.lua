@@ -140,14 +140,11 @@ lspconfig["lua_ls"].setup({
 				enable = true,
 				showWord = "Disable",
 			},
-			runtime = {
-				version = "LuaJIT",
-			},
 			diagnostics = {
 				globals = { "vim" },
 			},
 			workspace = {
-				library = { os.getenv("VIMRUNTIME") },
+				library = { vim.env.VIMRUNTIME, "${3rd}/luv/library" },
 			},
 			telemetry = {
 				enable = false,
