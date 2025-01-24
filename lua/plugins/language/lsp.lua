@@ -155,6 +155,7 @@ lspconfig["lua_ls"].setup({
 
 -- Unconfigured servers
 local servers = {
+	"bashls", -- Bash
 	"clangd", -- C++
 	"nil_ls", -- Nix
 	"pyright", -- Python
