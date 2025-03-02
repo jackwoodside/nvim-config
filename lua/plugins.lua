@@ -216,7 +216,7 @@ return require("lazy").setup({
 	--- Surroundings
 	{
 		"echasnovski/mini.pairs",
-		event = "VeryLazy",
+		event = { "BufReadPre", "BufNewFile" }, -- for autocmds
 		config = function()
 			require("plugins.pairs")
 		end,
