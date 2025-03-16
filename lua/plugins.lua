@@ -103,6 +103,13 @@ return require("lazy").setup({
 			require("plugins.diff")
 		end,
 	},
+	{
+		"sindrets/diffview.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("diffview").setup()
+		end,
+	},
 
 	--- File Browser
 	{
