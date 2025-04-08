@@ -30,6 +30,8 @@ blink.setup({
 	},
 
 	keymap = {
+		preset = "none",
+
 		["<Tab>"] = { "select_next", "fallback" },
 		["<S-Tab>"] = { "select_prev", "fallback" },
 		["<C-space>"] = { "select_and_accept" },
