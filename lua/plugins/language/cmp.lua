@@ -10,7 +10,7 @@ blink.setup({
 		documentation = {
 			auto_show = true,
 			auto_show_delay_ms = 1000,
-			update_delay_ms = 0,
+			update_delay_ms = 50,
 			treesitter_highlighting = true,
 		},
 
@@ -19,7 +19,7 @@ blink.setup({
 		},
 
 		list = {
-			selection = "auto_insert",
+			selection = { preselect = false, auto_insert = true },
 		},
 
 		menu = {
