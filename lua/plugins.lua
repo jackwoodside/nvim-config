@@ -2,6 +2,7 @@
 -- TODO DAP
 -- TODO leap
 -- TODO toggleterm
+-- TODO replace matchparen
 return require("lazy").setup({
 	-- Dependencies
 	{ "MunifTanjim/nui.nvim", lazy = true },
@@ -283,7 +284,7 @@ return require("lazy").setup({
 			disabled_plugins = {
 				"gzip",
 				"matchit",
-				"matchparen",
+				-- "matchparen",
 				"netrwPlugin",
 				"tarPlugin",
 				"tohtml",
