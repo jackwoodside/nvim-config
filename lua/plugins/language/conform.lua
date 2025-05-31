@@ -1,10 +1,9 @@
-local va = vim.api
-
 local conform = require("conform")
 
 conform.setup({
 	formatters_by_ft = {
 		cpp = { "clang-format" },
+		json = { "jq" },
 		lua = { "stylua" },
 		nix = { "nixfmt" },
 		python = { "black" },
