@@ -10,6 +10,11 @@ conform.setup({
 		sh = { "shfmt" },
 		tex = { "latexindent" },
 	},
+	formatters = {
+		latexindent = {
+			append_args = { "-g", "/tmp/latexindent.log" },
+		},
+	},
 
 	format_on_save = {
 		timeout_ms = 2000,
