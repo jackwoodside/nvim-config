@@ -84,9 +84,12 @@ lspconfig["ltex"].setup({
 					["\\author{}"] = "ignore",
 					["\\bibliographystyle{}"] = "ignore",
 					["\\documentclass[]{}"] = "ignore",
+					["\\institute[]{}"] = "ignore",
 					["\\note{}"] = "ignore",
 					["\\pgfplotsset{}"] = "ignore",
 					["\\usepgfplotslibrary{}"] = "ignore",
+					["\\usecolortheme{}"] = "ignore",
+					["\\usetheme{}"] = "ignore",
 				},
 				environments = {
 					["align"] = "ignore",
@@ -105,6 +108,7 @@ lspconfig["texlab"].setup({
 		texlab = {
 			build = {
 				args = { "-pdf", "-shell-escape", "-interaction=nonstopmode", "-synctex=1", "%f" },
+				-- args = { "-pdflua", "-shell-escape", "-interaction=nonstopmode", "-synctex=1", "%f" },
 				onSave = true,
 				forwardSearchAfter = true,
 			},
