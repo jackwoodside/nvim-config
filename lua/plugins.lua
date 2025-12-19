@@ -54,7 +54,7 @@ return require("lazy").setup({
 	-- Misc.
 	--- Mini Extras
 	{
-		"echasnovski/mini.extra",
+		"nvim-mini/mini.extra",
 		event = "VeryLazy",
 		config = function()
 			require("mini.extra").setup()
@@ -62,7 +62,7 @@ return require("lazy").setup({
 	},
 
 	{
-		"echasnovski/mini.icons",
+		"nvim-mini/mini.icons",
 		event = "VeryLazy",
 		config = function()
 			require("mini.icons").setup()
@@ -71,7 +71,7 @@ return require("lazy").setup({
 
 	--- Alignment
 	{
-		"echasnovski/mini.align",
+		"nvim-mini/mini.align",
 		event = "VeryLazy",
 		config = function()
 			require("mini.align").setup()
@@ -80,7 +80,7 @@ return require("lazy").setup({
 
 	--- Animations
 	{
-		"echasnovski/mini.animate",
+		"nvim-mini/mini.animate",
 		event = "VeryLazy",
 		config = function()
 			require("mini.animate").setup()
@@ -89,7 +89,7 @@ return require("lazy").setup({
 
 	--- Comments
 	{
-		"echasnovski/mini.comment",
+		"nvim-mini/mini.comment",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.comment")
@@ -98,7 +98,7 @@ return require("lazy").setup({
 
 	--- Diffs
 	{
-		"echasnovski/mini.diff",
+		"nvim-mini/mini.diff",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.diff")
@@ -114,7 +114,7 @@ return require("lazy").setup({
 
 	--- File Browser
 	{
-		"echasnovski/mini.files",
+		"nvim-mini/mini.files",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.files")
@@ -123,7 +123,7 @@ return require("lazy").setup({
 
 	--- Finder
 	{
-		"echasnovski/mini.pick",
+		"nvim-mini/mini.pick",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.pick")
@@ -142,7 +142,7 @@ return require("lazy").setup({
 
 	--- Git
 	{
-		"echasnovski/mini-git",
+		"nvim-mini/mini-git",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.git")
@@ -151,7 +151,7 @@ return require("lazy").setup({
 
 	--- Highlights
 	{
-		"echasnovski/mini.hipatterns",
+		"nvim-mini/mini.hipatterns",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.highlights")
@@ -160,7 +160,7 @@ return require("lazy").setup({
 
 	--- Indents
 	{
-		"echasnovski/mini.indentscope",
+		"nvim-mini/mini.indentscope",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.indents")
@@ -169,7 +169,7 @@ return require("lazy").setup({
 
 	--- Keymaps
 	{
-		"echasnovski/mini.clue",
+		"nvim-mini/mini.clue",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.clue")
@@ -178,7 +178,7 @@ return require("lazy").setup({
 
 	--- Moving
 	{
-		"echasnovski/mini.move",
+		"nvim-mini/mini.move",
 		event = "VeryLazy",
 		config = function()
 			require("mini.move").setup()
@@ -187,7 +187,7 @@ return require("lazy").setup({
 
 	--- Notifications
 	{
-		"echasnovski/mini.notify",
+		"nvim-mini/mini.notify",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.notify")
@@ -196,7 +196,7 @@ return require("lazy").setup({
 
 	--- Startscreen
 	{
-		"echasnovski/mini.starter",
+		"nvim-mini/mini.starter",
 		event = "VimEnter",
 		config = function()
 			require("plugins.starter")
@@ -214,7 +214,7 @@ return require("lazy").setup({
 
 	--- Statusline
 	{
-		"echasnovski/mini.statusline",
+		"nvim-mini/mini.statusline",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.statusline")
@@ -223,7 +223,7 @@ return require("lazy").setup({
 
 	--- Surroundings
 	{
-		"echasnovski/mini.pairs",
+		"nvim-mini/mini.pairs",
 		event = { "BufReadPre", "BufNewFile" }, -- for autocmds
 		config = function()
 			require("plugins.pairs")
@@ -231,7 +231,7 @@ return require("lazy").setup({
 	},
 
 	{
-		"echasnovski/mini.surround",
+		"nvim-mini/mini.surround",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.surround")
@@ -240,7 +240,7 @@ return require("lazy").setup({
 
 	--- Tabline
 	{
-		"echasnovski/mini.tabline",
+		"nvim-mini/mini.tabline",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.tabline")
@@ -249,7 +249,7 @@ return require("lazy").setup({
 
 	--- Textobjects
 	{
-		"echasnovski/mini.ai",
+		"nvim-mini/mini.ai",
 		event = "VeryLazy",
 		config = function()
 			require("plugins.ai")
