@@ -4,12 +4,13 @@ local function map(m, k, v, b, d)
 	vim.keymap.set(m, k, v, { buffer = b, desc = d, silent = true })
 end
 
-local lspconfig = require("lspconfig")
+local lspconfig = vim.lsp.config
+local lspenable = vim.lsp.enable
 
 -- Settings
 local function lsp_attach(_, bufnr) -- _ is client
-	map("n", "[d", diagnostic.goto_prev, bufnr, "Next diagnostic")
-	map("n", "]d", diagnostic.goto_next, bufnr, "Previous diagnostic")
+	-- map("n", "[d", diagnostic.jump({ count = 1, float = true }), bufnr, "Next diagnostic")
+	-- map("n", "]d", diagnostic.jump({ count = -1, float = true }), bufnr, "Previous diagnostic")
 
 	map("n", "gd", buf.definition, bufnr, "Go to definition")
 	map("n", "gD", buf.declaration, bufnr, "Go to declaration")
@@ -63,7 +64,7 @@ for word in io.open(path, "r"):lines() do
 	table.insert(words, word)
 end
 
-lspconfig["ltex"].setup({
+lspconfig["ltex"] = {
 	on_attach = lsp_attach(),
 	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
@@ -98,9 +99,10 @@ lspconfig["ltex"].setup({
 			},
 		},
 	},
-})
+}
+lspenable("ltex")
 
-lspconfig["texlab"].setup({
+lspconfig["texlab"] = {
 	on_attach = lsp_attach(),
 	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
@@ -131,10 +133,11 @@ lspconfig["texlab"].setup({
 			},
 		},
 	},
-})
+}
+lspenable("texlab")
 
 --- Lua
-lspconfig["lua_ls"].setup({
+lspconfig["lua_ls"] = {
 	on_attach = lsp_attach(),
 	capabilities = lsp_capabilities(),
 	flags = lsp_flags,
@@ -155,7 +158,8 @@ lspconfig["lua_ls"].setup({
 			},
 		},
 	},
-})
+}
+lspenable("lua_ls")
 
 -- Unconfigured servers
 local servers = {
@@ -166,9 +170,10 @@ local servers = {
 }
 
 for _, server in ipairs(servers) do
-	lspconfig[server].setup({
+	lspconfig[server] = {
 		on_attach = lsp_attach(),
 		capabilities = lsp_capabilities(),
 		flags = lsp_flags,
-	})
+	}
+	lspenable(server)
 end
