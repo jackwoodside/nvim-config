@@ -1,12 +1,8 @@
 require("catppuccin").setup({
 	flavour = "mocha",
+	auto_integrations = true,
 	integrations = {
-		blink_cmp = true,
-		mini = {
-			enabled = true,
-		},
 		native_lsp = {
-			enabled = true,
 			virtual_text = {
 				errors = { "italic" },
 				hints = { "italic" },
@@ -25,10 +21,6 @@ require("catppuccin").setup({
 				background = true,
 			},
 		},
-		noice = true,
-		treesitter = true,
-		treesitter_context = true,
-		ufo = true,
 	},
 
 	custom_highlights = function(colors)
