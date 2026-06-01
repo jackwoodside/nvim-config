@@ -26,8 +26,8 @@ return require("lazy").setup({
 
 	{
 		"saghen/blink.cmp",
-		event = { "BufReadPre", "BufNewFile" },
 		version = "v0.*",
+		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.cmp")
 		end,
@@ -39,17 +39,12 @@ return require("lazy").setup({
 	-- Treesitter
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
 		event = { "BufReadPre", "BufNewFile" },
 		build = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
 		end,
-		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter-context" },
-			{ "JoosepAlviste/nvim-ts-context-commentstring" },
-			{ "nvim-treesitter/nvim-treesitter-refactor" },
-			{ "nvim-treesitter/nvim-treesitter-textobjects" },
-		},
 	},
 	-- Misc.
 	--- Mini Extras
