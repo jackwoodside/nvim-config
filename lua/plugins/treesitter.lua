@@ -1,18 +1,25 @@
-require("nvim-treesitter").setup({
-	auto_install = true,
-	ensure_installed = {
-		"bash",
-		"c",
-		"git_rebase",
-		"gitattributes",
-		"gitcommit",
-		"json",
-		"lua",
-		"markdown",
-		"markdown_inline",
-		"regex",
-		"vim",
-		"vimdoc",
+local ts = require("nvim-treesitter")
+
+ts.install({
+	"bash",
+	"c",
+	"diff",
+	"git_rebase",
+	"gitattributes",
+	"gitcommit",
+	"json",
+	"lua",
+	"markdown",
+	"markdown_inline",
+	"query",
+	"regex",
+	"vim",
+	"vimdoc",
+})
+
+ts.setup({
+	folds = {
+		enable = true,
 	},
 
 	highlight = {
@@ -27,37 +34,26 @@ require("nvim-treesitter").setup({
 		end,
 	},
 
-	-- nvim-treesitter/nvim-treesitter-refactor
-	refactor = {
-		highlight_definitions = {
-			enable = true,
-			clear_on_cursor_move = false,
-		},
+	indent = {
+		enable = true,
 	},
+})
 
-	-- nvim-treesitter/nvim-treesitter-textobjects
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true,
-			keymaps = {
-				-- Comments are handled by mini.comment
+require("nvim-treesitter-textobjects").setup({
+	select = {
+		enable = true,
+		lookahead = true,
+		keymaps = {
+			-- Comments are handled by mini.comment
 
-				["ac"] = "@conditional.outer", -- around conditional
-				["ic"] = "@conditional.inner", -- inside conditional
+			["ac"] = "@conditional.outer", -- around conditional
+			["ic"] = "@conditional.inner", -- inside conditional
 
-				["af"] = "@function.outer", -- around function
-				["if"] = "@function.inner", -- inside function
+			["af"] = "@function.outer", -- around function
+			["if"] = "@function.inner", -- inside function
 
-				["al"] = "@loop.outer", -- around loop
-				["il"] = "@loop.inner", -- inside loop
-			},
+			["al"] = "@loop.outer", -- around loop
+			["il"] = "@loop.inner", -- inside loop
 		},
 	},
 })
-require("treesitter-context").setup({ enable = true })
-
--- JoosepAlviste/nvim-ts-context-commentstring
-require("ts_context_commentstring").setup = {
-	enable_autocmd = false,
-}

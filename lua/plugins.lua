@@ -46,9 +46,6 @@ return require("lazy").setup({
 			require("plugins.treesitter")
 		end,
 		dependencies = {
-			{ "nvim-treesitter/nvim-treesitter-context" },
-			{ "JoosepAlviste/nvim-ts-context-commentstring" },
-			{ "nvim-treesitter/nvim-treesitter-refactor" },
 			{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		},
 	},
