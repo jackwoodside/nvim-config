@@ -10,7 +10,6 @@ require("nvim-treesitter").setup({
 		"lua",
 		"markdown",
 		"markdown_inline",
-		"query",
 		"regex",
 		"vim",
 		"vimdoc",
