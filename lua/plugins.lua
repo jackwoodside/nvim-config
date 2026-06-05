@@ -26,7 +26,7 @@ return require("lazy").setup({
 
 	{
 		"saghen/blink.cmp",
-		version = "v0.*",
+		version = "v1.*",
 		event = { "BufReadPre", "BufNewFile" },
 		config = function()
 			require("plugins.language.cmp")
