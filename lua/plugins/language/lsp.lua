@@ -148,7 +148,7 @@ lspconfig["lua_ls"] = {
 				showWord = "Disable",
 			},
 			diagnostics = {
-				globals = { "vim" },
+				globals = { "hl", "vim" },
 			},
 			workspace = {
 				library = { vim.env.VIMRUNTIME, "${3rd}/luv/library" },
